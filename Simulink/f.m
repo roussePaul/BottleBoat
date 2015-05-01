@@ -13,7 +13,7 @@
 
 
 function X_dot_ext=f(V_in)
- 
+%#codegen
 % use the system parameters
 global par
 
