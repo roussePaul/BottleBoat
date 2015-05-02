@@ -1,0 +1,15 @@
+%implements s5_b0_tqcjg_InitializeConditions "C"
+
+%function InitializeConditions(block, system) Output
+%assign localVarDecl = ""
+%assign tlcInitializeConditionsFcnOfS5B0 = OpaqueTLCBlockFcn("InitializeConditions", 5, 0, 0, 4)
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+%<tlcInitializeConditionsFcnOfS5B0>\
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void InitializeConditions(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 4, fcnProtoType)>
+%endfunction

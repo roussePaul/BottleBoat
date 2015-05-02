@@ -1,0 +1,19 @@
+%implements s5_b0_tqcjg_Start "C"
+
+%function Start(block, system) Output
+%assign localVarDecl = ""
+%assign tlcStartFcnOfS5B1 = OpaqueTLCBlockFcn("Start", 5, 1, 0, 3)
+%assign tlcStartFcnOfS5B17 = OpaqueTLCBlockFcn("Start", 5, 17, 0, 3)
+%assign tlcStartFcnOfS5B18 = OpaqueTLCBlockFcn("Start", 5, 18, 0, 3)
+/* Start for Constant: '<Root>/IC = [ eta(0) ; nu(0) ]' */
+memcpy(&SailingYachtModel2_B.ICeta0nu0[0], &SailingYachtModel2_P.ICeta0nu0_Value[0], sizeof(real_T) << 3U);
+%<tlcStartFcnOfS5B1>\
+%<tlcStartFcnOfS5B17>\
+%<tlcStartFcnOfS5B18>\
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Start(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 3, fcnProtoType)>
+%endfunction

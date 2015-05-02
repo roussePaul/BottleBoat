@@ -12,7 +12,7 @@
 
 
 
-function X_dot_ext=f(V_in)
+function [X_dot_ext]=f(V_in)
 %#codegen
 % use the system parameters
 global par
@@ -67,6 +67,8 @@ end
 alpha_as = alpha_aw - delta_s;
 
 [Cls,Cds] = sailcoef(alpha_as);
+[Cls1,Cds1] = sailcoef(alpha_as);
+
 Ls = 0.5*par.rho_a*par.As*(V_awu^2+V_awv^2)*Cls;
 Ds = 0.5*par.rho_a*par.As*(V_awu^2+V_awv^2)*Cds;
 
@@ -79,6 +81,7 @@ v_arv = -v-r*par.xr + p*par.zr;
 alpha_ar = atan2(v_arv,-v_aru);
 alpha_a = alpha_ar-delta_r;
 [Clr,Cdr] = ruddercoef(alpha_a);
+[Clr1,Cdr1] = ruddercoef(alpha_a);
 Cdr = Cdr+Clr^2*par.Ar/(pi*2*par.zeta_r*par.d_r^2);
 
 Lr = 0.5*par.rho_w*par.Ar*(v_aru^2+v_arv^2)*Clr;
@@ -97,6 +100,7 @@ v_akv = -v - r*par.xk+p*par.zk;
 alpha_ak = atan2(v_akv,-v_aku);
 alpha_e = alpha_ak;
 [Clk,Cdk] = keelcoef(alpha_e);
+[Clk1,Cdk1] = keelcoef(alpha_e);
 Cdk = Cdk + Clk^2*par.Ak/(pi*2*par.zeta_k*par.d_k^2);
 
 Lk = 0.5*par.rho_w*par.Ak*(v_aku^2+v_akv^2)*Clk;
@@ -110,6 +114,7 @@ v_ahv = (-v-r*par.xh + p*par.zh)/cos(phi);
 v_ah = sqrt(v_aku^2+v_akv^2);
 alpha_ah = atan2(v_ahv,-v_ahu);
 Frh = resistancehull(v_ah);
+Frh1 = resistancehull(v_ah);
 
 D_hull = [Frh*cos(alpha_ah);-Frh*sin(alpha_ah)*cos(phi); Frh*sin(alpha_ah)*cos(phi)*par.zh; -Frh*sin(alpha_ah)*cos(phi)*par.xh];
 
@@ -134,10 +139,15 @@ G = [ 0 ; 0 ; par.a*phi_deg^2+par.b*phi_deg + M_xw ; M_zw];
 % computation of nu_dot
 nu_dot = -M\(C_RB*nu+C_A*nu)-M\D-M\G+M\tau; 
  
+
 % output the derivative of the state extended with the sail angle
 X_dot_ext = [ eta_dot   ; 
               nu_dot   ;
               delta_s];
+          
+%y=[Cls1;Cds1;Clr1;Cdr1;Clk1;Cdk1;Frh1;alpha_as;alpha_a;alpha_e;v_ah];
+
+%X_dot_ext = y;
 
 
 %------------------------------------------------------------------------------------------------------------------------------

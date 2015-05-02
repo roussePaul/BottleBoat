@@ -1,0 +1,13 @@
+%implements s5_b0_tqcjg_Terminate "C"
+
+%function Terminate(block, system) Output
+%assign localVarDecl = ""
+%assign tlcTerminateFcnOfS5B1 = OpaqueTLCBlockFcn("Terminate", 5, 1, 0, 9)
+%<tlcTerminateFcnOfS5B1>\
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Terminate(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 9, fcnProtoType)>
+%endfunction

@@ -1,9 +1,13 @@
 %% Lookuptable
 
+clc
+clear
+N = 100;
+
 % sail coeff
 % lookup table
 alphacoeff_xdata = linspace(-pi,pi,73); % every 5 degrees
-alphacoeff_xdata = alphacoeff_xdata/pi*180;
+alphacoeff_xdata = alphacoeff_xdata;
 
 % lift curve
 alphacoeff_yldata = [fliplr([0 0.15 0.32 ...
@@ -21,13 +25,18 @@ alphacoeff_yddata = [fliplr([0.1 0.12 0.14 ...
     0.16 0.19 0.26 0.35 0.46 0.54 0.62 0.7 0.78 0.9 0.98 1.04 1.08 1.16 1.2 1.24 1.26 ...
     1.28 1.34 1.36 1.37 1.33 1.31 1.28 1.26 1.25 1.2 1.1 1.04 0.88 0.8 0.64 0.38 0.1]];
 
-alphacoeff_ydata = [alphacoeff_yldata;alphacoeff_yddata];
+alphacoeff_xdata2 = linspace(-pi,pi,N);
+alphacoeff_xdata2 = alphacoeff_xdata2;
+%alphacoeff_yldata = arrayfun(@(x)sailcoef_cls(x),alphacoeff_xdata2);
+alphacoeff_yldata = interp1(alphacoeff_xdata,alphacoeff_yldata,alphacoeff_xdata2,'pchip');
+alphacoeff_yddata = interp1(alphacoeff_xdata,alphacoeff_yddata,alphacoeff_xdata2,'pchip');
+alphacoeff_xdata = alphacoeff_xdata2;
 
-
+%%
 % Rudder angle
 % lookup table
 ruddercoeff_xdata = linspace(-pi,pi,73); % every 5 degrees
-ruddercoeff_xdata = ruddercoeff_xdata/pi*180;
+ruddercoeff_xdata = ruddercoeff_xdata;
 
 % lift curve
 ruddercoeff_yl = fliplr([0 0.425 0.74 ...
@@ -45,14 +54,19 @@ ruddercoeff_yddata = [fliplr([0 0.04 0.07 ...
     [0.04 0.07 ...
     0.1 0.17 0.3 0.49 0.76 0.98 1.19 1.34 1.5 1.65 1.77 1.88 1.96 2.01 2.05 2.09 ruddercoeff_yd]];
 
-ruddercoeff_ydata = [ruddercoeff_yldata;ruddercoeff_yddata];
 
+ruddercoeff_xdata2 = linspace(-pi,pi,N);
+ruddercoeff_xdata2 = ruddercoeff_xdata2;
+ruddercoeff_yldata = interp1(ruddercoeff_xdata,ruddercoeff_yldata,ruddercoeff_xdata2,'pchip');
+ruddercoeff_yddata = arrayfun(@(x)ruddercoef_cdr(x),ruddercoeff_xdata2);
+%ruddercoeff_yddata = interp1(ruddercoeff_xdata,ruddercoeff_yddata,ruddercoeff_xdata2,'pchip');
+ruddercoeff_xdata = ruddercoeff_xdata2;
 
 %keelcoef
 
 % lookup table
 keelcoeff_xdata = linspace(-pi,pi,73); % every 5 degrees
-keelcoeff_xdata = keelcoeff_xdata/pi*180;
+keelcoeff_xdata = keelcoeff_xdata;
 
 % lift curve
 keelcoeff_yl = fliplr([0 0.425 0.74 ...
@@ -70,8 +84,13 @@ keelcoeff_yddata = [fliplr([0 0.04 0.07 ...
     [0.04 0.07 ...
     0.1 0.17 0.3 0.49 0.76 0.98 1.19 1.34 1.5 1.65 1.77 1.88 1.96 2.01 2.05 2.09 keelcoeff_yd]];
 
-keelcoeff_ydata = [keelcoeff_yldata;keelcoeff_yddata];
+keelcoeff_xdata2 = linspace(-pi,pi,N);
+keelcoeff_xdata2 = keelcoeff_xdata2;
+keelcoeff_yldata = interp1(keelcoeff_xdata,keelcoeff_yldata,keelcoeff_xdata2,'pchip');
+keelcoeff_yddata = interp1(keelcoeff_xdata,keelcoeff_yddata,keelcoeff_xdata2,'pchip');
+keelcoeff_xdata = keelcoeff_xdata2;
 
 % resistance hull
-hull_xdata = linspace(0,6,13); % every 0.5m/s
-hull_ydata = [0 0.15 0.35 0.5 0.675 0.825 1.175 1.4 2 4.85 9.85 18.46 27.5]*1000;
+hull_xdata2 = linspace(0,20,N);
+hull_ydata = arrayfun(@(x)resistancehull(x),hull_xdata2);
+hull_xdata = hull_xdata2;

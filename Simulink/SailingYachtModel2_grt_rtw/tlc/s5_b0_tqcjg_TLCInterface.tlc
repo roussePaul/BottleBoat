@@ -1,0 +1,476 @@
+%implements s5_b0_tqcjg_TLCInterface "C"
+
+%function getInputAddr_5_1_0_3_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_1_0_3_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_5_1_0_3_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_DW.ToWorkspace_PWORK"
+%endfunction
+
+%function getDWork_5_1_0_3_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_DW.ToWorkspace_PWORK"
+%endfunction
+
+%function getInputAddr_5_17_0_3_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.rudderanglesaturation"
+%endfunction
+
+%function getInput_5_17_0_3_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.rudderanglesaturation"
+%endfunction
+
+%function getDWorkAddr_5_17_0_3_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_DW.delta_rt_PWORK"
+%endfunction
+
+%function getDWork_5_17_0_3_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_DW.delta_rt_PWORK"
+%endfunction
+
+%function getInputAddr_5_18_0_3_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.Sum"
+%endfunction
+
+%function getInput_5_18_0_3_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.Sum"
+%endfunction
+
+%function getDWorkAddr_5_18_0_3_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_DW.psi_tildet_PWORK"
+%endfunction
+
+%function getDWork_5_18_0_3_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_DW.psi_tildet_PWORK"
+%endfunction
+
+%function getInputAddr_5_0_0_4_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.X_dot_ext" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_0_0_4_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.X_dot_ext" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_5_0_0_4_1_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.ICeta0nu0" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_0_0_4_1_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.ICeta0nu0" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutputAddr_5_0_0_4_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_5_0_0_4_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_5_0_0_4_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_DW.Integrator_IWORK"
+%endfunction
+
+%function getDWork_5_0_0_4_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_DW.Integrator_IWORK"
+%endfunction
+
+%function getInputAddr_5_0_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.X_dot_ext" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_0_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.X_dot_ext" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_5_0_0_5_1_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.ICeta0nu0" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_0_0_5_1_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.ICeta0nu0" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutputAddr_5_0_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_5_0_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_5_0_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_DW.Integrator_IWORK"
+%endfunction
+
+%function getDWork_5_0_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_DW.Integrator_IWORK"
+%endfunction
+
+%function getInputAddr_5_1_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_1_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_5_1_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_DW.ToWorkspace_PWORK"
+%endfunction
+
+%function getDWork_5_1_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_DW.ToWorkspace_PWORK"
+%endfunction
+
+%function getInputAddr_5_15_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(13, 0)> %% rtb_TmpSignalConversionAtVRSail
+
+%return "&rtb_TmpSignalConversionAtVRSail" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_15_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(13, 0)> %% rtb_TmpSignalConversionAtVRSail
+
+%return "rtb_TmpSignalConversionAtVRSail" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_5_15_0_5_1_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(14, 0)> %% rtb_TmpSignalConversionAtVRSa_o
+
+%return "&rtb_TmpSignalConversionAtVRSa_o" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_15_0_5_1_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(14, 0)> %% rtb_TmpSignalConversionAtVRSa_o
+
+%return "rtb_TmpSignalConversionAtVRSa_o" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_5_15_0_5_2_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(15, 0)> %% rtb_TmpSignalConversionAtVRSa_i
+
+%return "&rtb_TmpSignalConversionAtVRSa_i" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_15_0_5_2_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(15, 0)> %% rtb_TmpSignalConversionAtVRSa_i
+
+%return "rtb_TmpSignalConversionAtVRSa_i" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_5_15_0_5_3_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(16, 0)> %% rtb_TmpSignalConversionAtVRSa_b
+
+%return "&rtb_TmpSignalConversionAtVRSa_b" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_15_0_5_3_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(16, 0)> %% rtb_TmpSignalConversionAtVRSa_b
+
+%return "rtb_TmpSignalConversionAtVRSa_b" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_5_15_0_5_4_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(17, 0)> %% rtb_TmpSignalConversionAtVRS_bd
+
+%return "&rtb_TmpSignalConversionAtVRS_bd" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_15_0_5_4_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(17, 0)> %% rtb_TmpSignalConversionAtVRS_bd
+
+%return "rtb_TmpSignalConversionAtVRS_bd" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_5_15_0_5_5_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(18, 0)> %% rtb_TmpSignalConversionAtVRS_im
+
+%return "&rtb_TmpSignalConversionAtVRS_im" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_15_0_5_5_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(18, 0)> %% rtb_TmpSignalConversionAtVRS_im
+
+%return "rtb_TmpSignalConversionAtVRS_im" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_5_15_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_DW.VRSailingYachtAnimation_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_5_15_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_DW.VRSailingYachtAnimation_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_5_16_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.rudderanglesaturation"
+%endfunction
+
+%function getInput_5_16_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.rudderanglesaturation"
+%endfunction
+
+%function getInputAddr_5_16_0_5_0_1(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_P.Constant_Value"
+%endfunction
+
+%function getInput_5_16_0_5_0_1(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_P.Constant_Value"
+%endfunction
+
+%function getInputAddr_5_16_0_5_0_2(block, lcv, ucv, sigIdx, reim) void
+
+%return "NULL"
+%endfunction
+
+%function getInput_5_16_0_5_0_2(block, lcv, ucv, sigIdx, reim) void
+
+%return "(*NULL)"
+%endfunction
+
+%function getInputAddr_5_16_0_5_0_3(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_16_0_5_0_3(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutputAddr_5_16_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(7, 0)> %% rtb_X_dot_extfV_in
+
+%return "&rtb_X_dot_extfV_in" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_5_16_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(7, 0)> %% rtb_X_dot_extfV_in
+
+%return "rtb_X_dot_extfV_in" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_5_17_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.rudderanglesaturation"
+%endfunction
+
+%function getInput_5_17_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.rudderanglesaturation"
+%endfunction
+
+%function getDWorkAddr_5_17_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_DW.delta_rt_PWORK"
+%endfunction
+
+%function getDWork_5_17_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_DW.delta_rt_PWORK"
+%endfunction
+
+%function getInputAddr_5_18_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.Sum"
+%endfunction
+
+%function getInput_5_18_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.Sum"
+%endfunction
+
+%function getDWorkAddr_5_18_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_DW.psi_tildet_PWORK"
+%endfunction
+
+%function getDWork_5_18_0_5_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_DW.psi_tildet_PWORK"
+%endfunction
+
+%function getInputAddr_5_0_0_6_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.X_dot_ext" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_0_0_6_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.X_dot_ext" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_5_0_0_6_1_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.ICeta0nu0" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_0_0_6_1_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.ICeta0nu0" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutputAddr_5_0_0_6_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_5_0_0_6_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_5_0_0_6_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_DW.Integrator_IWORK"
+%endfunction
+
+%function getDWork_5_0_0_6_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_DW.Integrator_IWORK"
+%endfunction
+
+%function getInputAddr_5_0_0_7_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.X_dot_ext" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_0_0_7_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.X_dot_ext" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_5_0_0_7_1_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.ICeta0nu0" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_0_0_7_1_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.ICeta0nu0" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutputAddr_5_0_0_7_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_5_0_0_7_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_5_0_0_7_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_DW.Integrator_IWORK"
+%endfunction
+
+%function getDWork_5_0_0_7_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_DW.Integrator_IWORK"
+%endfunction
+
+%function getInputAddr_5_0_0_8_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.X_dot_ext" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_0_0_8_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.X_dot_ext" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_5_0_0_8_1_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.ICeta0nu0" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_0_0_8_1_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.ICeta0nu0" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutputAddr_5_0_0_8_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_5_0_0_8_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_5_0_0_8_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_DW.Integrator_IWORK"
+%endfunction
+
+%function getDWork_5_0_0_8_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_DW.Integrator_IWORK"
+%endfunction
+
+%function getInputAddr_5_1_0_9_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_5_1_0_9_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_B.Integrator" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_5_1_0_9_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "&SailingYachtModel2_DW.ToWorkspace_PWORK"
+%endfunction
+
+%function getDWork_5_1_0_9_0_0(block, lcv, ucv, sigIdx, reim) void
+
+%return "SailingYachtModel2_DW.ToWorkspace_PWORK"
+%endfunction
+

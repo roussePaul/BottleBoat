@@ -1,0 +1,1 @@
+error = (xdot.Data-trueSim.Data)./(xdot.Data+trueSim.Data);
