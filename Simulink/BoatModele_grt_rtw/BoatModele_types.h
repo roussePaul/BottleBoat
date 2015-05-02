@@ -3,9 +3,9 @@
  *
  * Code generation for model "BoatModele".
  *
- * Model version              : 1.4
+ * Model version              : 1.11
  * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Sat May  2 21:57:46 2015
+ * C source code generated on : Sat May  2 23:14:17 2015
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -19,7 +19,7 @@
 #include "builtin_typeid_types.h"
 #include "multiword_types.h"
 
-/* Custom Type definition for MATLAB Function: '<S1>/MATLAB Function4' */
+/* Custom Type definition for MATLAB Function: '<S1>/MATLAB Function1' */
 #ifndef struct_srLgvkCzuuZn3rWrmrpDanB
 #define struct_srLgvkCzuuZn3rWrmrpDanB
 

@@ -3,9 +3,9 @@
  *
  * Code generation for model "BoatModele".
  *
- * Model version              : 1.4
+ * Model version              : 1.11
  * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Sat May  2 21:57:46 2015
+ * C source code generated on : Sat May  2 23:14:17 2015
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -246,7 +246,7 @@ typedef struct {
 /* External inputs (root inport signals with auto storage) */
 typedef struct {
   real_T X_0[8];                       /* '<Root>/X_0' */
-  real_T U[3];                         /* '<Root>/U' */
+  real_T U[4];                         /* '<Root>/U' */
 } ExtU_BoatModele_T;
 
 /* External outputs (root outports fed by signals with auto storage) */
@@ -450,8 +450,5 @@ extern RT_MODEL_BoatModele_T *const BoatModele_M;
  * '<S1>'   : 'BoatModele/4DOF nonlinear sailing yacht model'
  * '<S2>'   : 'BoatModele/4DOF nonlinear sailing yacht model/MATLAB Function'
  * '<S3>'   : 'BoatModele/4DOF nonlinear sailing yacht model/MATLAB Function1'
- * '<S4>'   : 'BoatModele/4DOF nonlinear sailing yacht model/MATLAB Function2'
- * '<S5>'   : 'BoatModele/4DOF nonlinear sailing yacht model/MATLAB Function3'
- * '<S6>'   : 'BoatModele/4DOF nonlinear sailing yacht model/MATLAB Function4'
  */
 #endif                                 /* RTW_HEADER_BoatModele_h_ */

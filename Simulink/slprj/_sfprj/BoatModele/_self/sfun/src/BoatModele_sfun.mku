@@ -8,7 +8,7 @@ LD = $(CC)
  
 MACHINE     = BoatModele
 TARGET      = sfun
-CHART_SRCS   = c1_BoatModele.c c2_BoatModele.c c3_BoatModele.c c4_BoatModele.c c5_BoatModele.c
+CHART_SRCS   = c1_BoatModele.c c2_BoatModele.c
 MACHINE_SRC  = BoatModele_sfun.c
 MACHINE_REG = BoatModele_sfun_registry.c
 MAKEFILE    = BoatModele_sfun.mku

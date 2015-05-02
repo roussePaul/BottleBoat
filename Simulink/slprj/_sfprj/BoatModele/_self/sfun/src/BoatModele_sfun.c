@@ -4,9 +4,6 @@
 #include "BoatModele_sfun_debug_macros.h"
 #include "c1_BoatModele.h"
 #include "c2_BoatModele.h"
-#include "c3_BoatModele.h"
-#include "c4_BoatModele.h"
-#include "c5_BoatModele.h"
 
 /* Type Definitions */
 
@@ -39,21 +36,6 @@ unsigned int sf_BoatModele_method_dispatcher(SimStruct *simstructPtr, unsigned
 
   if (chartFileNumber==2) {
     c2_BoatModele_method_dispatcher(simstructPtr, method, data);
-    return 1;
-  }
-
-  if (chartFileNumber==3) {
-    c3_BoatModele_method_dispatcher(simstructPtr, method, data);
-    return 1;
-  }
-
-  if (chartFileNumber==4) {
-    c4_BoatModele_method_dispatcher(simstructPtr, method, data);
-    return 1;
-  }
-
-  if (chartFileNumber==5) {
-    c5_BoatModele_method_dispatcher(simstructPtr, method, data);
     return 1;
   }
 
@@ -90,10 +72,10 @@ unsigned int sf_BoatModele_process_check_sum_call( int nlhs, mxArray * plhs[],
       ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(0U);
       ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(0U);
     } else if (!strcmp(commandName,"makefile")) {
-      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2085501899U);
-      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(983571124U);
-      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3444439919U);
-      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3449890858U);
+      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2396649055U);
+      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(698553737U);
+      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3835782393U);
+      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(857042645U);
     } else if (nrhs==3 && !strcmp(commandName,"chart")) {
       unsigned int chartFileNumber;
       chartFileNumber = (unsigned int)mxGetScalar(prhs[2]);
@@ -112,27 +94,6 @@ unsigned int sf_BoatModele_process_check_sum_call( int nlhs, mxArray * plhs[],
           break;
         }
 
-       case 3:
-        {
-          extern void sf_c3_BoatModele_get_check_sum(mxArray *plhs[]);
-          sf_c3_BoatModele_get_check_sum(plhs);
-          break;
-        }
-
-       case 4:
-        {
-          extern void sf_c4_BoatModele_get_check_sum(mxArray *plhs[]);
-          sf_c4_BoatModele_get_check_sum(plhs);
-          break;
-        }
-
-       case 5:
-        {
-          extern void sf_c5_BoatModele_get_check_sum(mxArray *plhs[]);
-          sf_c5_BoatModele_get_check_sum(plhs);
-          break;
-        }
-
        default:
         ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(0.0);
         ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(0.0);
@@ -148,10 +109,10 @@ unsigned int sf_BoatModele_process_check_sum_call( int nlhs, mxArray * plhs[],
       return 0;
     }
   } else {
-    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2224531094U);
-    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(80998503U);
-    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1996513954U);
-    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(752888497U);
+    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(845926330U);
+    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2358621619U);
+    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(4021077905U);
+    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(2872973196U);
   }
 
   return 1;
@@ -189,7 +150,7 @@ unsigned int sf_BoatModele_autoinheritance_info( int nlhs, mxArray * plhs[], int
     switch (chartFileNumber) {
      case 1:
       {
-        if (strcmp(aiChksum, "rajJK3myDAiAWILUTXxLYH") == 0) {
+        if (strcmp(aiChksum, "Q3PoKwdm172vj9rWYGyvlH") == 0) {
           extern mxArray *sf_c1_BoatModele_get_autoinheritance_info(void);
           plhs[0] = sf_c1_BoatModele_get_autoinheritance_info();
           break;
@@ -201,45 +162,9 @@ unsigned int sf_BoatModele_autoinheritance_info( int nlhs, mxArray * plhs[], int
 
      case 2:
       {
-        if (strcmp(aiChksum, "2iNogOqDrlBdlrI8dt8k3C") == 0) {
+        if (strcmp(aiChksum, "6MwH0Meo3t3xNak7yANlHE") == 0) {
           extern mxArray *sf_c2_BoatModele_get_autoinheritance_info(void);
           plhs[0] = sf_c2_BoatModele_get_autoinheritance_info();
-          break;
-        }
-
-        plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
-        break;
-      }
-
-     case 3:
-      {
-        if (strcmp(aiChksum, "jmD4X94ZIV3FGAklKqAANH") == 0) {
-          extern mxArray *sf_c3_BoatModele_get_autoinheritance_info(void);
-          plhs[0] = sf_c3_BoatModele_get_autoinheritance_info();
-          break;
-        }
-
-        plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
-        break;
-      }
-
-     case 4:
-      {
-        if (strcmp(aiChksum, "2Mfpkqh9dfpVKwH99reYRC") == 0) {
-          extern mxArray *sf_c4_BoatModele_get_autoinheritance_info(void);
-          plhs[0] = sf_c4_BoatModele_get_autoinheritance_info();
-          break;
-        }
-
-        plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
-        break;
-      }
-
-     case 5:
-      {
-        if (strcmp(aiChksum, "d723Ad8nMruGiQ0x7PmEOH") == 0) {
-          extern mxArray *sf_c5_BoatModele_get_autoinheritance_info(void);
-          plhs[0] = sf_c5_BoatModele_get_autoinheritance_info();
           break;
         }
 
@@ -304,39 +229,6 @@ unsigned int sf_BoatModele_get_eml_resolved_functions_info( int nlhs, mxArray *
         break;
       }
 
-     case 3:
-      {
-        extern const mxArray *sf_c3_BoatModele_get_eml_resolved_functions_info
-          (void);
-        mxArray *persistentMxArray = (mxArray *)
-          sf_c3_BoatModele_get_eml_resolved_functions_info();
-        plhs[0] = mxDuplicateArray(persistentMxArray);
-        mxDestroyArray(persistentMxArray);
-        break;
-      }
-
-     case 4:
-      {
-        extern const mxArray *sf_c4_BoatModele_get_eml_resolved_functions_info
-          (void);
-        mxArray *persistentMxArray = (mxArray *)
-          sf_c4_BoatModele_get_eml_resolved_functions_info();
-        plhs[0] = mxDuplicateArray(persistentMxArray);
-        mxDestroyArray(persistentMxArray);
-        break;
-      }
-
-     case 5:
-      {
-        extern const mxArray *sf_c5_BoatModele_get_eml_resolved_functions_info
-          (void);
-        mxArray *persistentMxArray = (mxArray *)
-          sf_c5_BoatModele_get_eml_resolved_functions_info();
-        plhs[0] = mxDuplicateArray(persistentMxArray);
-        mxDestroyArray(persistentMxArray);
-        break;
-      }
-
      default:
       plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
     }
@@ -374,7 +266,7 @@ unsigned int sf_BoatModele_third_party_uses_info( int nlhs, mxArray * plhs[],
     switch (chartFileNumber) {
      case 1:
       {
-        if (strcmp(tpChksum, "xv3kFIi3Rj1AwjfUBSSFtH") == 0) {
+        if (strcmp(tpChksum, "QDPwJeq2Q5550RODQK7fH") == 0) {
           extern mxArray *sf_c1_BoatModele_third_party_uses_info(void);
           plhs[0] = sf_c1_BoatModele_third_party_uses_info();
           break;
@@ -383,36 +275,9 @@ unsigned int sf_BoatModele_third_party_uses_info( int nlhs, mxArray * plhs[],
 
      case 2:
       {
-        if (strcmp(tpChksum, "w4NXO9dVpMStYiZRNRjsWC") == 0) {
+        if (strcmp(tpChksum, "ExCGXEagQNJ2rnRmkZIoLH") == 0) {
           extern mxArray *sf_c2_BoatModele_third_party_uses_info(void);
           plhs[0] = sf_c2_BoatModele_third_party_uses_info();
-          break;
-        }
-      }
-
-     case 3:
-      {
-        if (strcmp(tpChksum, "8hJanoFkAUq13QqujzrzCE") == 0) {
-          extern mxArray *sf_c3_BoatModele_third_party_uses_info(void);
-          plhs[0] = sf_c3_BoatModele_third_party_uses_info();
-          break;
-        }
-      }
-
-     case 4:
-      {
-        if (strcmp(tpChksum, "AHhuVmexFcn1Phryo9PTc") == 0) {
-          extern mxArray *sf_c4_BoatModele_third_party_uses_info(void);
-          plhs[0] = sf_c4_BoatModele_third_party_uses_info();
-          break;
-        }
-      }
-
-     case 5:
-      {
-        if (strcmp(tpChksum, "7cprSD6170H43CZpogqnmG") == 0) {
-          extern mxArray *sf_c5_BoatModele_third_party_uses_info(void);
-          plhs[0] = sf_c5_BoatModele_third_party_uses_info();
           break;
         }
       }
@@ -447,7 +312,7 @@ unsigned int sf_BoatModele_updateBuildInfo_args_info( int nlhs, mxArray * plhs[]
     switch (chartFileNumber) {
      case 1:
       {
-        if (strcmp(tpChksum, "xv3kFIi3Rj1AwjfUBSSFtH") == 0) {
+        if (strcmp(tpChksum, "QDPwJeq2Q5550RODQK7fH") == 0) {
           extern mxArray *sf_c1_BoatModele_updateBuildInfo_args_info(void);
           plhs[0] = sf_c1_BoatModele_updateBuildInfo_args_info();
           break;
@@ -456,36 +321,9 @@ unsigned int sf_BoatModele_updateBuildInfo_args_info( int nlhs, mxArray * plhs[]
 
      case 2:
       {
-        if (strcmp(tpChksum, "w4NXO9dVpMStYiZRNRjsWC") == 0) {
+        if (strcmp(tpChksum, "ExCGXEagQNJ2rnRmkZIoLH") == 0) {
           extern mxArray *sf_c2_BoatModele_updateBuildInfo_args_info(void);
           plhs[0] = sf_c2_BoatModele_updateBuildInfo_args_info();
-          break;
-        }
-      }
-
-     case 3:
-      {
-        if (strcmp(tpChksum, "8hJanoFkAUq13QqujzrzCE") == 0) {
-          extern mxArray *sf_c3_BoatModele_updateBuildInfo_args_info(void);
-          plhs[0] = sf_c3_BoatModele_updateBuildInfo_args_info();
-          break;
-        }
-      }
-
-     case 4:
-      {
-        if (strcmp(tpChksum, "AHhuVmexFcn1Phryo9PTc") == 0) {
-          extern mxArray *sf_c4_BoatModele_updateBuildInfo_args_info(void);
-          plhs[0] = sf_c4_BoatModele_updateBuildInfo_args_info();
-          break;
-        }
-      }
-
-     case 5:
-      {
-        if (strcmp(tpChksum, "7cprSD6170H43CZpogqnmG") == 0) {
-          extern mxArray *sf_c5_BoatModele_updateBuildInfo_args_info(void);
-          plhs[0] = sf_c5_BoatModele_updateBuildInfo_args_info();
           break;
         }
       }
@@ -501,7 +339,7 @@ unsigned int sf_BoatModele_updateBuildInfo_args_info( int nlhs, mxArray * plhs[]
 void BoatModele_debug_initialize(struct SfDebugInstanceStruct* debugInstance)
 {
   _BoatModeleMachineNumber_ = sf_debug_initialize_machine(debugInstance,
-    "BoatModele","sfun",0,5,0,0,0);
+    "BoatModele","sfun",0,2,0,0,0);
   sf_debug_set_machine_event_thresholds(debugInstance,_BoatModeleMachineNumber_,
     0,0);
   sf_debug_set_machine_data_thresholds(debugInstance,_BoatModeleMachineNumber_,0);

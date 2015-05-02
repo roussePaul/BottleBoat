@@ -3,9 +3,9 @@
  *
  * Code generation for model "BoatModele".
  *
- * Model version              : 1.4
+ * Model version              : 1.11
  * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Sat May  2 21:57:46 2015
+ * C source code generated on : Sat May  2 23:14:17 2015
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -607,14 +607,15 @@ void BoatModele_step(void)
   real_T rtb_DLookupTable5;
   real_T rtb_DLookupTable2;
   real_T rtb_DLookupTable6;
-  real_T rtb_attack;
-  real_T rtb_attack_c;
-  real_T rtb_attack_a;
+  real_T rtb_attack_sail;
+  real_T rtb_attack_rudder;
+  real_T rtb_attack_keel;
   real_T alpha_aw;
   real_T delta_s;
   real_T alpha_as;
-  real_T alpha_ak;
+  real_T v_aku;
   real_T v_akv;
+  real_T alpha_ak;
   real_T nu[4];
   real_T Ls;
   real_T Ds;
@@ -633,7 +634,7 @@ void BoatModele_step(void)
     -126410.0 };
 
   real_T g[4];
-  real_T rtb_TmpSignalConversionAtSFun_c[11];
+  real_T rtb_TmpSignalConversionAtSFunct[12];
   real_T rtb_DLookupTable3;
   int32_T i;
   real_T c_0[9];
@@ -649,7 +650,6 @@ void BoatModele_step(void)
   real_T tmp_4[4];
   real_T tmp_5[4];
   real_T V_awb_idx_1;
-  real_T V_awb_idx_0;
   if (rtmIsMajorTimeStep(BoatModele_M)) {
     /* set solver stop time */
     if (!(BoatModele_M->Timing.clockTick0+1)) {
@@ -694,11 +694,13 @@ void BoatModele_step(void)
    *  Inport: '<Root>/U'
    *  MATLAB Function: '<S1>/MATLAB Function1'
    */
-  rtb_TmpSignalConversionAtSFun_c[1] = BoatModele_U.U[1];
+  rtb_TmpSignalConversionAtSFunct[0] = BoatModele_U.U[0];
+  rtb_TmpSignalConversionAtSFunct[1] = BoatModele_U.U[1];
+  rtb_TmpSignalConversionAtSFunct[3] = BoatModele_U.U[3];
   for (i = 0; i < 8; i++) {
     /* Outport: '<Root>/X' */
     BoatModele_Y.X[i] = rtb_Integrator[i];
-    rtb_TmpSignalConversionAtSFun_c[i + 3] = rtb_Integrator[i];
+    rtb_TmpSignalConversionAtSFunct[i + 4] = rtb_Integrator[i];
   }
 
   /* End of SignalConversion: '<S3>/TmpSignal ConversionAt SFunction Inport1' */
@@ -716,42 +718,45 @@ void BoatModele_step(void)
   /*   */
   /*  Jerome Jouffroy, Jiaxi He and Lin Xiao, 2014. */
   /*  University of Southern Denmark. */
+  /*  use the system parameters */
   /*  retrieve the system state from the field input vector "V_in" */
-  /* '<S3>:1:24' */
   /* '<S3>:1:25' */
   /* '<S3>:1:26' */
   /* '<S3>:1:27' */
   /* '<S3>:1:28' */
   /* '<S3>:1:29' */
+  /* '<S3>:1:30' */
   /*  retrieve the input signals from the vector "V_in" */
   /* '<S3>:1:34' */
+  /* '<S3>:1:35' */
+  /* '<S3>:1:37' */
   /*  evaluate the matrix M and C in the model */
   /*  calculate the tau vector, ie forces and moments generated from: */
   /*  the sail */
-  /* '<S3>:1:49' */
-  alpha_as = log(11.58 * cos(rtb_TmpSignalConversionAtSFun_c[5]) / 0.0005) /
+  /* '<S3>:1:52' */
+  alpha_as = log(11.58 * cos(rtb_TmpSignalConversionAtSFunct[6]) / 0.0005) /
     10.050181931686932;
 
-  /* '<S3>:1:50' */
-  /* '<S3>:1:51' */
-  /* '<S3>:1:52' */
-  /*  wind expressed in the body frame */
   /* '<S3>:1:53' */
   /* '<S3>:1:54' */
+  /* '<S3>:1:55' */
+  /*  wind expressed in the body frame */
+  /* '<S3>:1:56' */
+  /* '<S3>:1:57' */
   c_0[0] = 1.0;
   c_0[3] = 0.0;
   c_0[6] = 0.0;
   c_0[1] = 0.0;
-  c_0[4] = cos(-rtb_TmpSignalConversionAtSFun_c[5]);
-  c_0[7] = -sin(-rtb_TmpSignalConversionAtSFun_c[5]);
+  c_0[4] = cos(-rtb_TmpSignalConversionAtSFunct[6]);
+  c_0[7] = -sin(-rtb_TmpSignalConversionAtSFunct[6]);
   c_0[2] = 0.0;
-  c_0[5] = sin(-rtb_TmpSignalConversionAtSFun_c[5]);
-  c_0[8] = cos(-rtb_TmpSignalConversionAtSFun_c[5]);
-  tmp[0] = cos(-rtb_TmpSignalConversionAtSFun_c[6]);
-  tmp[3] = -sin(-rtb_TmpSignalConversionAtSFun_c[6]);
+  c_0[5] = sin(-rtb_TmpSignalConversionAtSFunct[6]);
+  c_0[8] = cos(-rtb_TmpSignalConversionAtSFunct[6]);
+  tmp[0] = cos(-rtb_TmpSignalConversionAtSFunct[7]);
+  tmp[3] = -sin(-rtb_TmpSignalConversionAtSFunct[7]);
   tmp[6] = 0.0;
-  tmp[1] = sin(-rtb_TmpSignalConversionAtSFun_c[6]);
-  tmp[4] = cos(-rtb_TmpSignalConversionAtSFun_c[6]);
+  tmp[1] = sin(-rtb_TmpSignalConversionAtSFunct[7]);
+  tmp[4] = cos(-rtb_TmpSignalConversionAtSFunct[7]);
   tmp[7] = 0.0;
   tmp[2] = 0.0;
   tmp[5] = 0.0;
@@ -770,39 +775,44 @@ void BoatModele_step(void)
       1.2246467991473533E-15) + alpha_as * -10.0 * c_1[i]);
   }
 
-  /* '<S3>:1:55' */
-  /* '<S3>:1:56' */
-  /* '<S3>:1:57' */
-  alpha_aw = rt_atan2d_snf((c_2[1] - rtb_TmpSignalConversionAtSFun_c[8]) -
-    (rtb_TmpSignalConversionAtSFun_c[10] * 0.0 -
-     rtb_TmpSignalConversionAtSFun_c[9] * -11.58), -((c_2[0] -
-    rtb_TmpSignalConversionAtSFun_c[7]) - (-0.0 -
-    rtb_TmpSignalConversionAtSFun_c[10] * 0.0)));
+  /* '<S3>:1:58' */
+  /* '<S3>:1:59' */
+  /* '<S3>:1:60' */
+  alpha_aw = rt_atan2d_snf((c_2[1] - rtb_TmpSignalConversionAtSFunct[9]) -
+    (rtb_TmpSignalConversionAtSFunct[11] * 0.0 -
+     rtb_TmpSignalConversionAtSFunct[10] * -11.58), -((c_2[0] -
+    rtb_TmpSignalConversionAtSFunct[8]) - (-0.0 -
+    rtb_TmpSignalConversionAtSFunct[11] * 0.0)));
 
-  /*  (sail luffing or not) */
-  if (alpha_aw > rtb_TmpSignalConversionAtSFun_c[1]) {
-    /* '<S3>:1:60' */
-    /* '<S3>:1:61' */
-    delta_s = rtb_TmpSignalConversionAtSFun_c[1];
-  } else if (alpha_aw < -rtb_TmpSignalConversionAtSFun_c[1]) {
-    /* '<S3>:1:62' */
+  /* % (sail luffing or not) */
+  if (alpha_aw - rtb_TmpSignalConversionAtSFunct[3] >
+      rtb_TmpSignalConversionAtSFunct[1]) {
     /* '<S3>:1:63' */
-    delta_s = -rtb_TmpSignalConversionAtSFun_c[1];
-  } else {
+    /* '<S3>:1:64' */
+    delta_s = rtb_TmpSignalConversionAtSFunct[1];
+  } else if (alpha_aw - rtb_TmpSignalConversionAtSFunct[3] <
+             -rtb_TmpSignalConversionAtSFunct[1]) {
     /* '<S3>:1:65' */
-    delta_s = alpha_aw;
+    /* '<S3>:1:66' */
+    delta_s = -rtb_TmpSignalConversionAtSFunct[1];
+  } else {
+    /* '<S3>:1:68' */
+    delta_s = alpha_aw - rtb_TmpSignalConversionAtSFunct[3];
   }
 
-  /* '<S3>:1:68' */
+  /* '<S3>:1:70' */
+  delta_s += rtb_TmpSignalConversionAtSFunct[3];
+
+  /* '<S3>:1:72' */
   alpha_as = alpha_aw - delta_s;
 
-  /* '<S3>:1:70' */
-  rtb_attack_a = alpha_as;
+  /* '<S3>:1:74' */
+  rtb_attack_sail = alpha_as;
 
   /*  fit the input angle of attack into the interval [-pi,pi] */
   if (alpha_as > 3.1415926535897931) {
-    /* '<S3>:1:73' */
-    /* '<S3>:1:74' */
+    /* '<S3>:1:77' */
+    /* '<S3>:1:78' */
     alpha_as = (alpha_as + 3.1415926535897931) / 6.2831853071795862;
     if (fabs(alpha_as - rt_roundd_snf(alpha_as)) <= 2.2204460492503131E-16 *
         alpha_as) {
@@ -811,11 +821,11 @@ void BoatModele_step(void)
       alpha_as = (alpha_as - floor(alpha_as)) * 6.2831853071795862;
     }
 
-    rtb_attack_a = alpha_as - 3.1415926535897931;
+    rtb_attack_sail = alpha_as - 3.1415926535897931;
   } else {
     if (alpha_as < -3.1415926535897931) {
-      /* '<S3>:1:76' */
-      /* '<S3>:1:77' */
+      /* '<S3>:1:80' */
+      /* '<S3>:1:81' */
       alpha_as = (alpha_as - 3.1415926535897931) / -6.2831853071795862;
       if (fabs(alpha_as - rt_roundd_snf(alpha_as)) <= 2.2204460492503131E-16 *
           alpha_as) {
@@ -824,9 +834,101 @@ void BoatModele_step(void)
         alpha_as = (alpha_as - floor(alpha_as)) * -6.2831853071795862;
       }
 
-      rtb_attack_a = alpha_as + 3.1415926535897931;
+      rtb_attack_sail = alpha_as + 3.1415926535897931;
     }
   }
+
+  /* % the rudder */
+  /* '<S3>:1:86' */
+  /* '<S3>:1:87' */
+  /* '<S3>:1:88' */
+  /* '<S3>:1:89' */
+  alpha_as = rt_atan2d_snf((-rtb_TmpSignalConversionAtSFunct[9] -
+    rtb_TmpSignalConversionAtSFunct[11] * -8.2) +
+    rtb_TmpSignalConversionAtSFunct[10] * -0.78,
+    -(rtb_TmpSignalConversionAtSFunct[11] * 0.0 +
+      -rtb_TmpSignalConversionAtSFunct[8])) - rtb_TmpSignalConversionAtSFunct[0];
+
+  /* '<S3>:1:91' */
+  rtb_attack_rudder = alpha_as;
+
+  /*  fit the input angle of attack into the interval [-pi,pi] */
+  if (alpha_as > 3.1415926535897931) {
+    /* '<S3>:1:94' */
+    /* '<S3>:1:95' */
+    alpha_as = (alpha_as + 3.1415926535897931) / 6.2831853071795862;
+    if (fabs(alpha_as - rt_roundd_snf(alpha_as)) <= 2.2204460492503131E-16 *
+        alpha_as) {
+      alpha_as = 0.0;
+    } else {
+      alpha_as = (alpha_as - floor(alpha_as)) * 6.2831853071795862;
+    }
+
+    rtb_attack_rudder = alpha_as - 3.1415926535897931;
+  } else {
+    if (alpha_as < -3.1415926535897931) {
+      /* '<S3>:1:97' */
+      /* '<S3>:1:98' */
+      alpha_as = (alpha_as - 3.1415926535897931) / -6.2831853071795862;
+      if (fabs(alpha_as - rt_roundd_snf(alpha_as)) <= 2.2204460492503131E-16 *
+          alpha_as) {
+        alpha_as = 0.0;
+      } else {
+        alpha_as = (alpha_as - floor(alpha_as)) * -6.2831853071795862;
+      }
+
+      rtb_attack_rudder = alpha_as + 3.1415926535897931;
+    }
+  }
+
+  /* % the keel */
+  /* '<S3>:1:103' */
+  v_aku = rtb_TmpSignalConversionAtSFunct[11] * 0.0 +
+    -rtb_TmpSignalConversionAtSFunct[8];
+
+  /* '<S3>:1:104' */
+  v_akv = (-rtb_TmpSignalConversionAtSFunct[9] -
+           rtb_TmpSignalConversionAtSFunct[11] * 0.0) +
+    rtb_TmpSignalConversionAtSFunct[10] * -0.58;
+
+  /* '<S3>:1:105' */
+  alpha_ak = rt_atan2d_snf(v_akv, -v_aku);
+
+  /* '<S3>:1:108' */
+  rtb_attack_keel = alpha_ak;
+
+  /*  fit the input angle of attack into the interval [-pi,pi] */
+  if (alpha_ak > 3.1415926535897931) {
+    /* '<S3>:1:111' */
+    /* '<S3>:1:112' */
+    alpha_as = (alpha_ak + 3.1415926535897931) / 6.2831853071795862;
+    if (fabs(alpha_as - rt_roundd_snf(alpha_as)) <= 2.2204460492503131E-16 *
+        alpha_as) {
+      alpha_as = 0.0;
+    } else {
+      alpha_as = (alpha_as - floor(alpha_as)) * 6.2831853071795862;
+    }
+
+    rtb_attack_keel = alpha_as - 3.1415926535897931;
+  } else {
+    if (alpha_ak < -3.1415926535897931) {
+      /* '<S3>:1:114' */
+      /* '<S3>:1:115' */
+      alpha_as = (alpha_ak - 3.1415926535897931) / -6.2831853071795862;
+      if (fabs(alpha_as - rt_roundd_snf(alpha_as)) <= 2.2204460492503131E-16 *
+          alpha_as) {
+        alpha_as = 0.0;
+      } else {
+        alpha_as = (alpha_as - floor(alpha_as)) * -6.2831853071795862;
+      }
+
+      rtb_attack_keel = alpha_as + 3.1415926535897931;
+    }
+  }
+
+  /* % from the hull */
+  /* '<S3>:1:122' */
+  /* '<S3>:1:124' */
 
   /* Lookup_n-D: '<S1>/1-D Lookup Table'
    * About '<S1>/1-D Lookup Table':
@@ -836,7 +938,7 @@ void BoatModele_step(void)
    *   Breakpt Search:  Binary
    *    Breakpt Cache:  OFF
    */
-  rtb_DLookupTable = look_SplNBinXZcd(1U, &rtb_attack_a, (rt_LUTSplineWork*)
+  rtb_DLookupTable = look_SplNBinXZcd(1U, &rtb_attack_sail, (rt_LUTSplineWork*)
     &BoatModele_DW.SWork[0]);
 
   /* Lookup_n-D: '<S1>/1-D Lookup Table4'
@@ -847,85 +949,8 @@ void BoatModele_step(void)
    *   Breakpt Search:  Binary
    *    Breakpt Cache:  OFF
    */
-  rtb_DLookupTable4 = look_SplNBinXZcd(1U, &rtb_attack_a, (rt_LUTSplineWork*)
+  rtb_DLookupTable4 = look_SplNBinXZcd(1U, &rtb_attack_sail, (rt_LUTSplineWork*)
     &BoatModele_DW.SWork_k[0]);
-
-  /* SignalConversion: '<S4>/TmpSignal ConversionAt SFunction Inport1' incorporates:
-   *  Inport: '<Root>/U'
-   *  MATLAB Function: '<S1>/MATLAB Function2'
-   */
-  rtb_TmpSignalConversionAtSFun_c[0] = BoatModele_U.U[0];
-  memcpy(&rtb_TmpSignalConversionAtSFun_c[3], &rtb_Integrator[0], sizeof(real_T)
-         << 3U);
-
-  /* MATLAB Function: '<S1>/MATLAB Function2' */
-  /* MATLAB Function '4DOF nonlinear sailing yacht model/MATLAB Function2': '<S4>:1' */
-  /*  interpreted Matlab function "f.m" for the Simulink file "SailingYachtModel.slx" */
-  /*  This function describes the dynamics of a 4DOF sailing yacht model */
-  /*  and gives the derivative of the state X and the sail angle delta_s. */
-  /*  The input vector V_in contains the system state and the control input vector.  */
-  /*  */
-  /*  For the model description, notations, equations and parameters, */
-  /*  see Xiao and Jouffroy, "Modeling and nonlinear heading control of sailing */
-  /*  yachts", IEEE Journal of Oceanic Engineering, vol. 39, no. 2., pp. 256-268, 2014. */
-  /*   */
-  /*  Jerome Jouffroy, Jiaxi He and Lin Xiao, 2014. */
-  /*  University of Southern Denmark. */
-  /*  use the system parameters */
-  /*  retrieve the system state from the field input vector "V_in" */
-  /* '<S4>:1:28' */
-  /* '<S4>:1:29' */
-  /* '<S4>:1:30' */
-  /* '<S4>:1:31' */
-  /*  retrieve the input signals from the vector "V_in" */
-  /* '<S4>:1:35' */
-  /*  evaluate the matrix M and C in the model */
-  /*  calculate the tau vector, ie forces and moments generated from: */
-  /*  the sail */
-  /*  wind expressed in the body frame */
-  /*  (sail luffing or not) */
-  /*  the rudder */
-  /* '<S4>:1:74' */
-  /* '<S4>:1:75' */
-  /* '<S4>:1:76' */
-  /* '<S4>:1:77' */
-  alpha_as = rt_atan2d_snf((-rtb_TmpSignalConversionAtSFun_c[8] -
-    rtb_TmpSignalConversionAtSFun_c[10] * -8.2) +
-    rtb_TmpSignalConversionAtSFun_c[9] * -0.78,
-    -(rtb_TmpSignalConversionAtSFun_c[10] * 0.0 +
-      -rtb_TmpSignalConversionAtSFun_c[7])) - rtb_TmpSignalConversionAtSFun_c[0];
-
-  /* '<S4>:1:79' */
-  rtb_attack_c = alpha_as;
-
-  /*  fit the input angle of attack into the interval [-pi,pi] */
-  if (alpha_as > 3.1415926535897931) {
-    /* '<S4>:1:82' */
-    /* '<S4>:1:83' */
-    alpha_as = (alpha_as + 3.1415926535897931) / 6.2831853071795862;
-    if (fabs(alpha_as - rt_roundd_snf(alpha_as)) <= 2.2204460492503131E-16 *
-        alpha_as) {
-      alpha_as = 0.0;
-    } else {
-      alpha_as = (alpha_as - floor(alpha_as)) * 6.2831853071795862;
-    }
-
-    rtb_attack_c = alpha_as - 3.1415926535897931;
-  } else {
-    if (alpha_as < -3.1415926535897931) {
-      /* '<S4>:1:85' */
-      /* '<S4>:1:86' */
-      alpha_as = (alpha_as - 3.1415926535897931) / -6.2831853071795862;
-      if (fabs(alpha_as - rt_roundd_snf(alpha_as)) <= 2.2204460492503131E-16 *
-          alpha_as) {
-        alpha_as = 0.0;
-      } else {
-        alpha_as = (alpha_as - floor(alpha_as)) * -6.2831853071795862;
-      }
-
-      rtb_attack_c = alpha_as + 3.1415926535897931;
-    }
-  }
 
   /* Lookup_n-D: '<S1>/1-D Lookup Table1'
    * About '<S1>/1-D Lookup Table1':
@@ -935,7 +960,7 @@ void BoatModele_step(void)
    *   Breakpt Search:  Binary
    *    Breakpt Cache:  OFF
    */
-  rtb_DLookupTable1 = look_SplNBinXZcd(1U, &rtb_attack_c, (rt_LUTSplineWork*)
+  rtb_DLookupTable1 = look_SplNBinXZcd(1U, &rtb_attack_rudder, (rt_LUTSplineWork*)
     &BoatModele_DW.SWork_j[0]);
 
   /* Lookup_n-D: '<S1>/1-D Lookup Table5'
@@ -946,84 +971,8 @@ void BoatModele_step(void)
    *   Breakpt Search:  Binary
    *    Breakpt Cache:  OFF
    */
-  rtb_DLookupTable5 = look_SplNBinXZcd(1U, &rtb_attack_c, (rt_LUTSplineWork*)
+  rtb_DLookupTable5 = look_SplNBinXZcd(1U, &rtb_attack_rudder, (rt_LUTSplineWork*)
     &BoatModele_DW.SWork_kl[0]);
-
-  /* SignalConversion: '<S5>/TmpSignal ConversionAt SFunction Inport1' incorporates:
-   *  MATLAB Function: '<S1>/MATLAB Function3'
-   */
-  memcpy(&rtb_TmpSignalConversionAtSFun_c[3], &rtb_Integrator[0], sizeof(real_T)
-         << 3U);
-
-  /* MATLAB Function: '<S1>/MATLAB Function3' */
-  /* MATLAB Function '4DOF nonlinear sailing yacht model/MATLAB Function3': '<S5>:1' */
-  /*  interpreted Matlab function "f.m" for the Simulink file "SailingYachtModel.slx" */
-  /*  This function describes the dynamics of a 4DOF sailing yacht model */
-  /*  and gives the derivative of the state X and the sail angle delta_s. */
-  /*  The input vector V_in contains the system state and the control input vector.  */
-  /*  */
-  /*  For the model description, notations, equations and parameters, */
-  /*  see Xiao and Jouffroy, "Modeling and nonlinear heading control of sailing */
-  /*  yachts", IEEE Journal of Oceanic Engineering, vol. 39, no. 2., pp. 256-268, 2014. */
-  /*   */
-  /*  Jerome Jouffroy, Jiaxi He and Lin Xiao, 2014. */
-  /*  University of Southern Denmark. */
-  /*  use the system parameters */
-  /*  retrieve the system state from the field input vector "V_in" */
-  /* '<S5>:1:28' */
-  /* '<S5>:1:29' */
-  /* '<S5>:1:30' */
-  /* '<S5>:1:31' */
-  /*  retrieve the input signals from the vector "V_in" */
-  /*  evaluate the matrix M and C in the model */
-  /*  calculate the tau vector, ie forces and moments generated from: */
-  /*  the sail */
-  /*  wind expressed in the body frame */
-  /*  calculate the damping forces and moments: */
-  /*  from the keel */
-  /* '<S5>:1:64' */
-  /* '<S5>:1:65' */
-  /* '<S5>:1:66' */
-  alpha_ak = rt_atan2d_snf((-rtb_TmpSignalConversionAtSFun_c[8] -
-    rtb_TmpSignalConversionAtSFun_c[10] * 0.0) +
-    rtb_TmpSignalConversionAtSFun_c[9] * -0.58,
-    -(rtb_TmpSignalConversionAtSFun_c[10] * 0.0 +
-      -rtb_TmpSignalConversionAtSFun_c[7]));
-
-  /* '<S5>:1:69' */
-  rtb_attack = alpha_ak;
-
-  /*  fit the input angle of attack into the interval [-pi,pi] */
-  if (alpha_ak > 3.1415926535897931) {
-    /* '<S5>:1:72' */
-    /* '<S5>:1:73' */
-    alpha_as = (alpha_ak + 3.1415926535897931) / 6.2831853071795862;
-    if (fabs(alpha_as - rt_roundd_snf(alpha_as)) <= 2.2204460492503131E-16 *
-        alpha_as) {
-      alpha_as = 0.0;
-    } else {
-      alpha_as = (alpha_as - floor(alpha_as)) * 6.2831853071795862;
-    }
-
-    rtb_attack = alpha_as - 3.1415926535897931;
-  } else {
-    if (alpha_ak < -3.1415926535897931) {
-      /* '<S5>:1:75' */
-      /* '<S5>:1:76' */
-      alpha_as = (alpha_ak - 3.1415926535897931) / -6.2831853071795862;
-      if (fabs(alpha_as - rt_roundd_snf(alpha_as)) <= 2.2204460492503131E-16 *
-          alpha_as) {
-        alpha_as = 0.0;
-      } else {
-        alpha_as = (alpha_as - floor(alpha_as)) * -6.2831853071795862;
-      }
-
-      rtb_attack = alpha_as + 3.1415926535897931;
-    }
-  }
-
-  /*  interpolation */
-  /* attack = attack/pi*180; */
 
   /* Lookup_n-D: '<S1>/1-D Lookup Table2'
    * About '<S1>/1-D Lookup Table2':
@@ -1033,7 +982,7 @@ void BoatModele_step(void)
    *   Breakpt Search:  Binary
    *    Breakpt Cache:  OFF
    */
-  rtb_DLookupTable2 = look_SplNBinXZcd(1U, &rtb_attack, (rt_LUTSplineWork*)
+  rtb_DLookupTable2 = look_SplNBinXZcd(1U, &rtb_attack_keel, (rt_LUTSplineWork*)
     &BoatModele_DW.SWork_a[0]);
 
   /* Lookup_n-D: '<S1>/1-D Lookup Table6'
@@ -1044,66 +993,23 @@ void BoatModele_step(void)
    *   Breakpt Search:  Binary
    *    Breakpt Cache:  OFF
    */
-  rtb_DLookupTable6 = look_SplNBinXZcd(1U, &rtb_attack, (rt_LUTSplineWork*)
+  rtb_DLookupTable6 = look_SplNBinXZcd(1U, &rtb_attack_keel, (rt_LUTSplineWork*)
     &BoatModele_DW.SWork_e[0]);
 
-  /* SignalConversion: '<S6>/TmpSignal ConversionAt SFunction Inport1' incorporates:
-   *  MATLAB Function: '<S1>/MATLAB Function4'
+  /* Lookup_n-D: '<S1>/1-D Lookup Table3' incorporates:
+   *  MATLAB Function: '<S1>/MATLAB Function1'
    */
-  memcpy(&rtb_TmpSignalConversionAtSFun_c[3], &rtb_Integrator[0], sizeof(real_T)
-         << 3U);
-
-  /* MATLAB Function: '<S1>/MATLAB Function4' */
-  /* MATLAB Function '4DOF nonlinear sailing yacht model/MATLAB Function4': '<S6>:1' */
-  /*  interpreted Matlab function "f.m" for the Simulink file "SailingYachtModel.slx" */
-  /*  This function describes the dynamics of a 4DOF sailing yacht model */
-  /*  and gives the derivative of the state X and the sail angle delta_s. */
-  /*  The input vector V_in contains the system state and the control input vector.  */
-  /*  */
-  /*  For the model description, notations, equations and parameters, */
-  /*  see Xiao and Jouffroy, "Modeling and nonlinear heading control of sailing */
-  /*  yachts", IEEE Journal of Oceanic Engineering, vol. 39, no. 2., pp. 256-268, 2014. */
-  /*   */
-  /*  Jerome Jouffroy, Jiaxi He and Lin Xiao, 2014. */
-  /*  University of Southern Denmark. */
-  /*  use the system parameters */
-  /*  retrieve the system state from the field input vector "V_in" */
-  /* '<S6>:1:28' */
-  /* '<S6>:1:29' */
-  /* '<S6>:1:30' */
-  /* '<S6>:1:31' */
-  /*  retrieve the input signals from the vector "V_in" */
-  /*  evaluate the matrix M and C in the model */
-  /*  calculate the tau vector, ie forces and moments generated from: */
-  /*  the sail */
-  /*  wind expressed in the body frame */
-  /*  calculate the damping forces and moments: */
-  /*  from the keel */
-  /* '<S6>:1:63' */
-  alpha_as = rtb_TmpSignalConversionAtSFun_c[10] * 0.0 +
-    -rtb_TmpSignalConversionAtSFun_c[7];
-
-  /* '<S6>:1:64' */
-  v_akv = (-rtb_TmpSignalConversionAtSFun_c[8] -
-           rtb_TmpSignalConversionAtSFun_c[10] * 0.0) +
-    rtb_TmpSignalConversionAtSFun_c[9] * -0.58;
-
-  /*  from the hull */
-  /* '<S6>:1:71' */
-  /* '<S6>:1:73' */
-  alpha_as = sqrt(alpha_as * alpha_as + v_akv * v_akv);
-
-  /* Lookup_n-D: '<S1>/1-D Lookup Table3' */
-  rtb_DLookupTable3 = look1_binlxpw(alpha_as, BoatModele_P.hull_xdata,
-    BoatModele_P.hull_ydata, 99U);
+  rtb_DLookupTable3 = look1_binlxpw(sqrt(v_aku * v_aku + v_akv * v_akv),
+    BoatModele_P.hull_xdata, BoatModele_P.hull_ydata, 99U);
 
   /* SignalConversion: '<S2>/TmpSignal ConversionAt SFunction Inport1' incorporates:
    *  Inport: '<Root>/U'
    *  MATLAB Function: '<S1>/MATLAB Function'
    */
-  rtb_TmpSignalConversionAtSFun_c[1] = BoatModele_U.U[1];
-  rtb_TmpSignalConversionAtSFun_c[2] = BoatModele_U.U[2];
-  memcpy(&rtb_TmpSignalConversionAtSFun_c[3], &rtb_Integrator[0], sizeof(real_T)
+  rtb_TmpSignalConversionAtSFunct[1] = BoatModele_U.U[1];
+  rtb_TmpSignalConversionAtSFunct[2] = BoatModele_U.U[2];
+  rtb_TmpSignalConversionAtSFunct[3] = BoatModele_U.U[3];
+  memcpy(&rtb_TmpSignalConversionAtSFunct[4], &rtb_Integrator[0], sizeof(real_T)
          << 3U);
 
   /* MATLAB Function: '<S1>/MATLAB Function' */
@@ -1132,35 +1038,36 @@ void BoatModele_step(void)
   /*  retrieve the input signals from the vector "V_in" */
   /* '<S2>:1:35' */
   /* '<S2>:1:36' */
+  /* '<S2>:1:37' */
   /*  evaluate the matrix M and C in the model */
-  /* '<S2>:1:40' */
-  /* '<S2>:1:43' */
+  /* '<S2>:1:41' */
+  /* '<S2>:1:44' */
   /*  calculate the tau vector, ie forces and moments generated from: */
   /*  the sail */
-  /* '<S2>:1:50' */
-  alpha_as = log(11.58 * cos(rtb_TmpSignalConversionAtSFun_c[5]) / 0.0005) /
+  /* '<S2>:1:51' */
+  alpha_as = log(11.58 * cos(rtb_TmpSignalConversionAtSFunct[6]) / 0.0005) /
     10.050181931686932;
 
-  /* '<S2>:1:51' */
   /* '<S2>:1:52' */
   /* '<S2>:1:53' */
-  /*  wind expressed in the body frame */
   /* '<S2>:1:54' */
+  /*  wind expressed in the body frame */
   /* '<S2>:1:55' */
+  /* '<S2>:1:56' */
   e[0] = 1.0;
   e[3] = 0.0;
   e[6] = 0.0;
   e[1] = 0.0;
-  e[4] = cos(-rtb_TmpSignalConversionAtSFun_c[5]);
-  e[7] = -sin(-rtb_TmpSignalConversionAtSFun_c[5]);
+  e[4] = cos(-rtb_TmpSignalConversionAtSFunct[6]);
+  e[7] = -sin(-rtb_TmpSignalConversionAtSFunct[6]);
   e[2] = 0.0;
-  e[5] = sin(-rtb_TmpSignalConversionAtSFun_c[5]);
-  e[8] = cos(-rtb_TmpSignalConversionAtSFun_c[5]);
-  tmp_0[0] = cos(-rtb_TmpSignalConversionAtSFun_c[6]);
-  tmp_0[3] = -sin(-rtb_TmpSignalConversionAtSFun_c[6]);
+  e[5] = sin(-rtb_TmpSignalConversionAtSFunct[6]);
+  e[8] = cos(-rtb_TmpSignalConversionAtSFunct[6]);
+  tmp_0[0] = cos(-rtb_TmpSignalConversionAtSFunct[7]);
+  tmp_0[3] = -sin(-rtb_TmpSignalConversionAtSFunct[7]);
   tmp_0[6] = 0.0;
-  tmp_0[1] = sin(-rtb_TmpSignalConversionAtSFun_c[6]);
-  tmp_0[4] = cos(-rtb_TmpSignalConversionAtSFun_c[6]);
+  tmp_0[1] = sin(-rtb_TmpSignalConversionAtSFunct[7]);
+  tmp_0[4] = cos(-rtb_TmpSignalConversionAtSFunct[7]);
   tmp_0[7] = 0.0;
   tmp_0[2] = 0.0;
   tmp_0[5] = 0.0;
@@ -1179,113 +1086,115 @@ void BoatModele_step(void)
       1.2246467991473533E-15) + alpha_as * -10.0 * c_0[i]);
   }
 
-  V_awb_idx_0 = (c_2[0] - rtb_TmpSignalConversionAtSFun_c[7]) - (-0.0 -
-    rtb_TmpSignalConversionAtSFun_c[10] * 0.0);
-  V_awb_idx_1 = (c_2[1] - rtb_TmpSignalConversionAtSFun_c[8]) -
-    (rtb_TmpSignalConversionAtSFun_c[10] * 0.0 -
-     rtb_TmpSignalConversionAtSFun_c[9] * -11.58);
+  v_akv = (c_2[0] - rtb_TmpSignalConversionAtSFunct[8]) - (-0.0 -
+    rtb_TmpSignalConversionAtSFunct[11] * 0.0);
+  V_awb_idx_1 = (c_2[1] - rtb_TmpSignalConversionAtSFunct[9]) -
+    (rtb_TmpSignalConversionAtSFunct[11] * 0.0 -
+     rtb_TmpSignalConversionAtSFunct[10] * -11.58);
 
-  /* '<S2>:1:56' */
   /* '<S2>:1:57' */
   /* '<S2>:1:58' */
-  alpha_aw = rt_atan2d_snf(V_awb_idx_1, -V_awb_idx_0);
+  /* '<S2>:1:59' */
+  alpha_aw = rt_atan2d_snf(V_awb_idx_1, -v_akv);
 
   /*  (sail luffing or not) */
-  if (alpha_aw > rtb_TmpSignalConversionAtSFun_c[1]) {
-    /* '<S2>:1:61' */
+  if (alpha_aw - rtb_TmpSignalConversionAtSFunct[3] >
+      rtb_TmpSignalConversionAtSFunct[1]) {
     /* '<S2>:1:62' */
-    delta_s = rtb_TmpSignalConversionAtSFun_c[1];
-  } else if (alpha_aw < -rtb_TmpSignalConversionAtSFun_c[1]) {
     /* '<S2>:1:63' */
+    delta_s = rtb_TmpSignalConversionAtSFunct[1];
+  } else if (alpha_aw - rtb_TmpSignalConversionAtSFunct[3] <
+             -rtb_TmpSignalConversionAtSFunct[1]) {
     /* '<S2>:1:64' */
-    delta_s = -rtb_TmpSignalConversionAtSFun_c[1];
+    /* '<S2>:1:65' */
+    delta_s = -rtb_TmpSignalConversionAtSFunct[1];
   } else {
-    /* '<S2>:1:66' */
-    delta_s = alpha_aw;
+    /* '<S2>:1:67' */
+    delta_s = alpha_aw - rtb_TmpSignalConversionAtSFunct[3];
   }
 
-  /* '<S2>:1:74' */
-  Ls = (V_awb_idx_0 * V_awb_idx_0 + V_awb_idx_1 * V_awb_idx_1) * 102.0 *
-    rtb_DLookupTable;
+  /* '<S2>:1:69' */
+  delta_s += rtb_TmpSignalConversionAtSFunct[3];
 
-  /* '<S2>:1:75' */
-  Ds = (V_awb_idx_0 * V_awb_idx_0 + V_awb_idx_1 * V_awb_idx_1) * 102.0 *
-    rtb_DLookupTable4;
+  /* '<S2>:1:76' */
+  Ls = (v_akv * v_akv + V_awb_idx_1 * V_awb_idx_1) * 102.0 * rtb_DLookupTable;
 
   /* '<S2>:1:77' */
+  Ds = (v_akv * v_akv + V_awb_idx_1 * V_awb_idx_1) * 102.0 * rtb_DLookupTable4;
+
+  /* '<S2>:1:79' */
   /*  the rudder */
-  /* '<S2>:1:81' */
-  alpha_as = rtb_TmpSignalConversionAtSFun_c[10] * 0.0 +
-    -rtb_TmpSignalConversionAtSFun_c[7];
-
-  /* '<S2>:1:82' */
-  v_akv = (-rtb_TmpSignalConversionAtSFun_c[8] -
-           rtb_TmpSignalConversionAtSFun_c[10] * -8.2) +
-    rtb_TmpSignalConversionAtSFun_c[9] * -0.78;
-
   /* '<S2>:1:83' */
-  alpha_ar = rt_atan2d_snf(v_akv, -alpha_as);
+  alpha_as = rtb_TmpSignalConversionAtSFunct[11] * 0.0 +
+    -rtb_TmpSignalConversionAtSFunct[8];
+
+  /* '<S2>:1:84' */
+  v_aku = (-rtb_TmpSignalConversionAtSFunct[9] -
+           rtb_TmpSignalConversionAtSFunct[11] * -8.2) +
+    rtb_TmpSignalConversionAtSFunct[10] * -0.78;
+
+  /* '<S2>:1:85' */
+  alpha_ar = rt_atan2d_snf(v_aku, -alpha_as);
 
   /* [Clr,Cdr] = ruddercoef(alpha_a); */
-  /* '<S2>:1:90' */
   /* '<S2>:1:92' */
-  Lr = (alpha_as * alpha_as + v_akv * v_akv) * 599.625 * rtb_DLookupTable1;
-
-  /* '<S2>:1:93' */
-  Dr = (rtb_DLookupTable1 * rtb_DLookupTable1 * 1.17 / 18.145839167134646 +
-        rtb_DLookupTable5) * ((alpha_as * alpha_as + v_akv * v_akv) * 599.625);
+  /* '<S2>:1:94' */
+  Lr = (alpha_as * alpha_as + v_aku * v_aku) * 599.625 * rtb_DLookupTable1;
 
   /* '<S2>:1:95' */
+  Dr = (rtb_DLookupTable1 * rtb_DLookupTable1 * 1.17 / 18.145839167134646 +
+        rtb_DLookupTable5) * ((alpha_as * alpha_as + v_aku * v_aku) * 599.625);
+
+  /* '<S2>:1:97' */
   /*  the tau vector is finally given by: */
-  /* '<S2>:1:99' */
+  /* '<S2>:1:101' */
   /*  calculate the damping forces and moments: */
   /*  from the keel */
-  /* '<S2>:1:103' */
-  alpha_as = rtb_TmpSignalConversionAtSFun_c[10] * 0.0 +
-    -rtb_TmpSignalConversionAtSFun_c[7];
-
-  /* '<S2>:1:104' */
-  v_akv = (-rtb_TmpSignalConversionAtSFun_c[8] -
-           rtb_TmpSignalConversionAtSFun_c[10] * 0.0) +
-    rtb_TmpSignalConversionAtSFun_c[9] * -0.58;
-
   /* '<S2>:1:105' */
-  alpha_ak = rt_atan2d_snf(v_akv, -alpha_as);
+  v_aku = rtb_TmpSignalConversionAtSFunct[11] * 0.0 +
+    -rtb_TmpSignalConversionAtSFunct[8];
 
-  /* '<S2>:1:111' */
+  /* '<S2>:1:106' */
+  v_akv = (-rtb_TmpSignalConversionAtSFunct[9] -
+           rtb_TmpSignalConversionAtSFunct[11] * 0.0) +
+    rtb_TmpSignalConversionAtSFunct[10] * -0.58;
+
+  /* '<S2>:1:107' */
+  alpha_ak = rt_atan2d_snf(v_akv, -v_aku);
+
   /* '<S2>:1:113' */
-  Lk = (alpha_as * alpha_as + v_akv * v_akv) * 4458.75 * rtb_DLookupTable2;
-
-  /* '<S2>:1:114' */
-  alpha_as = (rtb_DLookupTable2 * rtb_DLookupTable2 * 8.7 / 27.269464056130911 +
-              rtb_DLookupTable6) * ((alpha_as * alpha_as + v_akv * v_akv) *
-    4458.75);
+  /* '<S2>:1:115' */
+  Lk = (v_aku * v_aku + v_akv * v_akv) * 4458.75 * rtb_DLookupTable2;
 
   /* '<S2>:1:116' */
-  /*  from the hull */
-  /* '<S2>:1:119' */
-  /* '<S2>:1:120' */
-  /* '<S2>:1:122' */
-  v_akv = rt_atan2d_snf(((-rtb_TmpSignalConversionAtSFun_c[8] -
-    rtb_TmpSignalConversionAtSFun_c[10] * 0.0) +
-    rtb_TmpSignalConversionAtSFun_c[9] * -1.18) / cos
-                        (rtb_TmpSignalConversionAtSFun_c[5]),
-                        -(rtb_TmpSignalConversionAtSFun_c[10] * 0.0 +
-    -rtb_TmpSignalConversionAtSFun_c[7]));
+  alpha_as = (rtb_DLookupTable2 * rtb_DLookupTable2 * 8.7 / 27.269464056130911 +
+              rtb_DLookupTable6) * ((v_aku * v_aku + v_akv * v_akv) * 4458.75);
 
-  /* '<S2>:1:126' */
+  /* '<S2>:1:118' */
+  /*  from the hull */
+  /* '<S2>:1:121' */
+  /* '<S2>:1:122' */
+  /* '<S2>:1:124' */
+  v_aku = rt_atan2d_snf(((-rtb_TmpSignalConversionAtSFunct[9] -
+    rtb_TmpSignalConversionAtSFunct[11] * 0.0) +
+    rtb_TmpSignalConversionAtSFunct[10] * -1.18) / cos
+                        (rtb_TmpSignalConversionAtSFunct[6]),
+                        -(rtb_TmpSignalConversionAtSFunct[11] * 0.0 +
+    -rtb_TmpSignalConversionAtSFunct[8]));
+
+  /* '<S2>:1:128' */
   /*  from heel and yaw */
   /*  (compute first eta_dot and thereby phi_dot and psi_dot) */
-  /* '<S2>:1:130' */
-  /* '<S2>:1:131' */
-  tmp_1[0] = cos(rtb_TmpSignalConversionAtSFun_c[6]);
-  tmp_1[4] = -sin(rtb_TmpSignalConversionAtSFun_c[6]) * cos
-    (rtb_TmpSignalConversionAtSFun_c[5]);
+  /* '<S2>:1:132' */
+  /* '<S2>:1:133' */
+  tmp_1[0] = cos(rtb_TmpSignalConversionAtSFunct[7]);
+  tmp_1[4] = -sin(rtb_TmpSignalConversionAtSFunct[7]) * cos
+    (rtb_TmpSignalConversionAtSFunct[6]);
   tmp_1[8] = 0.0;
   tmp_1[12] = 0.0;
-  tmp_1[1] = sin(rtb_TmpSignalConversionAtSFun_c[6]);
-  tmp_1[5] = cos(rtb_TmpSignalConversionAtSFun_c[6]) * cos
-    (rtb_TmpSignalConversionAtSFun_c[5]);
+  tmp_1[1] = sin(rtb_TmpSignalConversionAtSFunct[7]);
+  tmp_1[5] = cos(rtb_TmpSignalConversionAtSFunct[7]) * cos
+    (rtb_TmpSignalConversionAtSFunct[6]);
   tmp_1[9] = 0.0;
   tmp_1[13] = 0.0;
   tmp_1[2] = 0.0;
@@ -1295,34 +1204,34 @@ void BoatModele_step(void)
   tmp_1[3] = 0.0;
   tmp_1[7] = 0.0;
   tmp_1[11] = 0.0;
-  tmp_1[15] = cos(rtb_TmpSignalConversionAtSFun_c[5]);
+  tmp_1[15] = cos(rtb_TmpSignalConversionAtSFunct[6]);
   for (i = 0; i < 4; i++) {
-    V_awb_idx_0 = tmp_1[i + 12] * rtb_TmpSignalConversionAtSFun_c[10] + (tmp_1[i
-      + 8] * rtb_TmpSignalConversionAtSFun_c[9] + (tmp_1[i + 4] *
-      rtb_TmpSignalConversionAtSFun_c[8] + tmp_1[i] *
-      rtb_TmpSignalConversionAtSFun_c[7]));
-    eta_dot[i] = V_awb_idx_0;
+    v_akv = tmp_1[i + 12] * rtb_TmpSignalConversionAtSFunct[11] + (tmp_1[i + 8] *
+      rtb_TmpSignalConversionAtSFunct[10] + (tmp_1[i + 4] *
+      rtb_TmpSignalConversionAtSFunct[9] + tmp_1[i] *
+      rtb_TmpSignalConversionAtSFunct[8]));
+    eta_dot[i] = v_akv;
   }
 
-  /* '<S2>:1:132' */
-  /* '<S2>:1:133' */
+  /* '<S2>:1:134' */
   /* '<S2>:1:135' */
+  /* '<S2>:1:137' */
   /*  compute total damping vector D */
-  /* '<S2>:1:138' */
+  /* '<S2>:1:140' */
   /*  righting moment plus internal moving mass system (ie transversal weight) */
-  /* '<S2>:1:141' */
-  V_awb_idx_0 = rtb_TmpSignalConversionAtSFun_c[5] * 180.0 / 3.1415926535897931;
-
-  /* '<S2>:1:142' */
   /* '<S2>:1:143' */
+  v_akv = rtb_TmpSignalConversionAtSFunct[6] * 180.0 / 3.1415926535897931;
+
   /* '<S2>:1:144' */
+  /* '<S2>:1:145' */
+  /* '<S2>:1:146' */
   /*  computation of nu_dot */
-  /* '<S2>:1:147' */
+  /* '<S2>:1:149' */
   tmp_2[0] = 0.0;
-  tmp_2[4] = -25900.0 * rtb_TmpSignalConversionAtSFun_c[10];
+  tmp_2[4] = -25900.0 * rtb_TmpSignalConversionAtSFunct[11];
   tmp_2[8] = 0.0;
   tmp_2[12] = 0.0;
-  tmp_2[1] = 25900.0 * rtb_TmpSignalConversionAtSFun_c[10];
+  tmp_2[1] = 25900.0 * rtb_TmpSignalConversionAtSFunct[11];
   tmp_2[5] = 0.0;
   tmp_2[9] = 0.0;
   tmp_2[13] = 0.0;
@@ -1337,36 +1246,36 @@ void BoatModele_step(void)
   tmp_3[0] = 0.0;
   tmp_3[4] = 0.0;
   tmp_3[8] = 0.0;
-  tmp_3[12] = (-17430.0 * rtb_TmpSignalConversionAtSFun_c[8] - -13160.0 *
-               rtb_TmpSignalConversionAtSFun_c[9]) - -6190.0 *
-    rtb_TmpSignalConversionAtSFun_c[10];
+  tmp_3[12] = (-17430.0 * rtb_TmpSignalConversionAtSFunct[9] - -13160.0 *
+               rtb_TmpSignalConversionAtSFunct[10]) - -6190.0 *
+    rtb_TmpSignalConversionAtSFunct[11];
   tmp_3[1] = 0.0;
   tmp_3[5] = 0.0;
   tmp_3[9] = 0.0;
-  tmp_3[13] = 970.0 * rtb_TmpSignalConversionAtSFun_c[7];
+  tmp_3[13] = 970.0 * rtb_TmpSignalConversionAtSFunct[8];
   tmp_3[2] = 0.0;
   tmp_3[6] = 0.0;
   tmp_3[10] = 0.0;
   tmp_3[14] = 0.0;
-  tmp_3[3] = (17430.0 * rtb_TmpSignalConversionAtSFun_c[8] + -13160.0 *
-              rtb_TmpSignalConversionAtSFun_c[9]) + -6190.0 *
-    rtb_TmpSignalConversionAtSFun_c[10];
-  tmp_3[7] = -970.0 * rtb_TmpSignalConversionAtSFun_c[7];
+  tmp_3[3] = (17430.0 * rtb_TmpSignalConversionAtSFunct[9] + -13160.0 *
+              rtb_TmpSignalConversionAtSFunct[10]) + -6190.0 *
+    rtb_TmpSignalConversionAtSFunct[11];
+  tmp_3[7] = -970.0 * rtb_TmpSignalConversionAtSFunct[8];
   tmp_3[11] = 0.0;
   tmp_3[15] = 0.0;
   for (i = 0; i < 4; i++) {
-    V_awb_idx_1 = tmp_2[i + 12] * rtb_TmpSignalConversionAtSFun_c[10] + (tmp_2[i
-      + 8] * rtb_TmpSignalConversionAtSFun_c[9] + (tmp_2[i + 4] *
-      rtb_TmpSignalConversionAtSFun_c[8] + tmp_2[i] *
-      rtb_TmpSignalConversionAtSFun_c[7]));
+    V_awb_idx_1 = tmp_2[i + 12] * rtb_TmpSignalConversionAtSFunct[11] + (tmp_2[i
+      + 8] * rtb_TmpSignalConversionAtSFunct[10] + (tmp_2[i + 4] *
+      rtb_TmpSignalConversionAtSFunct[9] + tmp_2[i] *
+      rtb_TmpSignalConversionAtSFunct[8]));
     tmp_4[i] = V_awb_idx_1;
   }
 
   for (i = 0; i < 4; i++) {
-    V_awb_idx_1 = tmp_3[i + 12] * rtb_TmpSignalConversionAtSFun_c[10] + (tmp_3[i
-      + 8] * rtb_TmpSignalConversionAtSFun_c[9] + (tmp_3[i + 4] *
-      rtb_TmpSignalConversionAtSFun_c[8] + tmp_3[i] *
-      rtb_TmpSignalConversionAtSFun_c[7]));
+    V_awb_idx_1 = tmp_3[i + 12] * rtb_TmpSignalConversionAtSFunct[11] + (tmp_3[i
+      + 8] * rtb_TmpSignalConversionAtSFunct[10] + (tmp_3[i + 4] *
+      rtb_TmpSignalConversionAtSFunct[9] + tmp_3[i] *
+      rtb_TmpSignalConversionAtSFunct[8]));
     tmp_5[i] = V_awb_idx_1;
   }
 
@@ -1376,24 +1285,24 @@ void BoatModele_step(void)
   nu_dot[3] = tmp_4[3] + tmp_5[3];
   BoatModele_mldivide(c, nu_dot);
   g[0] = (-Lk * sin(alpha_ak) + alpha_as * cos(alpha_ak)) + rtb_DLookupTable3 *
-    cos(v_akv);
+    cos(v_aku);
   g[1] = (-Lk * cos(alpha_ak) - alpha_as * sin(alpha_ak)) + -rtb_DLookupTable3 *
-    sin(v_akv) * cos(rtb_TmpSignalConversionAtSFun_c[5]);
+    sin(v_aku) * cos(rtb_TmpSignalConversionAtSFunct[6]);
   g[2] = (-(-Lk * cos(alpha_ak) - alpha_as * sin(alpha_ak)) * -0.58 +
-          rtb_DLookupTable3 * sin(v_akv) * cos(rtb_TmpSignalConversionAtSFun_c[5])
+          rtb_DLookupTable3 * sin(v_aku) * cos(rtb_TmpSignalConversionAtSFunct[6])
           * -1.18) + 120000.0 * eta_dot[2] * fabs(eta_dot[2]);
   g[3] = (-(Lk * cos(alpha_ak) + alpha_as * sin(alpha_ak)) * 0.0 +
-          -rtb_DLookupTable3 * sin(v_akv) * cos(rtb_TmpSignalConversionAtSFun_c
-           [5]) * 0.0) + 50000.0 * eta_dot[3] * fabs(eta_dot[3]) * cos
-    (rtb_TmpSignalConversionAtSFun_c[5]);
+          -rtb_DLookupTable3 * sin(v_aku) * cos(rtb_TmpSignalConversionAtSFunct
+           [6]) * 0.0) + 50000.0 * eta_dot[3] * fabs(eta_dot[3]) * cos
+    (rtb_TmpSignalConversionAtSFunct[6]);
   BoatModele_mldivide(b, g);
   nu[0] = 0.0;
   nu[1] = 0.0;
-  nu[2] = (V_awb_idx_0 * V_awb_idx_0 * -5.89 + 8160.0 * V_awb_idx_0) +
-    -rtb_TmpSignalConversionAtSFun_c[2] * 60000.0 * 3.6 * cos
-    (rtb_TmpSignalConversionAtSFun_c[5]);
-  nu[3] = -rtb_TmpSignalConversionAtSFun_c[2] * 60000.0 * -8.0 * sin(fabs
-    (rtb_TmpSignalConversionAtSFun_c[5]));
+  nu[2] = (v_akv * v_akv * -5.89 + 8160.0 * v_akv) +
+    -rtb_TmpSignalConversionAtSFunct[2] * 60000.0 * 3.6 * cos
+    (rtb_TmpSignalConversionAtSFunct[6]);
+  nu[3] = -rtb_TmpSignalConversionAtSFunct[2] * 60000.0 * -8.0 * sin(fabs
+    (rtb_TmpSignalConversionAtSFunct[6]));
   BoatModele_mldivide(b, nu);
   D_hull[0] = (Ls * sin(alpha_aw) - Ds * cos(alpha_aw)) + (Lr * sin(alpha_ar) -
     Dr * cos(alpha_ar));
@@ -1410,7 +1319,7 @@ void BoatModele_step(void)
   nu_dot[2] = ((nu_dot[2] - g[2]) - nu[2]) + D_hull[2];
 
   /*  output the derivative of the state extended with the sail angle */
-  /* '<S2>:1:151' */
+  /* '<S2>:1:153' */
   BoatModele_B.X_dot_ext[0] = eta_dot[0];
   BoatModele_B.X_dot_ext[1] = eta_dot[1];
   BoatModele_B.X_dot_ext[2] = eta_dot[2];
