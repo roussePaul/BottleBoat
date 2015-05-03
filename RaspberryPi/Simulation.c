@@ -19,6 +19,8 @@ ExtU_BoatModele_T getU(double t, void (*commande)(void*,double*,double),void* pa
     double c[2];
     commande(param,c,t);
     u.U[0] = c[0];
+    u.U[1] = 0;
+    u.U[2] = 0;
     u.U[3] = c[1];
 
     return u;
