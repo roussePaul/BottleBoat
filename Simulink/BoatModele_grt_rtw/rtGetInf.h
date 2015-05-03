@@ -5,7 +5,7 @@
  *
  * Model version              : 1.11
  * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Sat May  2 23:14:17 2015
+ * C++ source code generated on : Sun May  3 10:05:32 2015
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -19,10 +19,19 @@
 #include <stddef.h>
 #include "rtwtypes.h"
 #include "rt_nonfinite.h"
+#ifdef __cplusplus
 
-extern real_T rtGetInf(void);
-extern real32_T rtGetInfF(void);
-extern real_T rtGetMinusInf(void);
-extern real32_T rtGetMinusInfF(void);
+extern "C" {
 
+#endif
+
+  extern real_T rtGetInf(void);
+  extern real32_T rtGetInfF(void);
+  extern real_T rtGetMinusInf(void);
+  extern real32_T rtGetMinusInfF(void);
+
+#ifdef __cplusplus
+
+}                                      /* extern "C" */
+#endif
 #endif                                 /* RTW_HEADER_rtGetInf_h_ */

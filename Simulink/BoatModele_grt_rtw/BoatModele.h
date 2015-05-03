@@ -5,7 +5,7 @@
  *
  * Model version              : 1.11
  * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Sat May  2 23:14:17 2015
+ * C++ source code generated on : Sun May  3 10:05:32 2015
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -407,7 +407,18 @@ struct tag_RTM_BoatModele_T {
 };
 
 /* Block parameters (auto storage) */
-extern P_BoatModele_T BoatModele_P;
+#ifdef __cplusplus
+
+extern "C" {
+
+#endif
+
+  extern P_BoatModele_T BoatModele_P;
+
+#ifdef __cplusplus
+
+}
+#endif
 
 /* Block signals (auto storage) */
 extern B_BoatModele_T BoatModele_B;
@@ -418,19 +429,52 @@ extern X_BoatModele_T BoatModele_X;
 /* Block states (auto storage) */
 extern DW_BoatModele_T BoatModele_DW;
 
-/* External inputs (root inport signals with auto storage) */
-extern ExtU_BoatModele_T BoatModele_U;
+#ifdef __cplusplus
 
-/* External outputs (root outports fed by signals with auto storage) */
-extern ExtY_BoatModele_T BoatModele_Y;
+extern "C" {
 
-/* Model entry point functions */
-extern void BoatModele_initialize(void);
-extern void BoatModele_step(void);
-extern void BoatModele_terminate(void);
+#endif
+
+  /* External inputs (root inport signals with auto storage) */
+  extern ExtU_BoatModele_T BoatModele_U;
+
+  /* External outputs (root outports fed by signals with auto storage) */
+  extern ExtY_BoatModele_T BoatModele_Y;
+
+#ifdef __cplusplus
+
+}
+#endif
+
+#ifdef __cplusplus
+
+extern "C" {
+
+#endif
+
+  /* Model entry point functions */
+  extern void BoatModele_initialize(void);
+  extern void BoatModele_step(void);
+  extern void BoatModele_terminate(void);
+
+#ifdef __cplusplus
+
+}
+#endif
 
 /* Real-time Model object */
-extern RT_MODEL_BoatModele_T *const BoatModele_M;
+#ifdef __cplusplus
+
+extern "C" {
+
+#endif
+
+  extern RT_MODEL_BoatModele_T *const BoatModele_M;
+
+#ifdef __cplusplus
+
+}
+#endif
 
 /*-
  * The generated code includes comments that allow you to trace directly

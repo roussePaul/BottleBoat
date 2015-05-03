@@ -1,10 +1,10 @@
-CC=gcc
+CC=colorgcc
 CFLAGS=-c -g -Wall -I/usr/include/ -IModele/matlab_include/ -IModele/simulink_include/ -IModele/rtw_include/ -IModele/rtw_include/ext_mode/common/ -IModele/
-LDFLAGS= -L/usr/lib/ -lm -L/Modele
+LDFLAGS= -L/usr/lib/ -lm -L/Modele -L/Modele/rtw_include/ -lgsl -lgslcblas 
 SOURCES=$(shell echo *.c)
 OBJECTS=$(SOURCES:.c=.o)
 MODELE_DIR=Modele/
-MODELE_OBJ=$(shell echo Modele/*.o)
+MODELE_OBJ=$(shell echo Modele/*.o) $(shell echo Modele/rtw_include/*.o)
 EXECUTABLE=prog
 
 all: $(SOURCES) modele $(EXECUTABLE)

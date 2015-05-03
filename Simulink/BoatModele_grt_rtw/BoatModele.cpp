@@ -1,11 +1,11 @@
 /*
- * BoatModele.c
+ * BoatModele.cpp
  *
  * Code generation for model "BoatModele".
  *
  * Model version              : 1.11
  * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Sat May  2 23:14:17 2015
+ * C++ source code generated on : Sun May  3 10:05:32 2015
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -419,7 +419,7 @@ real_T rt_atan2d_snf(real_T u0, real_T u1)
       u1_0 = -1;
     }
 
-    y = atan2(u0_0, u1_0);
+    y = atan2((real_T)u0_0, (real_T)u1_0);
   } else if (u1 == 0.0) {
     if (u0 > 0.0) {
       y = RT_PI / 2.0;
@@ -1000,7 +1000,8 @@ void BoatModele_step(void)
    *  MATLAB Function: '<S1>/MATLAB Function1'
    */
   rtb_DLookupTable3 = look1_binlxpw(sqrt(v_aku * v_aku + v_akv * v_akv),
-    BoatModele_P.hull_xdata, BoatModele_P.hull_ydata, 99U);
+    *(real_T (*)[100])&BoatModele_P.hull_xdata[0], *(real_T (*)[100])&
+    BoatModele_P.hull_ydata[0], 99U);
 
   /* SignalConversion: '<S2>/TmpSignal ConversionAt SFunction Inport1' incorporates:
    *  Inport: '<Root>/U'
