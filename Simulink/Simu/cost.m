@@ -7,6 +7,7 @@ function [ c ] = cost( X )
     global Xf;
     global h;
     
+    % We select the time prop in X
     select = [repmat([zeros(m-1, 1); 1], N+1, 1); zeros(N*n,1)];
     newX = ceil(X.*select);
     
@@ -17,7 +18,7 @@ function [ c ] = cost( X )
         speed=0.1;
     end
     
-    c = h*sum(newX) + (distance/speed)*ceil(X(N*m+9));
+    c = h*sum(newX) + (distance)*ceil(X(N*m+9));
 
 end
 

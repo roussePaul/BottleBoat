@@ -10,7 +10,9 @@ global Xf;
 global h;
 
 % Parameter
-N = 20;% Number of step for MPC
+addpath('ExtraFunction/');
+param;
+N = 60;% Number of step for MPC
 h = 0.5; % Time step of the simulation
 angleMaxRudder = pi/3;
 angleMaxSail = pi/2;
@@ -25,7 +27,7 @@ V0 = [1; 1]; % Initial velocity
 %% Initialization
 X = [X0; 0; 0; V0; 0; 0];
 Xinit = X;
-[a,b,c,d] = linmod('simple', X);
+[a,b,c,d] = linmod('systemMovingSail', X);
 [a,b,c,d] = ssdata(c2d(ss(a,b,c,d), h));
 [m,n] = size(b);
 a = [a zeros(m,1); zeros(1, m+1)];
@@ -56,7 +58,7 @@ A = [A; [kron(eye(N+1), Atilde), zeros(2*(N+1), n*N)]];
 
 % Optimization
 approx = [X; 1; zeros(N*m,1); zeros(n*N, 1)];
-options = optimset('Display','iter');
+options = optimset('Display','iter','MaxFunEvals',50000);
 [x, tps] = fmincon(@cost,approx,A,B,Aeq,Beq,lb,ub,[],options);
 
 Xboat = [x((0:N)*m+1)'; x((0:N)*m+2)'];
@@ -77,13 +79,13 @@ hold on;
 plot([Xf(1,1) Xf(1,1) Xf(1, 2) Xf(1,2) Xf(1,1)], [Xf(2,1) Xf(2,2) Xf(2,2) Xf(2,1) Xf(2,1)], '--k')
 
 % Plot of the boolean
-figure(2)
-hold on;
-plot(Xbool);
-plot(XboolMin', '--r');
-plot(XboolMax', '--k');
-plot(XboolMin2', '--r');
-plot(XboolMax2', '--k');
+% figure(2)
+% hold on;
+% plot(Xbool);
+% plot(XboolMin', '--r');
+% plot(XboolMax', '--k');
+% plot(XboolMin2', '--r');
+% plot(XboolMax2', '--k');
 
 % Plot of the control
 figure(3)
