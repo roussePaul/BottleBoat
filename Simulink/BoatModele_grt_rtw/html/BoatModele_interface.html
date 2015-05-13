@@ -52,7 +52,7 @@ Entry Point Functions
 
 </h3>
 <p>
-Function: <a href="BoatModele_cpp.html#fcn_BoatModele_initialize">BoatModele_initialize</a>
+Function: <a href="BoatModele_c.html#fcn_BoatModele_initialize">BoatModele_initialize</a>
 </p>
 <table width="100%" class="AltRow" cellspacing="0">
 <tr class="even">
@@ -115,7 +115,7 @@ Header file
 
 </table>
 <p>
-Function: <a href="BoatModele_cpp.html#fcn_BoatModele_step">BoatModele_step</a>
+Function: <a href="BoatModele_c.html#fcn_BoatModele_step">BoatModele_step</a>
 </p>
 <table width="100%" class="AltRow" cellspacing="0">
 <tr class="even">
@@ -178,7 +178,7 @@ Header file
 
 </table>
 <p>
-Function: <a href="BoatModele_cpp.html#fcn_BoatModele_terminate">BoatModele_terminate</a>
+Function: <a href="BoatModele_c.html#fcn_BoatModele_terminate">BoatModele_terminate</a>
 </p>
 <table width="100%" class="AltRow" cellspacing="0">
 <tr class="even">
@@ -573,7 +573,22 @@ real_T
 </tr>
 <tr class="odd">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table
+&lt;S1&gt;/Constant
+</td>
+<td width="25%" align="left" valign="top">
+BoatModele_P.Constant_Value
+</td>
+<td width="25%" align="left" valign="top">
+real_T
+</td>
+<td width="10%" align="right" valign="top">
+[1  2]
+</td>
+
+</tr>
+<tr class="even">
+<td width="40%" align="left" valign="top">
+&lt;S2&gt;/1-D Lookup Table
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable_maxIndex
@@ -586,9 +601,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="even">
+<tr class="odd">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table
+&lt;S2&gt;/1-D Lookup Table
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable_dimSizes
@@ -601,9 +616,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="odd">
+<tr class="even">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table
+&lt;S2&gt;/1-D Lookup Table
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable_numYWorkElts
@@ -616,9 +631,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="even">
+<tr class="odd">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table4
+&lt;S2&gt;/1-D Lookup Table4
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable4_maxIndex
@@ -631,9 +646,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="odd">
+<tr class="even">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table4
+&lt;S2&gt;/1-D Lookup Table4
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable4_dimSizes
@@ -646,9 +661,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="even">
+<tr class="odd">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table4
+&lt;S2&gt;/1-D Lookup Table4
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable4_numYWorkElts
@@ -661,9 +676,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="odd">
+<tr class="even">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table1
+&lt;S2&gt;/1-D Lookup Table1
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable1_maxIndex
@@ -676,9 +691,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="even">
+<tr class="odd">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table1
+&lt;S2&gt;/1-D Lookup Table1
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable1_dimSizes
@@ -691,9 +706,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="odd">
+<tr class="even">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table1
+&lt;S2&gt;/1-D Lookup Table1
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable1_numYWorkElts
@@ -706,9 +721,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="even">
+<tr class="odd">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table5
+&lt;S2&gt;/1-D Lookup Table5
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable5_maxIndex
@@ -721,9 +736,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="odd">
+<tr class="even">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table5
+&lt;S2&gt;/1-D Lookup Table5
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable5_dimSizes
@@ -736,9 +751,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="even">
+<tr class="odd">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table5
+&lt;S2&gt;/1-D Lookup Table5
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable5_numYWorkElts
@@ -751,9 +766,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="odd">
+<tr class="even">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table2
+&lt;S2&gt;/1-D Lookup Table2
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable2_maxIndex
@@ -766,9 +781,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="even">
+<tr class="odd">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table2
+&lt;S2&gt;/1-D Lookup Table2
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable2_dimSizes
@@ -781,9 +796,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="odd">
+<tr class="even">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table2
+&lt;S2&gt;/1-D Lookup Table2
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable2_numYWorkElts
@@ -796,9 +811,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="even">
+<tr class="odd">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table6
+&lt;S2&gt;/1-D Lookup Table6
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable6_maxIndex
@@ -811,9 +826,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="odd">
+<tr class="even">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table6
+&lt;S2&gt;/1-D Lookup Table6
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable6_dimSizes
@@ -826,9 +841,9 @@ uint32_T
 </td>
 
 </tr>
-<tr class="even">
+<tr class="odd">
 <td width="40%" align="left" valign="top">
-&lt;S1&gt;/1-D Lookup Table6
+&lt;S2&gt;/1-D Lookup Table6
 </td>
 <td width="25%" align="left" valign="top">
 BoatModele_P.DLookupTable6_numYWorkElts

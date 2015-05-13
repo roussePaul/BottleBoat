@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'BoatModele'. 
 ## 
 ## Makefile     : BoatModele.mk
-## Generated on : Sun May 03 10:05:37 2015
+## Generated on : Mon May 04 10:53:15 2015
 ## MATLAB Coder version: 2.6 (R2014a)
 ## 
 ## Build Info:
@@ -198,7 +198,7 @@ DEFINES = $(DEFINES_BUILD_ARGS) $(DEFINES_IMPLIED) $(DEFINES_STANDARD)
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/BoatModele_grt_rtw/BoatModele.cpp $(START_DIR)/BoatModele_grt_rtw/BoatModele_data.cpp $(START_DIR)/BoatModele_grt_rtw/rtGetInf.cpp $(START_DIR)/BoatModele_grt_rtw/rtGetNaN.cpp $(START_DIR)/BoatModele_grt_rtw/rt_nonfinite.cpp rt_logging.c
+SRCS = $(START_DIR)/BoatModele_grt_rtw/BoatModele.c $(START_DIR)/BoatModele_grt_rtw/BoatModele_data.c $(START_DIR)/BoatModele_grt_rtw/rtGetInf.c $(START_DIR)/BoatModele_grt_rtw/rtGetNaN.c $(START_DIR)/BoatModele_grt_rtw/rt_nonfinite.c rt_logging.c
 
 MAIN_SRC = $(MATLAB_ROOT)/rtw/c/src/common/rt_main.c
 
@@ -292,7 +292,7 @@ execute : download
 
 $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(MAIN_OBJ)
 	@echo "### Creating standalone executable "$(PRODUCT)" ..."
-	$(CPP_LD) $(CPP_LDFLAGS) -o $(PRODUCT) $(OBJS) $(MAIN_OBJ) $(SYSTEM_LIBS) $(TOOLCHAIN_LIBS)
+	$(LD) $(LDFLAGS) -o $(PRODUCT) $(OBJS) $(MAIN_OBJ) $(SYSTEM_LIBS) $(TOOLCHAIN_LIBS)
 	@echo "### Created: $(PRODUCT)"
 
 
@@ -329,6 +329,10 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(MAIN_OBJ)
 
 
 %.o : $(MATLAB_ROOT)/rtw/c/src/common/%.c
+	$(CC) $(CFLAGS) -o "$@" "$<"
+
+
+%.o : $(MATLAB_ROOT)/rtw/c/src/common/%.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 

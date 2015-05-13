@@ -186,9 +186,9 @@
 </span><span><a class="LN" name="169">  169   </a>                  <font color="#1122ff">&quot;stateName\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0&quot;</font> ZERO_PAD
 </span><span><a class="LN" name="170">  170   </a>                  <font color="#1122ff">&quot;inReferencedModel\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0&quot;</font> ZERO_PAD;
 </span><span><a class="LN" name="171">  171   </a>
-</span><span><a class="LN" name="172">  172   </a><span class="DT">extern</span> real_T <a href="rt_nonfinite_cpp.html#var_rtInf" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_rtInf');" target="_self"><font color="#1122aa">rtInf</font></a>; <span class="CT">/* declared by rt_nonfinite.c */</span>
-</span><span><a class="LN" name="173">  173   </a><span class="DT">extern</span> real_T <a href="rt_nonfinite_cpp.html#var_rtNaN" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_rtNaN');" target="_self"><font color="#1122aa">rtNaN</font></a>;
-</span><span><a class="LN" name="174">  174   </a><span class="DT">extern</span> real32_T <a href="rt_nonfinite_cpp.html#var_rtNaNF" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_rtNaNF');" target="_self"><font color="#1122aa">rtNaNF</font></a>;
+</span><span><a class="LN" name="172">  172   </a><span class="DT">extern</span> real_T <a href="rt_nonfinite_c.html#var_rtInf" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_rtInf');" target="_self"><font color="#1122aa">rtInf</font></a>; <span class="CT">/* declared by rt_nonfinite.c */</span>
+</span><span><a class="LN" name="173">  173   </a><span class="DT">extern</span> real_T <a href="rt_nonfinite_c.html#var_rtNaN" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_rtNaN');" target="_self"><font color="#1122aa">rtNaN</font></a>;
+</span><span><a class="LN" name="174">  174   </a><span class="DT">extern</span> real32_T <a href="rt_nonfinite_c.html#var_rtNaNF" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_rtNaNF');" target="_self"><font color="#1122aa">rtNaNF</font></a>;
 </span><span><a class="LN" name="175">  175   </a>
 </span><span><a class="LN" name="176">  176   </a><span class="CT">/*================*</span>
 </span><span><a class="LN" name="177">  177   </a><span class="CT"> * Local routines *</span>
@@ -2607,7 +2607,7 @@
 </span><span><a class="LN" name="2590"> 2590   </a><span class="CT">     * Calculate maximum number of rows needed in the buffer             *</span>
 </span><span><a class="LN" name="2591"> 2591   </a><span class="CT">     *===================================================================*/</span>
 </span><span><a class="LN" name="2592"> 2592   </a>
-</span><span><a class="LN" name="2593"> 2593   </a>    <span class="KW">if</span> (finalTime &gt; startTime &amp;&amp; finalTime != <a href="rt_nonfinite_cpp.html#var_rtInf" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_rtInf');" target="_self"><font color="#1122aa">rtInf</font></a>) <b>{</b>
+</span><span><a class="LN" name="2593"> 2593   </a>    <span class="KW">if</span> (finalTime &gt; startTime &amp;&amp; finalTime != <a href="rt_nonfinite_c.html#var_rtInf" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_rtInf');" target="_self"><font color="#1122aa">rtInf</font></a>) <b>{</b>
 </span><span><a class="LN" name="2594"> 2594   </a>        real_T nPoints;            <span class="CT">/* Tfinal is finite  ===&gt;  nRows can be  */</span>
 </span><span><a class="LN" name="2595"> 2595   </a>        real_T stepSize;           <span class="CT">/* computed since the StepSize is fixed  */</span>
 </span><span><a class="LN" name="2596"> 2596   </a>
@@ -3379,9 +3379,9 @@
 </span><span><a class="LN" name="3362"> 3362   </a><span class="CT">                          allowed, memset to zeros.</span>
 </span><span><a class="LN" name="3363"> 3363   </a><span class="CT">                    */</span>
 </span><span><a class="LN" name="3364"> 3364   </a>                    <span class="KW">if</span> (dTypeID == SS_DOUBLE) <b>{</b>
-</span><span><a class="LN" name="3365"> 3365   </a>                       (<span class="DT">void</span>) memcpy(currRealRow, &amp;<a href="rt_nonfinite_cpp.html#var_rtNaN" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_rtNaN');" target="_self"><font color="#1122aa">rtNaN</font></a>, elSize);
+</span><span><a class="LN" name="3365"> 3365   </a>                       (<span class="DT">void</span>) memcpy(currRealRow, &amp;<a href="rt_nonfinite_c.html#var_rtNaN" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_rtNaN');" target="_self"><font color="#1122aa">rtNaN</font></a>, elSize);
 </span><span><a class="LN" name="3366"> 3366   </a>                    <b>}</b> <span class="KW">else</span> <span class="KW">if</span> (dTypeID == SS_SINGLE)<b>{</b>
-</span><span><a class="LN" name="3367"> 3367   </a>                        (<span class="DT">void</span>) memcpy(currRealRow, &amp;<a href="rt_nonfinite_cpp.html#var_rtNaNF" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_rtNaNF');" target="_self"><font color="#1122aa">rtNaNF</font></a>, elSize);
+</span><span><a class="LN" name="3367"> 3367   </a>                        (<span class="DT">void</span>) memcpy(currRealRow, &amp;<a href="rt_nonfinite_c.html#var_rtNaNF" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_rtNaNF');" target="_self"><font color="#1122aa">rtNaNF</font></a>, elSize);
 </span><span><a class="LN" name="3368"> 3368   </a>                    <b>}</b> <span class="KW">else</span> <b>{</b>
 </span><span><a class="LN" name="3369"> 3369   </a>                        (<span class="DT">void</span>) memset(currRealRow, 0, elSize);
 </span><span><a class="LN" name="3370"> 3370   </a>                    <b>}</b>
@@ -3563,7 +3563,7 @@
 </span><span><a class="LN" name="3546"> 3546   </a>                        <span class="CT">/* vijay 4/11/2013: DO NOT CALL ldexp() with NaN below as it causes </span>
 </span><span><a class="LN" name="3547"> 3547   </a><span class="CT">                         * lcc-win64 to generate inf instead of NaN as output. </span>
 </span><span><a class="LN" name="3548"> 3548   </a><span class="CT">                         * Just use rtNaN directly */</span>
-</span><span><a class="LN" name="3549"> 3549   </a>                        curRealValue = <a href="rt_nonfinite_cpp.html#var_rtNaN" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_rtNaN');" target="_self"><font color="#1122aa">rtNaN</font></a>;
+</span><span><a class="LN" name="3549"> 3549   </a>                        curRealValue = <a href="rt_nonfinite_c.html#var_rtNaN" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_rtNaN');" target="_self"><font color="#1122aa">rtNaN</font></a>;
 </span><span><a class="LN" name="3550"> 3550   </a>                    <b>}</b>
 </span><span><a class="LN" name="3551"> 3551   </a>                    <span class="KW">else</span><b>{</b>
 </span><span><a class="LN" name="3552"> 3552   </a>                        curRealValue = ldexp( 0, fixedExp ) + bias;
