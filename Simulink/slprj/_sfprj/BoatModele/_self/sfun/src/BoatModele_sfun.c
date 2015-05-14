@@ -109,10 +109,10 @@ unsigned int sf_BoatModele_process_check_sum_call( int nlhs, mxArray * plhs[],
       return 0;
     }
   } else {
-    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(845926330U);
-    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2358621619U);
-    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(4021077905U);
-    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(2872973196U);
+    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(512963699U);
+    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(465696450U);
+    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3874261895U);
+    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(141116574U);
   }
 
   return 1;
@@ -150,7 +150,7 @@ unsigned int sf_BoatModele_autoinheritance_info( int nlhs, mxArray * plhs[], int
     switch (chartFileNumber) {
      case 1:
       {
-        if (strcmp(aiChksum, "Q3PoKwdm172vj9rWYGyvlH") == 0) {
+        if (strcmp(aiChksum, "m1LCUJKGDY65NnIe4NLJlF") == 0) {
           extern mxArray *sf_c1_BoatModele_get_autoinheritance_info(void);
           plhs[0] = sf_c1_BoatModele_get_autoinheritance_info();
           break;
@@ -162,7 +162,7 @@ unsigned int sf_BoatModele_autoinheritance_info( int nlhs, mxArray * plhs[], int
 
      case 2:
       {
-        if (strcmp(aiChksum, "6MwH0Meo3t3xNak7yANlHE") == 0) {
+        if (strcmp(aiChksum, "j70NnJ9afNTK58HSep1njE") == 0) {
           extern mxArray *sf_c2_BoatModele_get_autoinheritance_info(void);
           plhs[0] = sf_c2_BoatModele_get_autoinheritance_info();
           break;
@@ -266,7 +266,7 @@ unsigned int sf_BoatModele_third_party_uses_info( int nlhs, mxArray * plhs[],
     switch (chartFileNumber) {
      case 1:
       {
-        if (strcmp(tpChksum, "QDPwJeq2Q5550RODQK7fH") == 0) {
+        if (strcmp(tpChksum, "mOSDiUVMOm5I0NlrLkvZHB") == 0) {
           extern mxArray *sf_c1_BoatModele_third_party_uses_info(void);
           plhs[0] = sf_c1_BoatModele_third_party_uses_info();
           break;
@@ -275,7 +275,7 @@ unsigned int sf_BoatModele_third_party_uses_info( int nlhs, mxArray * plhs[],
 
      case 2:
       {
-        if (strcmp(tpChksum, "ExCGXEagQNJ2rnRmkZIoLH") == 0) {
+        if (strcmp(tpChksum, "l7lkkrOSOl2tEOyoYA4lJD") == 0) {
           extern mxArray *sf_c2_BoatModele_third_party_uses_info(void);
           plhs[0] = sf_c2_BoatModele_third_party_uses_info();
           break;
@@ -312,7 +312,7 @@ unsigned int sf_BoatModele_updateBuildInfo_args_info( int nlhs, mxArray * plhs[]
     switch (chartFileNumber) {
      case 1:
       {
-        if (strcmp(tpChksum, "QDPwJeq2Q5550RODQK7fH") == 0) {
+        if (strcmp(tpChksum, "mOSDiUVMOm5I0NlrLkvZHB") == 0) {
           extern mxArray *sf_c1_BoatModele_updateBuildInfo_args_info(void);
           plhs[0] = sf_c1_BoatModele_updateBuildInfo_args_info();
           break;
@@ -321,7 +321,7 @@ unsigned int sf_BoatModele_updateBuildInfo_args_info( int nlhs, mxArray * plhs[]
 
      case 2:
       {
-        if (strcmp(tpChksum, "ExCGXEagQNJ2rnRmkZIoLH") == 0) {
+        if (strcmp(tpChksum, "l7lkkrOSOl2tEOyoYA4lJD") == 0) {
           extern mxArray *sf_c2_BoatModele_updateBuildInfo_args_info(void);
           plhs[0] = sf_c2_BoatModele_updateBuildInfo_args_info();
           break;

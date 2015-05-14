@@ -20,9 +20,9 @@
 </span><span><a class="LN" name="3">    3   </a><span class="CT"> *</span>
 </span><span><a class="LN" name="4">    4   </a><span class="CT"> * Code generation for model "BoatModele".</span>
 </span><span><a class="LN" name="5">    5   </a><span class="CT"> *</span>
-</span><span><a class="LN" name="6">    6   </a><span class="CT"> * Model version              : 1.11</span>
+</span><span><a class="LN" name="6">    6   </a><span class="CT"> * Model version              : 1.20</span>
 </span><span><a class="LN" name="7">    7   </a><span class="CT"> * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013</span>
-</span><span><a class="LN" name="8">    8   </a><span class="CT"> * C++ source code generated on : Sun May  3 10:05:32 2015</span>
+</span><span><a class="LN" name="8">    8   </a><span class="CT"> * C source code generated on : Mon May  4 10:53:09 2015</span>
 </span><span><a class="LN" name="9">    9   </a><span class="CT"> *</span>
 </span><span><a class="LN" name="10">   10   </a><span class="CT"> * Target selection: grt.tlc</span>
 </span><span><a class="LN" name="11">   11   </a><span class="CT"> * Note: GRT includes extra infrastructure and instrumentation for prototyping</span>
@@ -164,71 +164,71 @@
 </span><span><a class="LN" name="147">  147   </a>
 </span><span><a class="LN" name="148">  148   </a><span class="CT">/* Block signals (auto storage) */</span>
 </span><span><a class="LN" name="149">  149   </a><span class="KW">typedef</span> <span class="KW">struct</span> <b>{</b>
-</span><span><a class="LN" name="150">  150   </a>  real_T X_dot_ext[9];                 <span class="CT">/* '&lt;S1&gt;/MATLAB Function' */</span>
+</span><span><a class="LN" name="150">  150   </a>  real_T X_dot_ext[9];                 <span class="CT">/* '&lt;S2&gt;/MATLAB Function' */</span>
 </span><span><a class="LN" name="151">  151   </a><b>}</b> <a name="type_B_BoatModele_T">B_BoatModele_T</a>;
 </span><span><a class="LN" name="152">  152   </a>
 </span><span><a class="LN" name="153">  153   </a><span class="CT">/* Block states (auto storage) for system '&lt;Root&gt;' */</span>
 </span><span><a class="LN" name="154">  154   </a><span class="KW">typedef</span> <span class="KW">struct</span> <b>{</b>
-</span><span><a class="LN" name="155">  155   </a>  real_T m_bpLambda;                   <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table' */</span>
-</span><span><a class="LN" name="156">  156   </a>  real_T m_yyA;                        <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table' */</span>
-</span><span><a class="LN" name="157">  157   </a>  real_T m_yyB;                        <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table' */</span>
-</span><span><a class="LN" name="158">  158   </a>  real_T m_yy2;                        <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table' */</span>
-</span><span><a class="LN" name="159">  159   </a>  real_T m_up[100];                    <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table' */</span>
-</span><span><a class="LN" name="160">  160   </a>  real_T m_y2[100];                    <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table' */</span>
-</span><span><a class="LN" name="161">  161   </a>  real_T m_bpLambda_n;                 <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table4' */</span>
-</span><span><a class="LN" name="162">  162   </a>  real_T m_yyA_i;                      <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table4' */</span>
-</span><span><a class="LN" name="163">  163   </a>  real_T m_yyB_l;                      <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table4' */</span>
-</span><span><a class="LN" name="164">  164   </a>  real_T m_yy2_k;                      <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table4' */</span>
-</span><span><a class="LN" name="165">  165   </a>  real_T m_up_f[100];                  <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table4' */</span>
-</span><span><a class="LN" name="166">  166   </a>  real_T m_y2_c[100];                  <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table4' */</span>
-</span><span><a class="LN" name="167">  167   </a>  real_T m_bpLambda_k;                 <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table1' */</span>
-</span><span><a class="LN" name="168">  168   </a>  real_T m_yyA_n;                      <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table1' */</span>
-</span><span><a class="LN" name="169">  169   </a>  real_T m_yyB_e;                      <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table1' */</span>
-</span><span><a class="LN" name="170">  170   </a>  real_T m_yy2_j;                      <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table1' */</span>
-</span><span><a class="LN" name="171">  171   </a>  real_T m_up_g[100];                  <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table1' */</span>
-</span><span><a class="LN" name="172">  172   </a>  real_T m_y2_cz[100];                 <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table1' */</span>
-</span><span><a class="LN" name="173">  173   </a>  real_T m_bpLambda_g;                 <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table5' */</span>
-</span><span><a class="LN" name="174">  174   </a>  real_T m_yyA_l;                      <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table5' */</span>
-</span><span><a class="LN" name="175">  175   </a>  real_T m_yyB_i;                      <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table5' */</span>
-</span><span><a class="LN" name="176">  176   </a>  real_T m_yy2_n;                      <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table5' */</span>
-</span><span><a class="LN" name="177">  177   </a>  real_T m_up_n[100];                  <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table5' */</span>
-</span><span><a class="LN" name="178">  178   </a>  real_T m_y2_g[100];                  <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table5' */</span>
-</span><span><a class="LN" name="179">  179   </a>  real_T m_bpLambda_kf;                <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table2' */</span>
-</span><span><a class="LN" name="180">  180   </a>  real_T m_yyA_nz;                     <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table2' */</span>
-</span><span><a class="LN" name="181">  181   </a>  real_T m_yyB_ex;                     <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table2' */</span>
-</span><span><a class="LN" name="182">  182   </a>  real_T m_yy2_c;                      <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table2' */</span>
-</span><span><a class="LN" name="183">  183   </a>  real_T m_up_k[100];                  <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table2' */</span>
-</span><span><a class="LN" name="184">  184   </a>  real_T m_y2_a[100];                  <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table2' */</span>
-</span><span><a class="LN" name="185">  185   </a>  real_T m_bpLambda_h;                 <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table6' */</span>
-</span><span><a class="LN" name="186">  186   </a>  real_T m_yyA_c;                      <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table6' */</span>
-</span><span><a class="LN" name="187">  187   </a>  real_T m_yyB_i5;                     <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table6' */</span>
-</span><span><a class="LN" name="188">  188   </a>  real_T m_yy2_h;                      <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table6' */</span>
-</span><span><a class="LN" name="189">  189   </a>  real_T m_up_o[100];                  <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table6' */</span>
-</span><span><a class="LN" name="190">  190   </a>  real_T m_y2_f[100];                  <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table6' */</span>
-</span><span><a class="LN" name="191">  191   </a>  <span class="DT">void</span>* m_bpDataSet;                   <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table' */</span>
-</span><span><a class="LN" name="192">  192   </a>  <span class="DT">void</span>* TWork[6];                      <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table' */</span>
-</span><span><a class="LN" name="193">  193   </a>  <span class="DT">void</span>* SWork[7];                      <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table' */</span>
-</span><span><a class="LN" name="194">  194   </a>  <span class="DT">void</span>* m_bpDataSet_c;                 <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table4' */</span>
-</span><span><a class="LN" name="195">  195   </a>  <span class="DT">void</span>* TWork_a[6];                    <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table4' */</span>
-</span><span><a class="LN" name="196">  196   </a>  <span class="DT">void</span>* SWork_k[7];                    <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table4' */</span>
-</span><span><a class="LN" name="197">  197   </a>  <span class="DT">void</span>* m_bpDataSet_j;                 <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table1' */</span>
-</span><span><a class="LN" name="198">  198   </a>  <span class="DT">void</span>* TWork_c[6];                    <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table1' */</span>
-</span><span><a class="LN" name="199">  199   </a>  <span class="DT">void</span>* SWork_j[7];                    <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table1' */</span>
-</span><span><a class="LN" name="200">  200   </a>  <span class="DT">void</span>* m_bpDataSet_g;                 <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table5' */</span>
-</span><span><a class="LN" name="201">  201   </a>  <span class="DT">void</span>* TWork_d[6];                    <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table5' */</span>
-</span><span><a class="LN" name="202">  202   </a>  <span class="DT">void</span>* SWork_kl[7];                   <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table5' */</span>
-</span><span><a class="LN" name="203">  203   </a>  <span class="DT">void</span>* m_bpDataSet_h;                 <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table2' */</span>
-</span><span><a class="LN" name="204">  204   </a>  <span class="DT">void</span>* TWork_m[6];                    <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table2' */</span>
-</span><span><a class="LN" name="205">  205   </a>  <span class="DT">void</span>* SWork_a[7];                    <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table2' */</span>
-</span><span><a class="LN" name="206">  206   </a>  <span class="DT">void</span>* m_bpDataSet_n;                 <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table6' */</span>
-</span><span><a class="LN" name="207">  207   </a>  <span class="DT">void</span>* TWork_i[6];                    <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table6' */</span>
-</span><span><a class="LN" name="208">  208   </a>  <span class="DT">void</span>* SWork_e[7];                    <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table6' */</span>
-</span><span><a class="LN" name="209">  209   </a>  uint32_T m_bpIndex;                  <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table' */</span>
-</span><span><a class="LN" name="210">  210   </a>  uint32_T m_bpIndex_n;                <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table4' */</span>
-</span><span><a class="LN" name="211">  211   </a>  uint32_T m_bpIndex_a;                <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table1' */</span>
-</span><span><a class="LN" name="212">  212   </a>  uint32_T m_bpIndex_j;                <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table5' */</span>
-</span><span><a class="LN" name="213">  213   </a>  uint32_T m_bpIndex_jk;               <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table2' */</span>
-</span><span><a class="LN" name="214">  214   </a>  uint32_T m_bpIndex_b;                <span class="CT">/* '&lt;S1&gt;/1-D Lookup Table6' */</span>
+</span><span><a class="LN" name="155">  155   </a>  real_T m_bpLambda;                   <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table' */</span>
+</span><span><a class="LN" name="156">  156   </a>  real_T m_yyA;                        <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table' */</span>
+</span><span><a class="LN" name="157">  157   </a>  real_T m_yyB;                        <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table' */</span>
+</span><span><a class="LN" name="158">  158   </a>  real_T m_yy2;                        <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table' */</span>
+</span><span><a class="LN" name="159">  159   </a>  real_T m_up[100];                    <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table' */</span>
+</span><span><a class="LN" name="160">  160   </a>  real_T m_y2[100];                    <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table' */</span>
+</span><span><a class="LN" name="161">  161   </a>  real_T m_bpLambda_n;                 <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table4' */</span>
+</span><span><a class="LN" name="162">  162   </a>  real_T m_yyA_i;                      <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table4' */</span>
+</span><span><a class="LN" name="163">  163   </a>  real_T m_yyB_l;                      <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table4' */</span>
+</span><span><a class="LN" name="164">  164   </a>  real_T m_yy2_k;                      <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table4' */</span>
+</span><span><a class="LN" name="165">  165   </a>  real_T m_up_f[100];                  <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table4' */</span>
+</span><span><a class="LN" name="166">  166   </a>  real_T m_y2_c[100];                  <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table4' */</span>
+</span><span><a class="LN" name="167">  167   </a>  real_T m_bpLambda_k;                 <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table1' */</span>
+</span><span><a class="LN" name="168">  168   </a>  real_T m_yyA_n;                      <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table1' */</span>
+</span><span><a class="LN" name="169">  169   </a>  real_T m_yyB_e;                      <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table1' */</span>
+</span><span><a class="LN" name="170">  170   </a>  real_T m_yy2_j;                      <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table1' */</span>
+</span><span><a class="LN" name="171">  171   </a>  real_T m_up_g[100];                  <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table1' */</span>
+</span><span><a class="LN" name="172">  172   </a>  real_T m_y2_cz[100];                 <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table1' */</span>
+</span><span><a class="LN" name="173">  173   </a>  real_T m_bpLambda_g;                 <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table5' */</span>
+</span><span><a class="LN" name="174">  174   </a>  real_T m_yyA_l;                      <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table5' */</span>
+</span><span><a class="LN" name="175">  175   </a>  real_T m_yyB_i;                      <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table5' */</span>
+</span><span><a class="LN" name="176">  176   </a>  real_T m_yy2_n;                      <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table5' */</span>
+</span><span><a class="LN" name="177">  177   </a>  real_T m_up_n[100];                  <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table5' */</span>
+</span><span><a class="LN" name="178">  178   </a>  real_T m_y2_g[100];                  <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table5' */</span>
+</span><span><a class="LN" name="179">  179   </a>  real_T m_bpLambda_kf;                <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table2' */</span>
+</span><span><a class="LN" name="180">  180   </a>  real_T m_yyA_nz;                     <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table2' */</span>
+</span><span><a class="LN" name="181">  181   </a>  real_T m_yyB_ex;                     <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table2' */</span>
+</span><span><a class="LN" name="182">  182   </a>  real_T m_yy2_c;                      <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table2' */</span>
+</span><span><a class="LN" name="183">  183   </a>  real_T m_up_k[100];                  <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table2' */</span>
+</span><span><a class="LN" name="184">  184   </a>  real_T m_y2_a[100];                  <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table2' */</span>
+</span><span><a class="LN" name="185">  185   </a>  real_T m_bpLambda_h;                 <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table6' */</span>
+</span><span><a class="LN" name="186">  186   </a>  real_T m_yyA_c;                      <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table6' */</span>
+</span><span><a class="LN" name="187">  187   </a>  real_T m_yyB_i5;                     <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table6' */</span>
+</span><span><a class="LN" name="188">  188   </a>  real_T m_yy2_h;                      <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table6' */</span>
+</span><span><a class="LN" name="189">  189   </a>  real_T m_up_o[100];                  <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table6' */</span>
+</span><span><a class="LN" name="190">  190   </a>  real_T m_y2_f[100];                  <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table6' */</span>
+</span><span><a class="LN" name="191">  191   </a>  <span class="DT">void</span>* m_bpDataSet;                   <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table' */</span>
+</span><span><a class="LN" name="192">  192   </a>  <span class="DT">void</span>* TWork[6];                      <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table' */</span>
+</span><span><a class="LN" name="193">  193   </a>  <span class="DT">void</span>* SWork[7];                      <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table' */</span>
+</span><span><a class="LN" name="194">  194   </a>  <span class="DT">void</span>* m_bpDataSet_c;                 <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table4' */</span>
+</span><span><a class="LN" name="195">  195   </a>  <span class="DT">void</span>* TWork_a[6];                    <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table4' */</span>
+</span><span><a class="LN" name="196">  196   </a>  <span class="DT">void</span>* SWork_k[7];                    <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table4' */</span>
+</span><span><a class="LN" name="197">  197   </a>  <span class="DT">void</span>* m_bpDataSet_j;                 <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table1' */</span>
+</span><span><a class="LN" name="198">  198   </a>  <span class="DT">void</span>* TWork_c[6];                    <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table1' */</span>
+</span><span><a class="LN" name="199">  199   </a>  <span class="DT">void</span>* SWork_j[7];                    <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table1' */</span>
+</span><span><a class="LN" name="200">  200   </a>  <span class="DT">void</span>* m_bpDataSet_g;                 <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table5' */</span>
+</span><span><a class="LN" name="201">  201   </a>  <span class="DT">void</span>* TWork_d[6];                    <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table5' */</span>
+</span><span><a class="LN" name="202">  202   </a>  <span class="DT">void</span>* SWork_kl[7];                   <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table5' */</span>
+</span><span><a class="LN" name="203">  203   </a>  <span class="DT">void</span>* m_bpDataSet_h;                 <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table2' */</span>
+</span><span><a class="LN" name="204">  204   </a>  <span class="DT">void</span>* TWork_m[6];                    <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table2' */</span>
+</span><span><a class="LN" name="205">  205   </a>  <span class="DT">void</span>* SWork_a[7];                    <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table2' */</span>
+</span><span><a class="LN" name="206">  206   </a>  <span class="DT">void</span>* m_bpDataSet_n;                 <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table6' */</span>
+</span><span><a class="LN" name="207">  207   </a>  <span class="DT">void</span>* TWork_i[6];                    <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table6' */</span>
+</span><span><a class="LN" name="208">  208   </a>  <span class="DT">void</span>* SWork_e[7];                    <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table6' */</span>
+</span><span><a class="LN" name="209">  209   </a>  uint32_T m_bpIndex;                  <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table' */</span>
+</span><span><a class="LN" name="210">  210   </a>  uint32_T m_bpIndex_n;                <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table4' */</span>
+</span><span><a class="LN" name="211">  211   </a>  uint32_T m_bpIndex_a;                <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table1' */</span>
+</span><span><a class="LN" name="212">  212   </a>  uint32_T m_bpIndex_j;                <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table5' */</span>
+</span><span><a class="LN" name="213">  213   </a>  uint32_T m_bpIndex_jk;               <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table2' */</span>
+</span><span><a class="LN" name="214">  214   </a>  uint32_T m_bpIndex_b;                <span class="CT">/* '&lt;S2&gt;/1-D Lookup Table6' */</span>
 </span><span><a class="LN" name="215">  215   </a>  <span class="KW">struct</span> <b>{</b>
 </span><span><a class="LN" name="216">  216   </a>    int_T IcNeedsLoading;
 </span><span><a class="LN" name="217">  217   </a>  <b>}</b> Integrator_IWORK;                  <span class="CT">/* '&lt;S1&gt;/Integrator' */</span>
@@ -276,244 +276,204 @@
 </span><span><a class="LN" name="259">  259   </a><span class="KW">struct</span> P_BoatModele_T_ <b>{</b>
 </span><span><a class="LN" name="260">  260   </a>  real_T alphacoeff_xdata[100];        <span class="CT">/* Variable: alphacoeff_xdata</span>
 </span><span><a class="LN" name="261">  261   </a><span class="CT">                                        * Referenced by:</span>
-</span><span><a class="LN" name="262">  262   </a><span class="CT">                                        *   '&lt;S1&gt;/1-D Lookup Table'</span>
-</span><span><a class="LN" name="263">  263   </a><span class="CT">                                        *   '&lt;S1&gt;/1-D Lookup Table4'</span>
+</span><span><a class="LN" name="262">  262   </a><span class="CT">                                        *   '&lt;S2&gt;/1-D Lookup Table'</span>
+</span><span><a class="LN" name="263">  263   </a><span class="CT">                                        *   '&lt;S2&gt;/1-D Lookup Table4'</span>
 </span><span><a class="LN" name="264">  264   </a><span class="CT">                                        */</span>
 </span><span><a class="LN" name="265">  265   </a>  real_T alphacoeff_yddata[100];       <span class="CT">/* Variable: alphacoeff_yddata</span>
-</span><span><a class="LN" name="266">  266   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table4'</span>
+</span><span><a class="LN" name="266">  266   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table4'</span>
 </span><span><a class="LN" name="267">  267   </a><span class="CT">                                        */</span>
 </span><span><a class="LN" name="268">  268   </a>  real_T alphacoeff_yldata[100];       <span class="CT">/* Variable: alphacoeff_yldata</span>
-</span><span><a class="LN" name="269">  269   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table'</span>
+</span><span><a class="LN" name="269">  269   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table'</span>
 </span><span><a class="LN" name="270">  270   </a><span class="CT">                                        */</span>
 </span><span><a class="LN" name="271">  271   </a>  real_T hull_xdata[100];              <span class="CT">/* Variable: hull_xdata</span>
-</span><span><a class="LN" name="272">  272   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table3'</span>
+</span><span><a class="LN" name="272">  272   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table3'</span>
 </span><span><a class="LN" name="273">  273   </a><span class="CT">                                        */</span>
 </span><span><a class="LN" name="274">  274   </a>  real_T hull_ydata[100];              <span class="CT">/* Variable: hull_ydata</span>
-</span><span><a class="LN" name="275">  275   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table3'</span>
+</span><span><a class="LN" name="275">  275   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table3'</span>
 </span><span><a class="LN" name="276">  276   </a><span class="CT">                                        */</span>
 </span><span><a class="LN" name="277">  277   </a>  real_T keelcoeff_xdata[100];         <span class="CT">/* Variable: keelcoeff_xdata</span>
 </span><span><a class="LN" name="278">  278   </a><span class="CT">                                        * Referenced by:</span>
-</span><span><a class="LN" name="279">  279   </a><span class="CT">                                        *   '&lt;S1&gt;/1-D Lookup Table2'</span>
-</span><span><a class="LN" name="280">  280   </a><span class="CT">                                        *   '&lt;S1&gt;/1-D Lookup Table6'</span>
+</span><span><a class="LN" name="279">  279   </a><span class="CT">                                        *   '&lt;S2&gt;/1-D Lookup Table2'</span>
+</span><span><a class="LN" name="280">  280   </a><span class="CT">                                        *   '&lt;S2&gt;/1-D Lookup Table6'</span>
 </span><span><a class="LN" name="281">  281   </a><span class="CT">                                        */</span>
 </span><span><a class="LN" name="282">  282   </a>  real_T keelcoeff_yddata[100];        <span class="CT">/* Variable: keelcoeff_yddata</span>
-</span><span><a class="LN" name="283">  283   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table6'</span>
+</span><span><a class="LN" name="283">  283   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table6'</span>
 </span><span><a class="LN" name="284">  284   </a><span class="CT">                                        */</span>
 </span><span><a class="LN" name="285">  285   </a>  real_T keelcoeff_yldata[100];        <span class="CT">/* Variable: keelcoeff_yldata</span>
-</span><span><a class="LN" name="286">  286   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table2'</span>
+</span><span><a class="LN" name="286">  286   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table2'</span>
 </span><span><a class="LN" name="287">  287   </a><span class="CT">                                        */</span>
 </span><span><a class="LN" name="288">  288   </a>  real_T ruddercoeff_xdata[100];       <span class="CT">/* Variable: ruddercoeff_xdata</span>
 </span><span><a class="LN" name="289">  289   </a><span class="CT">                                        * Referenced by:</span>
-</span><span><a class="LN" name="290">  290   </a><span class="CT">                                        *   '&lt;S1&gt;/1-D Lookup Table1'</span>
-</span><span><a class="LN" name="291">  291   </a><span class="CT">                                        *   '&lt;S1&gt;/1-D Lookup Table5'</span>
+</span><span><a class="LN" name="290">  290   </a><span class="CT">                                        *   '&lt;S2&gt;/1-D Lookup Table1'</span>
+</span><span><a class="LN" name="291">  291   </a><span class="CT">                                        *   '&lt;S2&gt;/1-D Lookup Table5'</span>
 </span><span><a class="LN" name="292">  292   </a><span class="CT">                                        */</span>
 </span><span><a class="LN" name="293">  293   </a>  real_T ruddercoeff_yddata[100];      <span class="CT">/* Variable: ruddercoeff_yddata</span>
-</span><span><a class="LN" name="294">  294   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table5'</span>
+</span><span><a class="LN" name="294">  294   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table5'</span>
 </span><span><a class="LN" name="295">  295   </a><span class="CT">                                        */</span>
 </span><span><a class="LN" name="296">  296   </a>  real_T ruddercoeff_yldata[100];      <span class="CT">/* Variable: ruddercoeff_yldata</span>
-</span><span><a class="LN" name="297">  297   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table1'</span>
+</span><span><a class="LN" name="297">  297   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table1'</span>
 </span><span><a class="LN" name="298">  298   </a><span class="CT">                                        */</span>
-</span><span><a class="LN" name="299">  299   </a>  uint32_T DLookupTable_maxIndex;      <span class="CT">/* Computed Parameter: DLookupTable_maxIndex</span>
-</span><span><a class="LN" name="300">  300   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table'</span>
+</span><span><a class="LN" name="299">  299   </a>  real_T Constant_Value[2];            <span class="CT">/* Expression: [10,pi]</span>
+</span><span><a class="LN" name="300">  300   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/Constant'</span>
 </span><span><a class="LN" name="301">  301   </a><span class="CT">                                        */</span>
-</span><span><a class="LN" name="302">  302   </a>  uint32_T DLookupTable_dimSizes;      <span class="CT">/* Computed Parameter: DLookupTable_dimSizes</span>
-</span><span><a class="LN" name="303">  303   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table'</span>
+</span><span><a class="LN" name="302">  302   </a>  uint32_T DLookupTable_maxIndex;      <span class="CT">/* Computed Parameter: DLookupTable_maxIndex</span>
+</span><span><a class="LN" name="303">  303   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table'</span>
 </span><span><a class="LN" name="304">  304   </a><span class="CT">                                        */</span>
-</span><span><a class="LN" name="305">  305   </a>  uint32_T DLookupTable_numYWorkElts[2];<span class="CT">/* Computed Parameter: DLookupTable_numYWorkElts</span>
-</span><span><a class="LN" name="306">  306   </a><span class="CT">                                         * Referenced by: '&lt;S1&gt;/1-D Lookup Table'</span>
-</span><span><a class="LN" name="307">  307   </a><span class="CT">                                         */</span>
-</span><span><a class="LN" name="308">  308   </a>  uint32_T DLookupTable4_maxIndex;     <span class="CT">/* Computed Parameter: DLookupTable4_maxIndex</span>
-</span><span><a class="LN" name="309">  309   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table4'</span>
-</span><span><a class="LN" name="310">  310   </a><span class="CT">                                        */</span>
-</span><span><a class="LN" name="311">  311   </a>  uint32_T DLookupTable4_dimSizes;     <span class="CT">/* Computed Parameter: DLookupTable4_dimSizes</span>
-</span><span><a class="LN" name="312">  312   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table4'</span>
+</span><span><a class="LN" name="305">  305   </a>  uint32_T DLookupTable_dimSizes;      <span class="CT">/* Computed Parameter: DLookupTable_dimSizes</span>
+</span><span><a class="LN" name="306">  306   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table'</span>
+</span><span><a class="LN" name="307">  307   </a><span class="CT">                                        */</span>
+</span><span><a class="LN" name="308">  308   </a>  uint32_T DLookupTable_numYWorkElts[2];<span class="CT">/* Computed Parameter: DLookupTable_numYWorkElts</span>
+</span><span><a class="LN" name="309">  309   </a><span class="CT">                                         * Referenced by: '&lt;S2&gt;/1-D Lookup Table'</span>
+</span><span><a class="LN" name="310">  310   </a><span class="CT">                                         */</span>
+</span><span><a class="LN" name="311">  311   </a>  uint32_T DLookupTable4_maxIndex;     <span class="CT">/* Computed Parameter: DLookupTable4_maxIndex</span>
+</span><span><a class="LN" name="312">  312   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table4'</span>
 </span><span><a class="LN" name="313">  313   </a><span class="CT">                                        */</span>
-</span><span><a class="LN" name="314">  314   </a>  uint32_T DLookupTable4_numYWorkElts[2];<span class="CT">/* Computed Parameter: DLookupTable4_numYWorkElts</span>
-</span><span><a class="LN" name="315">  315   </a><span class="CT">                                          * Referenced by: '&lt;S1&gt;/1-D Lookup Table4'</span>
-</span><span><a class="LN" name="316">  316   </a><span class="CT">                                          */</span>
-</span><span><a class="LN" name="317">  317   </a>  uint32_T DLookupTable1_maxIndex;     <span class="CT">/* Computed Parameter: DLookupTable1_maxIndex</span>
-</span><span><a class="LN" name="318">  318   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table1'</span>
-</span><span><a class="LN" name="319">  319   </a><span class="CT">                                        */</span>
-</span><span><a class="LN" name="320">  320   </a>  uint32_T DLookupTable1_dimSizes;     <span class="CT">/* Computed Parameter: DLookupTable1_dimSizes</span>
-</span><span><a class="LN" name="321">  321   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table1'</span>
+</span><span><a class="LN" name="314">  314   </a>  uint32_T DLookupTable4_dimSizes;     <span class="CT">/* Computed Parameter: DLookupTable4_dimSizes</span>
+</span><span><a class="LN" name="315">  315   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table4'</span>
+</span><span><a class="LN" name="316">  316   </a><span class="CT">                                        */</span>
+</span><span><a class="LN" name="317">  317   </a>  uint32_T DLookupTable4_numYWorkElts[2];<span class="CT">/* Computed Parameter: DLookupTable4_numYWorkElts</span>
+</span><span><a class="LN" name="318">  318   </a><span class="CT">                                          * Referenced by: '&lt;S2&gt;/1-D Lookup Table4'</span>
+</span><span><a class="LN" name="319">  319   </a><span class="CT">                                          */</span>
+</span><span><a class="LN" name="320">  320   </a>  uint32_T DLookupTable1_maxIndex;     <span class="CT">/* Computed Parameter: DLookupTable1_maxIndex</span>
+</span><span><a class="LN" name="321">  321   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table1'</span>
 </span><span><a class="LN" name="322">  322   </a><span class="CT">                                        */</span>
-</span><span><a class="LN" name="323">  323   </a>  uint32_T DLookupTable1_numYWorkElts[2];<span class="CT">/* Computed Parameter: DLookupTable1_numYWorkElts</span>
-</span><span><a class="LN" name="324">  324   </a><span class="CT">                                          * Referenced by: '&lt;S1&gt;/1-D Lookup Table1'</span>
-</span><span><a class="LN" name="325">  325   </a><span class="CT">                                          */</span>
-</span><span><a class="LN" name="326">  326   </a>  uint32_T DLookupTable5_maxIndex;     <span class="CT">/* Computed Parameter: DLookupTable5_maxIndex</span>
-</span><span><a class="LN" name="327">  327   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table5'</span>
-</span><span><a class="LN" name="328">  328   </a><span class="CT">                                        */</span>
-</span><span><a class="LN" name="329">  329   </a>  uint32_T DLookupTable5_dimSizes;     <span class="CT">/* Computed Parameter: DLookupTable5_dimSizes</span>
-</span><span><a class="LN" name="330">  330   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table5'</span>
+</span><span><a class="LN" name="323">  323   </a>  uint32_T DLookupTable1_dimSizes;     <span class="CT">/* Computed Parameter: DLookupTable1_dimSizes</span>
+</span><span><a class="LN" name="324">  324   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table1'</span>
+</span><span><a class="LN" name="325">  325   </a><span class="CT">                                        */</span>
+</span><span><a class="LN" name="326">  326   </a>  uint32_T DLookupTable1_numYWorkElts[2];<span class="CT">/* Computed Parameter: DLookupTable1_numYWorkElts</span>
+</span><span><a class="LN" name="327">  327   </a><span class="CT">                                          * Referenced by: '&lt;S2&gt;/1-D Lookup Table1'</span>
+</span><span><a class="LN" name="328">  328   </a><span class="CT">                                          */</span>
+</span><span><a class="LN" name="329">  329   </a>  uint32_T DLookupTable5_maxIndex;     <span class="CT">/* Computed Parameter: DLookupTable5_maxIndex</span>
+</span><span><a class="LN" name="330">  330   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table5'</span>
 </span><span><a class="LN" name="331">  331   </a><span class="CT">                                        */</span>
-</span><span><a class="LN" name="332">  332   </a>  uint32_T DLookupTable5_numYWorkElts[2];<span class="CT">/* Computed Parameter: DLookupTable5_numYWorkElts</span>
-</span><span><a class="LN" name="333">  333   </a><span class="CT">                                          * Referenced by: '&lt;S1&gt;/1-D Lookup Table5'</span>
-</span><span><a class="LN" name="334">  334   </a><span class="CT">                                          */</span>
-</span><span><a class="LN" name="335">  335   </a>  uint32_T DLookupTable2_maxIndex;     <span class="CT">/* Computed Parameter: DLookupTable2_maxIndex</span>
-</span><span><a class="LN" name="336">  336   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table2'</span>
-</span><span><a class="LN" name="337">  337   </a><span class="CT">                                        */</span>
-</span><span><a class="LN" name="338">  338   </a>  uint32_T DLookupTable2_dimSizes;     <span class="CT">/* Computed Parameter: DLookupTable2_dimSizes</span>
-</span><span><a class="LN" name="339">  339   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table2'</span>
+</span><span><a class="LN" name="332">  332   </a>  uint32_T DLookupTable5_dimSizes;     <span class="CT">/* Computed Parameter: DLookupTable5_dimSizes</span>
+</span><span><a class="LN" name="333">  333   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table5'</span>
+</span><span><a class="LN" name="334">  334   </a><span class="CT">                                        */</span>
+</span><span><a class="LN" name="335">  335   </a>  uint32_T DLookupTable5_numYWorkElts[2];<span class="CT">/* Computed Parameter: DLookupTable5_numYWorkElts</span>
+</span><span><a class="LN" name="336">  336   </a><span class="CT">                                          * Referenced by: '&lt;S2&gt;/1-D Lookup Table5'</span>
+</span><span><a class="LN" name="337">  337   </a><span class="CT">                                          */</span>
+</span><span><a class="LN" name="338">  338   </a>  uint32_T DLookupTable2_maxIndex;     <span class="CT">/* Computed Parameter: DLookupTable2_maxIndex</span>
+</span><span><a class="LN" name="339">  339   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table2'</span>
 </span><span><a class="LN" name="340">  340   </a><span class="CT">                                        */</span>
-</span><span><a class="LN" name="341">  341   </a>  uint32_T DLookupTable2_numYWorkElts[2];<span class="CT">/* Computed Parameter: DLookupTable2_numYWorkElts</span>
-</span><span><a class="LN" name="342">  342   </a><span class="CT">                                          * Referenced by: '&lt;S1&gt;/1-D Lookup Table2'</span>
-</span><span><a class="LN" name="343">  343   </a><span class="CT">                                          */</span>
-</span><span><a class="LN" name="344">  344   </a>  uint32_T DLookupTable6_maxIndex;     <span class="CT">/* Computed Parameter: DLookupTable6_maxIndex</span>
-</span><span><a class="LN" name="345">  345   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table6'</span>
-</span><span><a class="LN" name="346">  346   </a><span class="CT">                                        */</span>
-</span><span><a class="LN" name="347">  347   </a>  uint32_T DLookupTable6_dimSizes;     <span class="CT">/* Computed Parameter: DLookupTable6_dimSizes</span>
-</span><span><a class="LN" name="348">  348   </a><span class="CT">                                        * Referenced by: '&lt;S1&gt;/1-D Lookup Table6'</span>
+</span><span><a class="LN" name="341">  341   </a>  uint32_T DLookupTable2_dimSizes;     <span class="CT">/* Computed Parameter: DLookupTable2_dimSizes</span>
+</span><span><a class="LN" name="342">  342   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table2'</span>
+</span><span><a class="LN" name="343">  343   </a><span class="CT">                                        */</span>
+</span><span><a class="LN" name="344">  344   </a>  uint32_T DLookupTable2_numYWorkElts[2];<span class="CT">/* Computed Parameter: DLookupTable2_numYWorkElts</span>
+</span><span><a class="LN" name="345">  345   </a><span class="CT">                                          * Referenced by: '&lt;S2&gt;/1-D Lookup Table2'</span>
+</span><span><a class="LN" name="346">  346   </a><span class="CT">                                          */</span>
+</span><span><a class="LN" name="347">  347   </a>  uint32_T DLookupTable6_maxIndex;     <span class="CT">/* Computed Parameter: DLookupTable6_maxIndex</span>
+</span><span><a class="LN" name="348">  348   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table6'</span>
 </span><span><a class="LN" name="349">  349   </a><span class="CT">                                        */</span>
-</span><span><a class="LN" name="350">  350   </a>  uint32_T DLookupTable6_numYWorkElts[2];<span class="CT">/* Computed Parameter: DLookupTable6_numYWorkElts</span>
-</span><span><a class="LN" name="351">  351   </a><span class="CT">                                          * Referenced by: '&lt;S1&gt;/1-D Lookup Table6'</span>
-</span><span><a class="LN" name="352">  352   </a><span class="CT">                                          */</span>
-</span><span><a class="LN" name="353">  353   </a><b>}</b>;
-</span><span><a class="LN" name="354">  354   </a>
-</span><span><a class="LN" name="355">  355   </a><span class="CT">/* Real-time Model Data Structure */</span>
-</span><span><a class="LN" name="356">  356   </a><span class="KW">struct</span> tag_RTM_BoatModele_T <b>{</b>
-</span><span><a class="LN" name="357">  357   </a>  <span class="DT">const</span> char_T *errorStatus;
-</span><span><a class="LN" name="358">  358   </a>  RTWLogInfo *rtwLogInfo;
-</span><span><a class="LN" name="359">  359   </a>  RTWSolverInfo solverInfo;
-</span><span><a class="LN" name="360">  360   </a>
-</span><span><a class="LN" name="361">  361   </a>  <span class="CT">/*</span>
-</span><span><a class="LN" name="362">  362   </a><span class="CT">   * ModelData:</span>
-</span><span><a class="LN" name="363">  363   </a><span class="CT">   * The following substructure contains information regarding</span>
-</span><span><a class="LN" name="364">  364   </a><span class="CT">   * the data used in the model.</span>
-</span><span><a class="LN" name="365">  365   </a><span class="CT">   */</span>
-</span><span><a class="LN" name="366">  366   </a>  <span class="KW">struct</span> <b>{</b>
-</span><span><a class="LN" name="367">  367   </a>    <a href="#type_X_BoatModele_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_X_BoatModele_T');" target="_self"><font color="#1122aa">X_BoatModele_T</font></a> *contStates;
-</span><span><a class="LN" name="368">  368   </a>    real_T *derivs;
-</span><span><a class="LN" name="369">  369   </a>    boolean_T *contStateDisabled;
-</span><span><a class="LN" name="370">  370   </a>    boolean_T zCCacheNeedsReset;
-</span><span><a class="LN" name="371">  371   </a>    boolean_T derivCacheNeedsReset;
-</span><span><a class="LN" name="372">  372   </a>    boolean_T blkStateChange;
-</span><span><a class="LN" name="373">  373   </a>    real_T odeY[8];
-</span><span><a class="LN" name="374">  374   </a>    real_T odeF[3][8];
-</span><span><a class="LN" name="375">  375   </a>    <a href="#type_ODE3_IntgData" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_ODE3_IntgData');" target="_self"><font color="#1122aa">ODE3_IntgData</font></a> intgData;
-</span><span><a class="LN" name="376">  376   </a>  <b>}</b> ModelData;
-</span><span><a class="LN" name="377">  377   </a>
-</span><span><a class="LN" name="378">  378   </a>  <span class="CT">/*</span>
-</span><span><a class="LN" name="379">  379   </a><span class="CT">   * Sizes:</span>
-</span><span><a class="LN" name="380">  380   </a><span class="CT">   * The following substructure contains sizes information</span>
-</span><span><a class="LN" name="381">  381   </a><span class="CT">   * for many of the model attributes such as inputs, outputs,</span>
-</span><span><a class="LN" name="382">  382   </a><span class="CT">   * dwork, sample times, etc.</span>
-</span><span><a class="LN" name="383">  383   </a><span class="CT">   */</span>
-</span><span><a class="LN" name="384">  384   </a>  <span class="KW">struct</span> <b>{</b>
-</span><span><a class="LN" name="385">  385   </a>    int_T numContStates;
-</span><span><a class="LN" name="386">  386   </a>    int_T numSampTimes;
-</span><span><a class="LN" name="387">  387   </a>  <b>}</b> Sizes;
-</span><span><a class="LN" name="388">  388   </a>
-</span><span><a class="LN" name="389">  389   </a>  <span class="CT">/*</span>
-</span><span><a class="LN" name="390">  390   </a><span class="CT">   * Timing:</span>
-</span><span><a class="LN" name="391">  391   </a><span class="CT">   * The following substructure contains information regarding</span>
-</span><span><a class="LN" name="392">  392   </a><span class="CT">   * the timing information for the model.</span>
-</span><span><a class="LN" name="393">  393   </a><span class="CT">   */</span>
-</span><span><a class="LN" name="394">  394   </a>  <span class="KW">struct</span> <b>{</b>
-</span><span><a class="LN" name="395">  395   </a>    uint32_T clockTick0;
-</span><span><a class="LN" name="396">  396   </a>    uint32_T clockTickH0;
-</span><span><a class="LN" name="397">  397   </a>    time_T stepSize0;
-</span><span><a class="LN" name="398">  398   </a>    uint32_T clockTick1;
-</span><span><a class="LN" name="399">  399   </a>    uint32_T clockTickH1;
-</span><span><a class="LN" name="400">  400   </a>    boolean_T firstInitCondFlag;
-</span><span><a class="LN" name="401">  401   </a>    time_T tFinal;
-</span><span><a class="LN" name="402">  402   </a>    SimTimeStep simTimeStep;
-</span><span><a class="LN" name="403">  403   </a>    boolean_T stopRequestedFlag;
-</span><span><a class="LN" name="404">  404   </a>    time_T *t;
-</span><span><a class="LN" name="405">  405   </a>    time_T tArray[2];
-</span><span><a class="LN" name="406">  406   </a>  <b>}</b> Timing;
-</span><span><a class="LN" name="407">  407   </a><b>}</b>;
-</span><span><a class="LN" name="408">  408   </a>
-</span><span><a class="LN" name="409">  409   </a><span class="CT">/* Block parameters (auto storage) */</span>
-</span><span><a class="LN" name="410">  410   </a><font color="#992211">#</font><span class="PP">ifdef</span> __cplusplus
+</span><span><a class="LN" name="350">  350   </a>  uint32_T DLookupTable6_dimSizes;     <span class="CT">/* Computed Parameter: DLookupTable6_dimSizes</span>
+</span><span><a class="LN" name="351">  351   </a><span class="CT">                                        * Referenced by: '&lt;S2&gt;/1-D Lookup Table6'</span>
+</span><span><a class="LN" name="352">  352   </a><span class="CT">                                        */</span>
+</span><span><a class="LN" name="353">  353   </a>  uint32_T DLookupTable6_numYWorkElts[2];<span class="CT">/* Computed Parameter: DLookupTable6_numYWorkElts</span>
+</span><span><a class="LN" name="354">  354   </a><span class="CT">                                          * Referenced by: '&lt;S2&gt;/1-D Lookup Table6'</span>
+</span><span><a class="LN" name="355">  355   </a><span class="CT">                                          */</span>
+</span><span><a class="LN" name="356">  356   </a><b>}</b>;
+</span><span><a class="LN" name="357">  357   </a>
+</span><span><a class="LN" name="358">  358   </a><span class="CT">/* Real-time Model Data Structure */</span>
+</span><span><a class="LN" name="359">  359   </a><span class="KW">struct</span> tag_RTM_BoatModele_T <b>{</b>
+</span><span><a class="LN" name="360">  360   </a>  <span class="DT">const</span> char_T *errorStatus;
+</span><span><a class="LN" name="361">  361   </a>  RTWLogInfo *rtwLogInfo;
+</span><span><a class="LN" name="362">  362   </a>  RTWSolverInfo solverInfo;
+</span><span><a class="LN" name="363">  363   </a>
+</span><span><a class="LN" name="364">  364   </a>  <span class="CT">/*</span>
+</span><span><a class="LN" name="365">  365   </a><span class="CT">   * ModelData:</span>
+</span><span><a class="LN" name="366">  366   </a><span class="CT">   * The following substructure contains information regarding</span>
+</span><span><a class="LN" name="367">  367   </a><span class="CT">   * the data used in the model.</span>
+</span><span><a class="LN" name="368">  368   </a><span class="CT">   */</span>
+</span><span><a class="LN" name="369">  369   </a>  <span class="KW">struct</span> <b>{</b>
+</span><span><a class="LN" name="370">  370   </a>    <a href="#type_X_BoatModele_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_X_BoatModele_T');" target="_self"><font color="#1122aa">X_BoatModele_T</font></a> *contStates;
+</span><span><a class="LN" name="371">  371   </a>    real_T *derivs;
+</span><span><a class="LN" name="372">  372   </a>    boolean_T *contStateDisabled;
+</span><span><a class="LN" name="373">  373   </a>    boolean_T zCCacheNeedsReset;
+</span><span><a class="LN" name="374">  374   </a>    boolean_T derivCacheNeedsReset;
+</span><span><a class="LN" name="375">  375   </a>    boolean_T blkStateChange;
+</span><span><a class="LN" name="376">  376   </a>    real_T odeY[8];
+</span><span><a class="LN" name="377">  377   </a>    real_T odeF[3][8];
+</span><span><a class="LN" name="378">  378   </a>    <a href="#type_ODE3_IntgData" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_ODE3_IntgData');" target="_self"><font color="#1122aa">ODE3_IntgData</font></a> intgData;
+</span><span><a class="LN" name="379">  379   </a>  <b>}</b> ModelData;
+</span><span><a class="LN" name="380">  380   </a>
+</span><span><a class="LN" name="381">  381   </a>  <span class="CT">/*</span>
+</span><span><a class="LN" name="382">  382   </a><span class="CT">   * Sizes:</span>
+</span><span><a class="LN" name="383">  383   </a><span class="CT">   * The following substructure contains sizes information</span>
+</span><span><a class="LN" name="384">  384   </a><span class="CT">   * for many of the model attributes such as inputs, outputs,</span>
+</span><span><a class="LN" name="385">  385   </a><span class="CT">   * dwork, sample times, etc.</span>
+</span><span><a class="LN" name="386">  386   </a><span class="CT">   */</span>
+</span><span><a class="LN" name="387">  387   </a>  <span class="KW">struct</span> <b>{</b>
+</span><span><a class="LN" name="388">  388   </a>    int_T numContStates;
+</span><span><a class="LN" name="389">  389   </a>    int_T numSampTimes;
+</span><span><a class="LN" name="390">  390   </a>  <b>}</b> Sizes;
+</span><span><a class="LN" name="391">  391   </a>
+</span><span><a class="LN" name="392">  392   </a>  <span class="CT">/*</span>
+</span><span><a class="LN" name="393">  393   </a><span class="CT">   * Timing:</span>
+</span><span><a class="LN" name="394">  394   </a><span class="CT">   * The following substructure contains information regarding</span>
+</span><span><a class="LN" name="395">  395   </a><span class="CT">   * the timing information for the model.</span>
+</span><span><a class="LN" name="396">  396   </a><span class="CT">   */</span>
+</span><span><a class="LN" name="397">  397   </a>  <span class="KW">struct</span> <b>{</b>
+</span><span><a class="LN" name="398">  398   </a>    uint32_T clockTick0;
+</span><span><a class="LN" name="399">  399   </a>    uint32_T clockTickH0;
+</span><span><a class="LN" name="400">  400   </a>    time_T stepSize0;
+</span><span><a class="LN" name="401">  401   </a>    uint32_T clockTick1;
+</span><span><a class="LN" name="402">  402   </a>    uint32_T clockTickH1;
+</span><span><a class="LN" name="403">  403   </a>    boolean_T firstInitCondFlag;
+</span><span><a class="LN" name="404">  404   </a>    time_T tFinal;
+</span><span><a class="LN" name="405">  405   </a>    SimTimeStep simTimeStep;
+</span><span><a class="LN" name="406">  406   </a>    boolean_T stopRequestedFlag;
+</span><span><a class="LN" name="407">  407   </a>    time_T *t;
+</span><span><a class="LN" name="408">  408   </a>    time_T tArray[2];
+</span><span><a class="LN" name="409">  409   </a>  <b>}</b> Timing;
+</span><span><a class="LN" name="410">  410   </a><b>}</b>;
 </span><span><a class="LN" name="411">  411   </a>
-</span><span><a class="LN" name="412">  412   </a><span class="DT">extern</span> <font color="#1122ff">&quot;C&quot;</font> <b>{</b>
-</span><span><a class="LN" name="413">  413   </a>
-</span><span><a class="LN" name="414">  414   </a><font color="#992211">#</font><span class="PP">endif</span>
-</span><span><a class="LN" name="415">  415   </a>
-</span><span><a class="LN" name="416">  416   </a>  <span class="DT">extern</span> <a href="BoatModele_types_h.html#type_P_BoatModele_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_P_BoatModele_T');" target="_self"><font color="#1122aa">P_BoatModele_T</font></a> <a href="BoatModele_data_cpp.html#var_BoatModele_P" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_BoatModele_P');" target="_self"><font color="#1122aa">BoatModele_P</font></a>;
+</span><span><a class="LN" name="412">  412   </a><span class="CT">/* Block parameters (auto storage) */</span>
+</span><span><a class="LN" name="413">  413   </a><span class="DT">extern</span> <a href="BoatModele_types_h.html#type_P_BoatModele_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_P_BoatModele_T');" target="_self"><font color="#1122aa">P_BoatModele_T</font></a> <a href="BoatModele_data_c.html#var_BoatModele_P" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_BoatModele_P');" target="_self"><font color="#1122aa">BoatModele_P</font></a>;
+</span><span><a class="LN" name="414">  414   </a>
+</span><span><a class="LN" name="415">  415   </a><span class="CT">/* Block signals (auto storage) */</span>
+</span><span><a class="LN" name="416">  416   </a><span class="DT">extern</span> <a href="#type_B_BoatModele_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_B_BoatModele_T');" target="_self"><font color="#1122aa">B_BoatModele_T</font></a> <a href="BoatModele_c.html#var_BoatModele_B" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_BoatModele_B');" target="_self"><font color="#1122aa">BoatModele_B</font></a>;
 </span><span><a class="LN" name="417">  417   </a>
-</span><span><a class="LN" name="418">  418   </a><font color="#992211">#</font><span class="PP">ifdef</span> __cplusplus
-</span><span><a class="LN" name="419">  419   </a>
-</span><span><a class="LN" name="420">  420   </a><b>}</b>
-</span><span><a class="LN" name="421">  421   </a><font color="#992211">#</font><span class="PP">endif</span>
-</span><span><a class="LN" name="422">  422   </a>
-</span><span><a class="LN" name="423">  423   </a><span class="CT">/* Block signals (auto storage) */</span>
-</span><span><a class="LN" name="424">  424   </a><span class="DT">extern</span> <a href="#type_B_BoatModele_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_B_BoatModele_T');" target="_self"><font color="#1122aa">B_BoatModele_T</font></a> <a href="BoatModele_cpp.html#var_BoatModele_B" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_BoatModele_B');" target="_self"><font color="#1122aa">BoatModele_B</font></a>;
-</span><span><a class="LN" name="425">  425   </a>
-</span><span><a class="LN" name="426">  426   </a><span class="CT">/* Continuous states (auto storage) */</span>
-</span><span><a class="LN" name="427">  427   </a><span class="DT">extern</span> <a href="#type_X_BoatModele_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_X_BoatModele_T');" target="_self"><font color="#1122aa">X_BoatModele_T</font></a> <a href="BoatModele_cpp.html#var_BoatModele_X" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_BoatModele_X');" target="_self"><font color="#1122aa">BoatModele_X</font></a>;
-</span><span><a class="LN" name="428">  428   </a>
-</span><span><a class="LN" name="429">  429   </a><span class="CT">/* Block states (auto storage) */</span>
-</span><span><a class="LN" name="430">  430   </a><span class="DT">extern</span> <a href="#type_DW_BoatModele_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_DW_BoatModele_T');" target="_self"><font color="#1122aa">DW_BoatModele_T</font></a> <a href="BoatModele_cpp.html#var_BoatModele_DW" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_BoatModele_DW');" target="_self"><font color="#1122aa">BoatModele_DW</font></a>;
-</span><span><a class="LN" name="431">  431   </a>
-</span><span><a class="LN" name="432">  432   </a><font color="#992211">#</font><span class="PP">ifdef</span> __cplusplus
-</span><span><a class="LN" name="433">  433   </a>
-</span><span><a class="LN" name="434">  434   </a><span class="DT">extern</span> <font color="#1122ff">&quot;C&quot;</font> <b>{</b>
-</span><span><a class="LN" name="435">  435   </a>
-</span><span><a class="LN" name="436">  436   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="418">  418   </a><span class="CT">/* Continuous states (auto storage) */</span>
+</span><span><a class="LN" name="419">  419   </a><span class="DT">extern</span> <a href="#type_X_BoatModele_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_X_BoatModele_T');" target="_self"><font color="#1122aa">X_BoatModele_T</font></a> <a href="BoatModele_c.html#var_BoatModele_X" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_BoatModele_X');" target="_self"><font color="#1122aa">BoatModele_X</font></a>;
+</span><span><a class="LN" name="420">  420   </a>
+</span><span><a class="LN" name="421">  421   </a><span class="CT">/* Block states (auto storage) */</span>
+</span><span><a class="LN" name="422">  422   </a><span class="DT">extern</span> <a href="#type_DW_BoatModele_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_DW_BoatModele_T');" target="_self"><font color="#1122aa">DW_BoatModele_T</font></a> <a href="BoatModele_c.html#var_BoatModele_DW" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_BoatModele_DW');" target="_self"><font color="#1122aa">BoatModele_DW</font></a>;
+</span><span><a class="LN" name="423">  423   </a>
+</span><span><a class="LN" name="424">  424   </a><span class="CT">/* External inputs (root inport signals with auto storage) */</span>
+</span><span><a class="LN" name="425">  425   </a><span class="DT">extern</span> <a href="#type_ExtU_BoatModele_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_ExtU_BoatModele_T');" target="_self"><font color="#1122aa">ExtU_BoatModele_T</font></a> <a href="BoatModele_c.html#var_BoatModele_U" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_BoatModele_U');" target="_self"><font color="#1122aa">BoatModele_U</font></a>;
+</span><span><a class="LN" name="426">  426   </a>
+</span><span><a class="LN" name="427">  427   </a><span class="CT">/* External outputs (root outports fed by signals with auto storage) */</span>
+</span><span><a class="LN" name="428">  428   </a><span class="DT">extern</span> <a href="#type_ExtY_BoatModele_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_ExtY_BoatModele_T');" target="_self"><font color="#1122aa">ExtY_BoatModele_T</font></a> <a href="BoatModele_c.html#var_BoatModele_Y" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_BoatModele_Y');" target="_self"><font color="#1122aa">BoatModele_Y</font></a>;
+</span><span><a class="LN" name="429">  429   </a>
+</span><span><a class="LN" name="430">  430   </a><span class="CT">/* Model entry point functions */</span>
+</span><span><a class="LN" name="431">  431   </a><span class="DT">extern</span> <span class="DT">void</span> <a href="BoatModele_c.html#fcn_BoatModele_initialize" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_BoatModele_initialize');" target="_self"><font color="#1122aa">BoatModele_initialize</font></a>(<span class="DT">void</span>);
+</span><span><a class="LN" name="432">  432   </a><span class="DT">extern</span> <span class="DT">void</span> <a href="BoatModele_c.html#fcn_BoatModele_step" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_BoatModele_step');" target="_self"><font color="#1122aa">BoatModele_step</font></a>(<span class="DT">void</span>);
+</span><span><a class="LN" name="433">  433   </a><span class="DT">extern</span> <span class="DT">void</span> <a href="BoatModele_c.html#fcn_BoatModele_terminate" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_BoatModele_terminate');" target="_self"><font color="#1122aa">BoatModele_terminate</font></a>(<span class="DT">void</span>);
+</span><span><a class="LN" name="434">  434   </a>
+</span><span><a class="LN" name="435">  435   </a><span class="CT">/* Real-time Model object */</span>
+</span><span><a class="LN" name="436">  436   </a><span class="DT">extern</span> <a href="BoatModele_types_h.html#type_RT_MODEL_BoatModele_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_RT_MODEL_BoatModele_T');" target="_self"><font color="#1122aa">RT_MODEL_BoatModele_T</font></a> *<span class="DT">const</span> <a href="BoatModele_c.html#var_BoatModele_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_BoatModele_M');" target="_self"><font color="#1122aa">BoatModele_M</font></a>;
 </span><span><a class="LN" name="437">  437   </a>
-</span><span><a class="LN" name="438">  438   </a>  <span class="CT">/* External inputs (root inport signals with auto storage) */</span>
-</span><span><a class="LN" name="439">  439   </a>  <span class="DT">extern</span> <a href="#type_ExtU_BoatModele_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_ExtU_BoatModele_T');" target="_self"><font color="#1122aa">ExtU_BoatModele_T</font></a> <a href="BoatModele_cpp.html#var_BoatModele_U" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_BoatModele_U');" target="_self"><font color="#1122aa">BoatModele_U</font></a>;
-</span><span><a class="LN" name="440">  440   </a>
-</span><span><a class="LN" name="441">  441   </a>  <span class="CT">/* External outputs (root outports fed by signals with auto storage) */</span>
-</span><span><a class="LN" name="442">  442   </a>  <span class="DT">extern</span> <a href="#type_ExtY_BoatModele_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_ExtY_BoatModele_T');" target="_self"><font color="#1122aa">ExtY_BoatModele_T</font></a> <a href="BoatModele_cpp.html#var_BoatModele_Y" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_BoatModele_Y');" target="_self"><font color="#1122aa">BoatModele_Y</font></a>;
-</span><span><a class="LN" name="443">  443   </a>
-</span><span><a class="LN" name="444">  444   </a><font color="#992211">#</font><span class="PP">ifdef</span> __cplusplus
-</span><span><a class="LN" name="445">  445   </a>
-</span><span><a class="LN" name="446">  446   </a><b>}</b>
-</span><span><a class="LN" name="447">  447   </a><font color="#992211">#</font><span class="PP">endif</span>
-</span><span><a class="LN" name="448">  448   </a>
-</span><span><a class="LN" name="449">  449   </a><font color="#992211">#</font><span class="PP">ifdef</span> __cplusplus
-</span><span><a class="LN" name="450">  450   </a>
-</span><span><a class="LN" name="451">  451   </a><span class="DT">extern</span> <font color="#1122ff">&quot;C&quot;</font> <b>{</b>
-</span><span><a class="LN" name="452">  452   </a>
-</span><span><a class="LN" name="453">  453   </a><font color="#992211">#</font><span class="PP">endif</span>
-</span><span><a class="LN" name="454">  454   </a>
-</span><span><a class="LN" name="455">  455   </a>  <span class="CT">/* Model entry point functions */</span>
-</span><span><a class="LN" name="456">  456   </a>  <span class="DT">extern</span> <span class="DT">void</span> <a href="BoatModele_cpp.html#fcn_BoatModele_initialize" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_BoatModele_initialize');" target="_self"><font color="#1122aa">BoatModele_initialize</font></a>(<span class="DT">void</span>);
-</span><span><a class="LN" name="457">  457   </a>  <span class="DT">extern</span> <span class="DT">void</span> <a href="BoatModele_cpp.html#fcn_BoatModele_step" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_BoatModele_step');" target="_self"><font color="#1122aa">BoatModele_step</font></a>(<span class="DT">void</span>);
-</span><span><a class="LN" name="458">  458   </a>  <span class="DT">extern</span> <span class="DT">void</span> <a href="BoatModele_cpp.html#fcn_BoatModele_terminate" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_BoatModele_terminate');" target="_self"><font color="#1122aa">BoatModele_terminate</font></a>(<span class="DT">void</span>);
+</span><span><a class="LN" name="438">  438   </a><span class="CT">/*-</span>
+</span><span><a class="LN" name="439">  439   </a><span class="CT"> * The generated code includes comments that allow you to trace directly</span>
+</span><span><a class="LN" name="440">  440   </a><span class="CT"> * back to the appropriate location in the model.  The basic format</span>
+</span><span><a class="LN" name="441">  441   </a><span class="CT"> * is &lt;system&gt;/block_name, where system is the system number (uniquely</span>
+</span><span><a class="LN" name="442">  442   </a><span class="CT"> * assigned by Simulink) and block_name is the name of the block.</span>
+</span><span><a class="LN" name="443">  443   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="444">  444   </a><span class="CT"> * Use the MATLAB hilite_system command to trace the generated code back</span>
+</span><span><a class="LN" name="445">  445   </a><span class="CT"> * to the model.  For example,</span>
+</span><span><a class="LN" name="446">  446   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="447">  447   </a><span class="CT"> * hilite_system('&lt;S3&gt;')    - opens system 3</span>
+</span><span><a class="LN" name="448">  448   </a><span class="CT"> * hilite_system('&lt;S3&gt;/Kp') - opens and selects block Kp which resides in S3</span>
+</span><span><a class="LN" name="449">  449   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="450">  450   </a><span class="CT"> * Here is the system hierarchy for this model</span>
+</span><span><a class="LN" name="451">  451   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="452">  452   </a><span class="CT"> * '&lt;Root&gt;' : 'BoatModele'</span>
+</span><span><a class="LN" name="453">  453   </a><span class="CT"> * '&lt;S1&gt;'   : 'BoatModele/4DOF nonlinear sailing yacht model'</span>
+</span><span><a class="LN" name="454">  454   </a><span class="CT"> * '&lt;S2&gt;'   : 'BoatModele/4DOF nonlinear sailing yacht model/BoatDynamic'</span>
+</span><span><a class="LN" name="455">  455   </a><span class="CT"> * '&lt;S3&gt;'   : 'BoatModele/4DOF nonlinear sailing yacht model/BoatDynamic/MATLAB Function'</span>
+</span><span><a class="LN" name="456">  456   </a><span class="CT"> * '&lt;S4&gt;'   : 'BoatModele/4DOF nonlinear sailing yacht model/BoatDynamic/MATLAB Function1'</span>
+</span><span><a class="LN" name="457">  457   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="458">  458   </a><font color="#992211">#</font><span class="PP">endif</span>                                 <span class="CT">/* RTW_HEADER_BoatModele_h_ */</span>
 </span><span><a class="LN" name="459">  459   </a>
-</span><span><a class="LN" name="460">  460   </a><font color="#992211">#</font><span class="PP">ifdef</span> __cplusplus
-</span><span><a class="LN" name="461">  461   </a>
-</span><span><a class="LN" name="462">  462   </a><b>}</b>
-</span><span><a class="LN" name="463">  463   </a><font color="#992211">#</font><span class="PP">endif</span>
-</span><span><a class="LN" name="464">  464   </a>
-</span><span><a class="LN" name="465">  465   </a><span class="CT">/* Real-time Model object */</span>
-</span><span><a class="LN" name="466">  466   </a><font color="#992211">#</font><span class="PP">ifdef</span> __cplusplus
-</span><span><a class="LN" name="467">  467   </a>
-</span><span><a class="LN" name="468">  468   </a><span class="DT">extern</span> <font color="#1122ff">&quot;C&quot;</font> <b>{</b>
-</span><span><a class="LN" name="469">  469   </a>
-</span><span><a class="LN" name="470">  470   </a><font color="#992211">#</font><span class="PP">endif</span>
-</span><span><a class="LN" name="471">  471   </a>
-</span><span><a class="LN" name="472">  472   </a>  <span class="DT">extern</span> <a href="BoatModele_types_h.html#type_RT_MODEL_BoatModele_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_RT_MODEL_BoatModele_T');" target="_self"><font color="#1122aa">RT_MODEL_BoatModele_T</font></a> *<span class="DT">const</span> <a href="BoatModele_cpp.html#var_BoatModele_M" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_BoatModele_M');" target="_self"><font color="#1122aa">BoatModele_M</font></a>;
-</span><span><a class="LN" name="473">  473   </a>
-</span><span><a class="LN" name="474">  474   </a><font color="#992211">#</font><span class="PP">ifdef</span> __cplusplus
-</span><span><a class="LN" name="475">  475   </a>
-</span><span><a class="LN" name="476">  476   </a><b>}</b>
-</span><span><a class="LN" name="477">  477   </a><font color="#992211">#</font><span class="PP">endif</span>
-</span><span><a class="LN" name="478">  478   </a>
-</span><span><a class="LN" name="479">  479   </a><span class="CT">/*-</span>
-</span><span><a class="LN" name="480">  480   </a><span class="CT"> * The generated code includes comments that allow you to trace directly</span>
-</span><span><a class="LN" name="481">  481   </a><span class="CT"> * back to the appropriate location in the model.  The basic format</span>
-</span><span><a class="LN" name="482">  482   </a><span class="CT"> * is &lt;system&gt;/block_name, where system is the system number (uniquely</span>
-</span><span><a class="LN" name="483">  483   </a><span class="CT"> * assigned by Simulink) and block_name is the name of the block.</span>
-</span><span><a class="LN" name="484">  484   </a><span class="CT"> *</span>
-</span><span><a class="LN" name="485">  485   </a><span class="CT"> * Use the MATLAB hilite_system command to trace the generated code back</span>
-</span><span><a class="LN" name="486">  486   </a><span class="CT"> * to the model.  For example,</span>
-</span><span><a class="LN" name="487">  487   </a><span class="CT"> *</span>
-</span><span><a class="LN" name="488">  488   </a><span class="CT"> * hilite_system('&lt;S3&gt;')    - opens system 3</span>
-</span><span><a class="LN" name="489">  489   </a><span class="CT"> * hilite_system('&lt;S3&gt;/Kp') - opens and selects block Kp which resides in S3</span>
-</span><span><a class="LN" name="490">  490   </a><span class="CT"> *</span>
-</span><span><a class="LN" name="491">  491   </a><span class="CT"> * Here is the system hierarchy for this model</span>
-</span><span><a class="LN" name="492">  492   </a><span class="CT"> *</span>
-</span><span><a class="LN" name="493">  493   </a><span class="CT"> * '&lt;Root&gt;' : 'BoatModele'</span>
-</span><span><a class="LN" name="494">  494   </a><span class="CT"> * '&lt;S1&gt;'   : 'BoatModele/4DOF nonlinear sailing yacht model'</span>
-</span><span><a class="LN" name="495">  495   </a><span class="CT"> * '&lt;S2&gt;'   : 'BoatModele/4DOF nonlinear sailing yacht model/MATLAB Function'</span>
-</span><span><a class="LN" name="496">  496   </a><span class="CT"> * '&lt;S3&gt;'   : 'BoatModele/4DOF nonlinear sailing yacht model/MATLAB Function1'</span>
-</span><span><a class="LN" name="497">  497   </a><span class="CT"> */</span>
-</span><span><a class="LN" name="498">  498   </a><font color="#992211">#</font><span class="PP">endif</span>                                 <span class="CT">/* RTW_HEADER_BoatModele_h_ */</span>
-</span><span><a class="LN" name="499">  499   </a>
 </span></pre>
 </td></tr></table>
 </p>

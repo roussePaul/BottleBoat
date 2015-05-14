@@ -3,9 +3,9 @@
  *
  * Code generation for model "BoatModele".
  *
- * Model version              : 1.11
+ * Model version              : 1.20
  * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C++ source code generated on : Sun May  3 10:05:32 2015
+ * C source code generated on : Mon May  4 10:53:09 2015
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -147,71 +147,71 @@
 
 /* Block signals (auto storage) */
 typedef struct {
-  real_T X_dot_ext[9];                 /* '<S1>/MATLAB Function' */
+  real_T X_dot_ext[9];                 /* '<S2>/MATLAB Function' */
 } B_BoatModele_T;
 
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {
-  real_T m_bpLambda;                   /* '<S1>/1-D Lookup Table' */
-  real_T m_yyA;                        /* '<S1>/1-D Lookup Table' */
-  real_T m_yyB;                        /* '<S1>/1-D Lookup Table' */
-  real_T m_yy2;                        /* '<S1>/1-D Lookup Table' */
-  real_T m_up[100];                    /* '<S1>/1-D Lookup Table' */
-  real_T m_y2[100];                    /* '<S1>/1-D Lookup Table' */
-  real_T m_bpLambda_n;                 /* '<S1>/1-D Lookup Table4' */
-  real_T m_yyA_i;                      /* '<S1>/1-D Lookup Table4' */
-  real_T m_yyB_l;                      /* '<S1>/1-D Lookup Table4' */
-  real_T m_yy2_k;                      /* '<S1>/1-D Lookup Table4' */
-  real_T m_up_f[100];                  /* '<S1>/1-D Lookup Table4' */
-  real_T m_y2_c[100];                  /* '<S1>/1-D Lookup Table4' */
-  real_T m_bpLambda_k;                 /* '<S1>/1-D Lookup Table1' */
-  real_T m_yyA_n;                      /* '<S1>/1-D Lookup Table1' */
-  real_T m_yyB_e;                      /* '<S1>/1-D Lookup Table1' */
-  real_T m_yy2_j;                      /* '<S1>/1-D Lookup Table1' */
-  real_T m_up_g[100];                  /* '<S1>/1-D Lookup Table1' */
-  real_T m_y2_cz[100];                 /* '<S1>/1-D Lookup Table1' */
-  real_T m_bpLambda_g;                 /* '<S1>/1-D Lookup Table5' */
-  real_T m_yyA_l;                      /* '<S1>/1-D Lookup Table5' */
-  real_T m_yyB_i;                      /* '<S1>/1-D Lookup Table5' */
-  real_T m_yy2_n;                      /* '<S1>/1-D Lookup Table5' */
-  real_T m_up_n[100];                  /* '<S1>/1-D Lookup Table5' */
-  real_T m_y2_g[100];                  /* '<S1>/1-D Lookup Table5' */
-  real_T m_bpLambda_kf;                /* '<S1>/1-D Lookup Table2' */
-  real_T m_yyA_nz;                     /* '<S1>/1-D Lookup Table2' */
-  real_T m_yyB_ex;                     /* '<S1>/1-D Lookup Table2' */
-  real_T m_yy2_c;                      /* '<S1>/1-D Lookup Table2' */
-  real_T m_up_k[100];                  /* '<S1>/1-D Lookup Table2' */
-  real_T m_y2_a[100];                  /* '<S1>/1-D Lookup Table2' */
-  real_T m_bpLambda_h;                 /* '<S1>/1-D Lookup Table6' */
-  real_T m_yyA_c;                      /* '<S1>/1-D Lookup Table6' */
-  real_T m_yyB_i5;                     /* '<S1>/1-D Lookup Table6' */
-  real_T m_yy2_h;                      /* '<S1>/1-D Lookup Table6' */
-  real_T m_up_o[100];                  /* '<S1>/1-D Lookup Table6' */
-  real_T m_y2_f[100];                  /* '<S1>/1-D Lookup Table6' */
-  void* m_bpDataSet;                   /* '<S1>/1-D Lookup Table' */
-  void* TWork[6];                      /* '<S1>/1-D Lookup Table' */
-  void* SWork[7];                      /* '<S1>/1-D Lookup Table' */
-  void* m_bpDataSet_c;                 /* '<S1>/1-D Lookup Table4' */
-  void* TWork_a[6];                    /* '<S1>/1-D Lookup Table4' */
-  void* SWork_k[7];                    /* '<S1>/1-D Lookup Table4' */
-  void* m_bpDataSet_j;                 /* '<S1>/1-D Lookup Table1' */
-  void* TWork_c[6];                    /* '<S1>/1-D Lookup Table1' */
-  void* SWork_j[7];                    /* '<S1>/1-D Lookup Table1' */
-  void* m_bpDataSet_g;                 /* '<S1>/1-D Lookup Table5' */
-  void* TWork_d[6];                    /* '<S1>/1-D Lookup Table5' */
-  void* SWork_kl[7];                   /* '<S1>/1-D Lookup Table5' */
-  void* m_bpDataSet_h;                 /* '<S1>/1-D Lookup Table2' */
-  void* TWork_m[6];                    /* '<S1>/1-D Lookup Table2' */
-  void* SWork_a[7];                    /* '<S1>/1-D Lookup Table2' */
-  void* m_bpDataSet_n;                 /* '<S1>/1-D Lookup Table6' */
-  void* TWork_i[6];                    /* '<S1>/1-D Lookup Table6' */
-  void* SWork_e[7];                    /* '<S1>/1-D Lookup Table6' */
-  uint32_T m_bpIndex;                  /* '<S1>/1-D Lookup Table' */
-  uint32_T m_bpIndex_n;                /* '<S1>/1-D Lookup Table4' */
-  uint32_T m_bpIndex_a;                /* '<S1>/1-D Lookup Table1' */
-  uint32_T m_bpIndex_j;                /* '<S1>/1-D Lookup Table5' */
-  uint32_T m_bpIndex_jk;               /* '<S1>/1-D Lookup Table2' */
-  uint32_T m_bpIndex_b;                /* '<S1>/1-D Lookup Table6' */
+  real_T m_bpLambda;                   /* '<S2>/1-D Lookup Table' */
+  real_T m_yyA;                        /* '<S2>/1-D Lookup Table' */
+  real_T m_yyB;                        /* '<S2>/1-D Lookup Table' */
+  real_T m_yy2;                        /* '<S2>/1-D Lookup Table' */
+  real_T m_up[100];                    /* '<S2>/1-D Lookup Table' */
+  real_T m_y2[100];                    /* '<S2>/1-D Lookup Table' */
+  real_T m_bpLambda_n;                 /* '<S2>/1-D Lookup Table4' */
+  real_T m_yyA_i;                      /* '<S2>/1-D Lookup Table4' */
+  real_T m_yyB_l;                      /* '<S2>/1-D Lookup Table4' */
+  real_T m_yy2_k;                      /* '<S2>/1-D Lookup Table4' */
+  real_T m_up_f[100];                  /* '<S2>/1-D Lookup Table4' */
+  real_T m_y2_c[100];                  /* '<S2>/1-D Lookup Table4' */
+  real_T m_bpLambda_k;                 /* '<S2>/1-D Lookup Table1' */
+  real_T m_yyA_n;                      /* '<S2>/1-D Lookup Table1' */
+  real_T m_yyB_e;                      /* '<S2>/1-D Lookup Table1' */
+  real_T m_yy2_j;                      /* '<S2>/1-D Lookup Table1' */
+  real_T m_up_g[100];                  /* '<S2>/1-D Lookup Table1' */
+  real_T m_y2_cz[100];                 /* '<S2>/1-D Lookup Table1' */
+  real_T m_bpLambda_g;                 /* '<S2>/1-D Lookup Table5' */
+  real_T m_yyA_l;                      /* '<S2>/1-D Lookup Table5' */
+  real_T m_yyB_i;                      /* '<S2>/1-D Lookup Table5' */
+  real_T m_yy2_n;                      /* '<S2>/1-D Lookup Table5' */
+  real_T m_up_n[100];                  /* '<S2>/1-D Lookup Table5' */
+  real_T m_y2_g[100];                  /* '<S2>/1-D Lookup Table5' */
+  real_T m_bpLambda_kf;                /* '<S2>/1-D Lookup Table2' */
+  real_T m_yyA_nz;                     /* '<S2>/1-D Lookup Table2' */
+  real_T m_yyB_ex;                     /* '<S2>/1-D Lookup Table2' */
+  real_T m_yy2_c;                      /* '<S2>/1-D Lookup Table2' */
+  real_T m_up_k[100];                  /* '<S2>/1-D Lookup Table2' */
+  real_T m_y2_a[100];                  /* '<S2>/1-D Lookup Table2' */
+  real_T m_bpLambda_h;                 /* '<S2>/1-D Lookup Table6' */
+  real_T m_yyA_c;                      /* '<S2>/1-D Lookup Table6' */
+  real_T m_yyB_i5;                     /* '<S2>/1-D Lookup Table6' */
+  real_T m_yy2_h;                      /* '<S2>/1-D Lookup Table6' */
+  real_T m_up_o[100];                  /* '<S2>/1-D Lookup Table6' */
+  real_T m_y2_f[100];                  /* '<S2>/1-D Lookup Table6' */
+  void* m_bpDataSet;                   /* '<S2>/1-D Lookup Table' */
+  void* TWork[6];                      /* '<S2>/1-D Lookup Table' */
+  void* SWork[7];                      /* '<S2>/1-D Lookup Table' */
+  void* m_bpDataSet_c;                 /* '<S2>/1-D Lookup Table4' */
+  void* TWork_a[6];                    /* '<S2>/1-D Lookup Table4' */
+  void* SWork_k[7];                    /* '<S2>/1-D Lookup Table4' */
+  void* m_bpDataSet_j;                 /* '<S2>/1-D Lookup Table1' */
+  void* TWork_c[6];                    /* '<S2>/1-D Lookup Table1' */
+  void* SWork_j[7];                    /* '<S2>/1-D Lookup Table1' */
+  void* m_bpDataSet_g;                 /* '<S2>/1-D Lookup Table5' */
+  void* TWork_d[6];                    /* '<S2>/1-D Lookup Table5' */
+  void* SWork_kl[7];                   /* '<S2>/1-D Lookup Table5' */
+  void* m_bpDataSet_h;                 /* '<S2>/1-D Lookup Table2' */
+  void* TWork_m[6];                    /* '<S2>/1-D Lookup Table2' */
+  void* SWork_a[7];                    /* '<S2>/1-D Lookup Table2' */
+  void* m_bpDataSet_n;                 /* '<S2>/1-D Lookup Table6' */
+  void* TWork_i[6];                    /* '<S2>/1-D Lookup Table6' */
+  void* SWork_e[7];                    /* '<S2>/1-D Lookup Table6' */
+  uint32_T m_bpIndex;                  /* '<S2>/1-D Lookup Table' */
+  uint32_T m_bpIndex_n;                /* '<S2>/1-D Lookup Table4' */
+  uint32_T m_bpIndex_a;                /* '<S2>/1-D Lookup Table1' */
+  uint32_T m_bpIndex_j;                /* '<S2>/1-D Lookup Table5' */
+  uint32_T m_bpIndex_jk;               /* '<S2>/1-D Lookup Table2' */
+  uint32_T m_bpIndex_b;                /* '<S2>/1-D Lookup Table6' */
   struct {
     int_T IcNeedsLoading;
   } Integrator_IWORK;                  /* '<S1>/Integrator' */
@@ -259,96 +259,99 @@ typedef struct {
 struct P_BoatModele_T_ {
   real_T alphacoeff_xdata[100];        /* Variable: alphacoeff_xdata
                                         * Referenced by:
-                                        *   '<S1>/1-D Lookup Table'
-                                        *   '<S1>/1-D Lookup Table4'
+                                        *   '<S2>/1-D Lookup Table'
+                                        *   '<S2>/1-D Lookup Table4'
                                         */
   real_T alphacoeff_yddata[100];       /* Variable: alphacoeff_yddata
-                                        * Referenced by: '<S1>/1-D Lookup Table4'
+                                        * Referenced by: '<S2>/1-D Lookup Table4'
                                         */
   real_T alphacoeff_yldata[100];       /* Variable: alphacoeff_yldata
-                                        * Referenced by: '<S1>/1-D Lookup Table'
+                                        * Referenced by: '<S2>/1-D Lookup Table'
                                         */
   real_T hull_xdata[100];              /* Variable: hull_xdata
-                                        * Referenced by: '<S1>/1-D Lookup Table3'
+                                        * Referenced by: '<S2>/1-D Lookup Table3'
                                         */
   real_T hull_ydata[100];              /* Variable: hull_ydata
-                                        * Referenced by: '<S1>/1-D Lookup Table3'
+                                        * Referenced by: '<S2>/1-D Lookup Table3'
                                         */
   real_T keelcoeff_xdata[100];         /* Variable: keelcoeff_xdata
                                         * Referenced by:
-                                        *   '<S1>/1-D Lookup Table2'
-                                        *   '<S1>/1-D Lookup Table6'
+                                        *   '<S2>/1-D Lookup Table2'
+                                        *   '<S2>/1-D Lookup Table6'
                                         */
   real_T keelcoeff_yddata[100];        /* Variable: keelcoeff_yddata
-                                        * Referenced by: '<S1>/1-D Lookup Table6'
+                                        * Referenced by: '<S2>/1-D Lookup Table6'
                                         */
   real_T keelcoeff_yldata[100];        /* Variable: keelcoeff_yldata
-                                        * Referenced by: '<S1>/1-D Lookup Table2'
+                                        * Referenced by: '<S2>/1-D Lookup Table2'
                                         */
   real_T ruddercoeff_xdata[100];       /* Variable: ruddercoeff_xdata
                                         * Referenced by:
-                                        *   '<S1>/1-D Lookup Table1'
-                                        *   '<S1>/1-D Lookup Table5'
+                                        *   '<S2>/1-D Lookup Table1'
+                                        *   '<S2>/1-D Lookup Table5'
                                         */
   real_T ruddercoeff_yddata[100];      /* Variable: ruddercoeff_yddata
-                                        * Referenced by: '<S1>/1-D Lookup Table5'
+                                        * Referenced by: '<S2>/1-D Lookup Table5'
                                         */
   real_T ruddercoeff_yldata[100];      /* Variable: ruddercoeff_yldata
-                                        * Referenced by: '<S1>/1-D Lookup Table1'
+                                        * Referenced by: '<S2>/1-D Lookup Table1'
+                                        */
+  real_T Constant_Value[2];            /* Expression: [10,pi]
+                                        * Referenced by: '<S1>/Constant'
                                         */
   uint32_T DLookupTable_maxIndex;      /* Computed Parameter: DLookupTable_maxIndex
-                                        * Referenced by: '<S1>/1-D Lookup Table'
+                                        * Referenced by: '<S2>/1-D Lookup Table'
                                         */
   uint32_T DLookupTable_dimSizes;      /* Computed Parameter: DLookupTable_dimSizes
-                                        * Referenced by: '<S1>/1-D Lookup Table'
+                                        * Referenced by: '<S2>/1-D Lookup Table'
                                         */
   uint32_T DLookupTable_numYWorkElts[2];/* Computed Parameter: DLookupTable_numYWorkElts
-                                         * Referenced by: '<S1>/1-D Lookup Table'
+                                         * Referenced by: '<S2>/1-D Lookup Table'
                                          */
   uint32_T DLookupTable4_maxIndex;     /* Computed Parameter: DLookupTable4_maxIndex
-                                        * Referenced by: '<S1>/1-D Lookup Table4'
+                                        * Referenced by: '<S2>/1-D Lookup Table4'
                                         */
   uint32_T DLookupTable4_dimSizes;     /* Computed Parameter: DLookupTable4_dimSizes
-                                        * Referenced by: '<S1>/1-D Lookup Table4'
+                                        * Referenced by: '<S2>/1-D Lookup Table4'
                                         */
   uint32_T DLookupTable4_numYWorkElts[2];/* Computed Parameter: DLookupTable4_numYWorkElts
-                                          * Referenced by: '<S1>/1-D Lookup Table4'
+                                          * Referenced by: '<S2>/1-D Lookup Table4'
                                           */
   uint32_T DLookupTable1_maxIndex;     /* Computed Parameter: DLookupTable1_maxIndex
-                                        * Referenced by: '<S1>/1-D Lookup Table1'
+                                        * Referenced by: '<S2>/1-D Lookup Table1'
                                         */
   uint32_T DLookupTable1_dimSizes;     /* Computed Parameter: DLookupTable1_dimSizes
-                                        * Referenced by: '<S1>/1-D Lookup Table1'
+                                        * Referenced by: '<S2>/1-D Lookup Table1'
                                         */
   uint32_T DLookupTable1_numYWorkElts[2];/* Computed Parameter: DLookupTable1_numYWorkElts
-                                          * Referenced by: '<S1>/1-D Lookup Table1'
+                                          * Referenced by: '<S2>/1-D Lookup Table1'
                                           */
   uint32_T DLookupTable5_maxIndex;     /* Computed Parameter: DLookupTable5_maxIndex
-                                        * Referenced by: '<S1>/1-D Lookup Table5'
+                                        * Referenced by: '<S2>/1-D Lookup Table5'
                                         */
   uint32_T DLookupTable5_dimSizes;     /* Computed Parameter: DLookupTable5_dimSizes
-                                        * Referenced by: '<S1>/1-D Lookup Table5'
+                                        * Referenced by: '<S2>/1-D Lookup Table5'
                                         */
   uint32_T DLookupTable5_numYWorkElts[2];/* Computed Parameter: DLookupTable5_numYWorkElts
-                                          * Referenced by: '<S1>/1-D Lookup Table5'
+                                          * Referenced by: '<S2>/1-D Lookup Table5'
                                           */
   uint32_T DLookupTable2_maxIndex;     /* Computed Parameter: DLookupTable2_maxIndex
-                                        * Referenced by: '<S1>/1-D Lookup Table2'
+                                        * Referenced by: '<S2>/1-D Lookup Table2'
                                         */
   uint32_T DLookupTable2_dimSizes;     /* Computed Parameter: DLookupTable2_dimSizes
-                                        * Referenced by: '<S1>/1-D Lookup Table2'
+                                        * Referenced by: '<S2>/1-D Lookup Table2'
                                         */
   uint32_T DLookupTable2_numYWorkElts[2];/* Computed Parameter: DLookupTable2_numYWorkElts
-                                          * Referenced by: '<S1>/1-D Lookup Table2'
+                                          * Referenced by: '<S2>/1-D Lookup Table2'
                                           */
   uint32_T DLookupTable6_maxIndex;     /* Computed Parameter: DLookupTable6_maxIndex
-                                        * Referenced by: '<S1>/1-D Lookup Table6'
+                                        * Referenced by: '<S2>/1-D Lookup Table6'
                                         */
   uint32_T DLookupTable6_dimSizes;     /* Computed Parameter: DLookupTable6_dimSizes
-                                        * Referenced by: '<S1>/1-D Lookup Table6'
+                                        * Referenced by: '<S2>/1-D Lookup Table6'
                                         */
   uint32_T DLookupTable6_numYWorkElts[2];/* Computed Parameter: DLookupTable6_numYWorkElts
-                                          * Referenced by: '<S1>/1-D Lookup Table6'
+                                          * Referenced by: '<S2>/1-D Lookup Table6'
                                           */
 };
 
@@ -407,18 +410,7 @@ struct tag_RTM_BoatModele_T {
 };
 
 /* Block parameters (auto storage) */
-#ifdef __cplusplus
-
-extern "C" {
-
-#endif
-
-  extern P_BoatModele_T BoatModele_P;
-
-#ifdef __cplusplus
-
-}
-#endif
+extern P_BoatModele_T BoatModele_P;
 
 /* Block signals (auto storage) */
 extern B_BoatModele_T BoatModele_B;
@@ -429,52 +421,19 @@ extern X_BoatModele_T BoatModele_X;
 /* Block states (auto storage) */
 extern DW_BoatModele_T BoatModele_DW;
 
-#ifdef __cplusplus
+/* External inputs (root inport signals with auto storage) */
+extern ExtU_BoatModele_T BoatModele_U;
 
-extern "C" {
+/* External outputs (root outports fed by signals with auto storage) */
+extern ExtY_BoatModele_T BoatModele_Y;
 
-#endif
-
-  /* External inputs (root inport signals with auto storage) */
-  extern ExtU_BoatModele_T BoatModele_U;
-
-  /* External outputs (root outports fed by signals with auto storage) */
-  extern ExtY_BoatModele_T BoatModele_Y;
-
-#ifdef __cplusplus
-
-}
-#endif
-
-#ifdef __cplusplus
-
-extern "C" {
-
-#endif
-
-  /* Model entry point functions */
-  extern void BoatModele_initialize(void);
-  extern void BoatModele_step(void);
-  extern void BoatModele_terminate(void);
-
-#ifdef __cplusplus
-
-}
-#endif
+/* Model entry point functions */
+extern void BoatModele_initialize(void);
+extern void BoatModele_step(void);
+extern void BoatModele_terminate(void);
 
 /* Real-time Model object */
-#ifdef __cplusplus
-
-extern "C" {
-
-#endif
-
-  extern RT_MODEL_BoatModele_T *const BoatModele_M;
-
-#ifdef __cplusplus
-
-}
-#endif
+extern RT_MODEL_BoatModele_T *const BoatModele_M;
 
 /*-
  * The generated code includes comments that allow you to trace directly
@@ -492,7 +451,8 @@ extern "C" {
  *
  * '<Root>' : 'BoatModele'
  * '<S1>'   : 'BoatModele/4DOF nonlinear sailing yacht model'
- * '<S2>'   : 'BoatModele/4DOF nonlinear sailing yacht model/MATLAB Function'
- * '<S3>'   : 'BoatModele/4DOF nonlinear sailing yacht model/MATLAB Function1'
+ * '<S2>'   : 'BoatModele/4DOF nonlinear sailing yacht model/BoatDynamic'
+ * '<S3>'   : 'BoatModele/4DOF nonlinear sailing yacht model/BoatDynamic/MATLAB Function'
+ * '<S4>'   : 'BoatModele/4DOF nonlinear sailing yacht model/BoatDynamic/MATLAB Function1'
  */
 #endif                                 /* RTW_HEADER_BoatModele_h_ */
