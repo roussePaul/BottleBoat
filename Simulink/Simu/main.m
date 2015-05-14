@@ -10,7 +10,8 @@ global Xf;
 global h;
 
 % Parameter
-N = 20;% Number of step for MPC
+kind = 'Fixed'; % Can be 'Fixed' or 'Moving'
+N = 10;% Number of step for MPC
 h = 0.5; % Time step of the simulation
 angleMaxRudder = pi/3;
 angleMaxSail = pi/2;
@@ -27,6 +28,8 @@ X0 = [0; 0]; % Initial position
 V0 = [1; 1]; % Initial velocity
 
 %% Initialization
+addpath('ExtraFunction/');
+param;
 X = [X0; 0; 0; V0; 0; 0];
 Xinit = X;
 U = [];
@@ -35,7 +38,7 @@ Tinf = tril(ones(N+1)-tril(ones(N+1), -2), -1);
 
 while 1
     
-    [a,b,c,d] = linmod('systemMovingSail', X);
+    [a,b,c,d] = linmod(strcat('system', kind, 'Sail'), X);
     [a,b,c,d] = ssdata(c2d(ss(a,b,c,d), h));
     [m,n] = size(b);
     a = [a zeros(m,1); zeros(1, m+1)];
@@ -65,8 +68,8 @@ while 1
 
     % Optimization
     approx = [Xinit; 1; zeros(N*m,1); zeros(n*N, 1)];
-%    options = optimset('Display','iter');
-    [x, tps] = fmincon(@cost,approx,A,B,Aeq,Beq,lb,ub,[]);
+    options = optimset('Display', 'iter', 'MaxFunEvals', 100000);
+    [x, tps] = fmincon(@cost,approx,A,B,Aeq,Beq,lb,ub,[],options);
 
     Xboat = [x((0:N)*m+1)'; x((0:N)*m+2)'];
     Xbool = x((0:N)*m+9)';
@@ -86,12 +89,13 @@ while 1
     
     U = [U [x((N+1)*m+(0:(Nreal-1))*n+1)'; x((N+1)*m+(0:(Nreal-1))*n+2)']];
 
-    sim('partSimuMovingSail');
+    sim(strcat('partSimu', kind, 'Sail'));
     
     figure(1)
     hold on;
     plot(X.signals.values(:,1), X.signals.values(:,2));
     plot([Xf(1,1) Xf(1,1) Xf(1, 2) Xf(1,2) Xf(1,1)], [Xf(2,1) Xf(2,2) Xf(2,2) Xf(2,1) Xf(2,1)], '--k')
+    drawnow;
     
     Xinit = X.signals.values(end,:)';
     X = Xinit;
@@ -131,3 +135,4 @@ plot(control(1,:), 'r');
 plot(control(2,:), 'k');
 plot(control(3,:), 'g');
 legend('Radder', 'Sail', 'Gravity Center');
+
