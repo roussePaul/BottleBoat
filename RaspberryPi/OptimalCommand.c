@@ -27,9 +27,9 @@ double cout(const gsl_vector * _x, void * _params)
   for(i=0;i<N*dim;i++)
     params->coeff[i] = gsl_vector_get(_x,i);
 
-  // for(i=0;i<N*dim;i++)
-  //   printf("%lf ",gsl_vector_get(_x,i));
-  // printf("\n");
+   //for(i=0;i<N*dim;i++)
+   //  printf("%lf ",gsl_vector_get(_x,i));
+   //printf("\n");
 
   initSimulation();
 
@@ -39,6 +39,8 @@ double cout(const gsl_vector * _x, void * _params)
   double v = predict.X[1];
 
   terminateSimulation();
+
+ // printf("%lf %lf\n",u,v);
 
   return -sqrt(u*u+v*v);
 }

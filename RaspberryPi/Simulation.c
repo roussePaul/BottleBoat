@@ -19,6 +19,8 @@ ExtU_BoatModele_T getU(double t, void (*commande)(void*,double*,double),void* pa
     double c[2];
     commande(param,c,t);
     u.U[0] = c[0];
+    u.U[1] = 0;
+    u.U[2] = 0;
     u.U[3] = c[1];
 
     return u;
@@ -42,6 +44,7 @@ void clSimulation(double t_f, void (*commande)(void*,double*,double),void* param
         t = *(BoatModele_M->Timing.t);
         BoatModele_U = getU(t,commande,param);
         BoatModele_step();
+	
         //printf("u = %lf %lf x = %lf %lf, t = %lf\n",BoatModele_U.U[0],BoatModele_U.U[3],BoatModele_Y.X[0],BoatModele_Y.X[1],t);
         
     }
