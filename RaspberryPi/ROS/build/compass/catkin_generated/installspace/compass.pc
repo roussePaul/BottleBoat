@@ -1,8 +1,8 @@
-prefix=/home/pi/BottleBoat/RaspberryPi/ROS/install
+prefix=/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install
 
 Name: compass
 Description: Description of compass
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/pi/BottleBoat/RaspberryPi/ROS/install/lib 
+Libs: -L/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install/lib 
 Requires: 

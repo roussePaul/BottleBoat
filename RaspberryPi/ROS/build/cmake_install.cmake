@@ -1,8 +1,8 @@
-# Install script for directory: /home/pi/BottleBoat/RaspberryPi/ROS/src
+# Install script for directory: /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/src
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/home/pi/BottleBoat/RaspberryPi/ROS/install")
+  SET(CMAKE_INSTALL_PREFIX "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,80 +44,80 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/BottleBoat/RaspberryPi/ROS/install/_setup_util.py")
+   "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install/_setup_util.py")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/home/pi/BottleBoat/RaspberryPi/ROS/install" TYPE PROGRAM FILES "/home/pi/BottleBoat/RaspberryPi/ROS/build/catkin_generated/installspace/_setup_util.py")
+FILE(INSTALL DESTINATION "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install" TYPE PROGRAM FILES "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/catkin_generated/installspace/_setup_util.py")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/BottleBoat/RaspberryPi/ROS/install/env.sh")
+   "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install/env.sh")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/home/pi/BottleBoat/RaspberryPi/ROS/install" TYPE PROGRAM FILES "/home/pi/BottleBoat/RaspberryPi/ROS/build/catkin_generated/installspace/env.sh")
+FILE(INSTALL DESTINATION "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install" TYPE PROGRAM FILES "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/catkin_generated/installspace/env.sh")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/BottleBoat/RaspberryPi/ROS/install/setup.bash")
+   "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install/setup.bash")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/home/pi/BottleBoat/RaspberryPi/ROS/install" TYPE FILE FILES "/home/pi/BottleBoat/RaspberryPi/ROS/build/catkin_generated/installspace/setup.bash")
+FILE(INSTALL DESTINATION "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install" TYPE FILE FILES "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/catkin_generated/installspace/setup.bash")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/BottleBoat/RaspberryPi/ROS/install/setup.sh")
+   "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install/setup.sh")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/home/pi/BottleBoat/RaspberryPi/ROS/install" TYPE FILE FILES "/home/pi/BottleBoat/RaspberryPi/ROS/build/catkin_generated/installspace/setup.sh")
+FILE(INSTALL DESTINATION "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install" TYPE FILE FILES "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/catkin_generated/installspace/setup.sh")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/BottleBoat/RaspberryPi/ROS/install/setup.zsh")
+   "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install/setup.zsh")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/home/pi/BottleBoat/RaspberryPi/ROS/install" TYPE FILE FILES "/home/pi/BottleBoat/RaspberryPi/ROS/build/catkin_generated/installspace/setup.zsh")
+FILE(INSTALL DESTINATION "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install" TYPE FILE FILES "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/catkin_generated/installspace/setup.zsh")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/pi/BottleBoat/RaspberryPi/ROS/install/.rosinstall")
+   "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install/.rosinstall")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/home/pi/BottleBoat/RaspberryPi/ROS/install" TYPE FILE FILES "/home/pi/BottleBoat/RaspberryPi/ROS/build/catkin_generated/installspace/.rosinstall")
+FILE(INSTALL DESTINATION "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install" TYPE FILE FILES "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/catkin_generated/installspace/.rosinstall")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  INCLUDE("/home/pi/BottleBoat/RaspberryPi/ROS/build/gtest/cmake_install.cmake")
-  INCLUDE("/home/pi/BottleBoat/RaspberryPi/ROS/build/compass/cmake_install.cmake")
+  INCLUDE("/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/gtest/cmake_install.cmake")
+  INCLUDE("/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/compass/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
@@ -127,7 +127,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/pi/BottleBoat/RaspberryPi/ROS/build/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/pi/BottleBoat/RaspberryPi/ROS/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

@@ -1,8 +1,8 @@
-# Install script for directory: /home/pi/BottleBoat/RaspberryPi/ROS/src/compass
+# Install script for directory: /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/src/compass
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/home/pi/BottleBoat/RaspberryPi/ROS/install")
+  SET(CMAKE_INSTALL_PREFIX "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/pi/BottleBoat/RaspberryPi/ROS/build/compass/catkin_generated/installspace/compass.pc")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/compass/catkin_generated/installspace/compass.pc")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/compass/cmake" TYPE FILE FILES
-    "/home/pi/BottleBoat/RaspberryPi/ROS/build/compass/catkin_generated/installspace/compassConfig.cmake"
-    "/home/pi/BottleBoat/RaspberryPi/ROS/build/compass/catkin_generated/installspace/compassConfig-version.cmake"
+    "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/compass/catkin_generated/installspace/compassConfig.cmake"
+    "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/compass/catkin_generated/installspace/compassConfig-version.cmake"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/compass" TYPE FILE FILES "/home/pi/BottleBoat/RaspberryPi/ROS/src/compass/package.xml")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/compass" TYPE FILE FILES "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/src/compass/package.xml")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

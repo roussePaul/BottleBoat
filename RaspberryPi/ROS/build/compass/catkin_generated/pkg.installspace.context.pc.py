@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "compass"
-PROJECT_SPACE_DIR = "/home/pi/BottleBoat/RaspberryPi/ROS/install"
+PROJECT_SPACE_DIR = "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install"
 PROJECT_VERSION = "0.0.0"
