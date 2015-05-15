@@ -34,14 +34,11 @@ RM = /usr/bin/cmake -E remove -f
 # Escaping for special characters.
 EQUALS = =
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/src
+CMAKE_SOURCE_DIR = /home/pi/BottleBoat/RaspberryPi/ROS/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build
+CMAKE_BINARY_DIR = /home/pi/BottleBoat/RaspberryPi/ROS/build
 
 # Utility rule file for roscpp_generate_messages_py.
 
@@ -59,10 +56,10 @@ compass/CMakeFiles/roscpp_generate_messages_py.dir/build: roscpp_generate_messag
 .PHONY : compass/CMakeFiles/roscpp_generate_messages_py.dir/build
 
 compass/CMakeFiles/roscpp_generate_messages_py.dir/clean:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/compass && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build/compass && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : compass/CMakeFiles/roscpp_generate_messages_py.dir/clean
 
 compass/CMakeFiles/roscpp_generate_messages_py.dir/depend:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/src /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/src/compass /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/compass /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/compass/CMakeFiles/roscpp_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/BottleBoat/RaspberryPi/ROS/src /home/pi/BottleBoat/RaspberryPi/ROS/src/compass /home/pi/BottleBoat/RaspberryPi/ROS/build /home/pi/BottleBoat/RaspberryPi/ROS/build/compass /home/pi/BottleBoat/RaspberryPi/ROS/build/compass/CMakeFiles/roscpp_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : compass/CMakeFiles/roscpp_generate_messages_py.dir/depend
 

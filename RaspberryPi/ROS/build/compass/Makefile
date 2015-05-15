@@ -38,22 +38,19 @@ RM = /usr/bin/cmake -E remove -f
 # Escaping for special characters.
 EQUALS = =
 
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/src
+CMAKE_SOURCE_DIR = /home/pi/BottleBoat/RaspberryPi/ROS/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build
+CMAKE_BINARY_DIR = /home/pi/BottleBoat/RaspberryPi/ROS/build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running interactive CMake command-line interface..."
+	/usr/bin/cmake -i .
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -123,14 +120,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/CMakeFiles /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/compass/CMakeFiles/progress.marks
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build/CMakeFiles 0
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/BottleBoat/RaspberryPi/ROS/build/CMakeFiles /home/pi/BottleBoat/RaspberryPi/ROS/build/compass/CMakeFiles/progress.marks
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/BottleBoat/RaspberryPi/ROS/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/clean
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/clean
 .PHONY : clean
 
 # The main clean target
@@ -139,22 +136,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/preinstall
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/preinstall
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 compass/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 .PHONY : compass/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -163,12 +160,12 @@ roscpp_generate_messages_cpp: compass/CMakeFiles/roscpp_generate_messages_cpp.di
 
 # fast build rule for target.
 roscpp_generate_messages_cpp/fast:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make compass/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make compass/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
 
 # Convenience name for target.
 compass/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 .PHONY : compass/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -177,12 +174,12 @@ roscpp_generate_messages_lisp: compass/CMakeFiles/roscpp_generate_messages_lisp.
 
 # fast build rule for target.
 roscpp_generate_messages_lisp/fast:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make compass/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make compass/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
 
 # Convenience name for target.
 compass/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/roscpp_generate_messages_py.dir/rule
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/roscpp_generate_messages_py.dir/rule
 .PHONY : compass/CMakeFiles/roscpp_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -191,12 +188,12 @@ roscpp_generate_messages_py: compass/CMakeFiles/roscpp_generate_messages_py.dir/
 
 # fast build rule for target.
 roscpp_generate_messages_py/fast:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/roscpp_generate_messages_py.dir/build.make compass/CMakeFiles/roscpp_generate_messages_py.dir/build
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/roscpp_generate_messages_py.dir/build.make compass/CMakeFiles/roscpp_generate_messages_py.dir/build
 .PHONY : roscpp_generate_messages_py/fast
 
 # Convenience name for target.
 compass/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 .PHONY : compass/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -205,12 +202,12 @@ rosgraph_msgs_generate_messages_cpp: compass/CMakeFiles/rosgraph_msgs_generate_m
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make compass/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make compass/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 compass/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 .PHONY : compass/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -219,12 +216,12 @@ rosgraph_msgs_generate_messages_lisp: compass/CMakeFiles/rosgraph_msgs_generate_
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make compass/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make compass/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 compass/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 .PHONY : compass/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -233,12 +230,12 @@ rosgraph_msgs_generate_messages_py: compass/CMakeFiles/rosgraph_msgs_generate_me
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_py/fast:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make compass/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make compass/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 compass/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 .PHONY : compass/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -247,12 +244,12 @@ std_msgs_generate_messages_cpp: compass/CMakeFiles/std_msgs_generate_messages_cp
 
 # fast build rule for target.
 std_msgs_generate_messages_cpp/fast:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make compass/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make compass/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 compass/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 .PHONY : compass/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -261,12 +258,12 @@ std_msgs_generate_messages_lisp: compass/CMakeFiles/std_msgs_generate_messages_l
 
 # fast build rule for target.
 std_msgs_generate_messages_lisp/fast:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make compass/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make compass/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 compass/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f CMakeFiles/Makefile2 compass/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 .PHONY : compass/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -275,7 +272,7 @@ std_msgs_generate_messages_py: compass/CMakeFiles/std_msgs_generate_messages_py.
 
 # fast build rule for target.
 std_msgs_generate_messages_py/fast:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/std_msgs_generate_messages_py.dir/build.make compass/CMakeFiles/std_msgs_generate_messages_py.dir/build
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(MAKE) -f compass/CMakeFiles/std_msgs_generate_messages_py.dir/build.make compass/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
 # Help Target
@@ -311,6 +308,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/pi/BottleBoat/RaspberryPi/ROS/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

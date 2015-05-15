@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "Compass")
-set(Compass_MAINTAINER "paul <paul@todo.todo>")
-set(Compass_DEPRECATED "")
-set(Compass_VERSION "0.0.0")
-set(Compass_BUILD_DEPENDS "roscpp" "rospy" "std_msgs")
-set(Compass_RUN_DEPENDS "roscpp" "rospy" "std_msgs")
-set(Compass_BUILDTOOL_DEPENDS "catkin")

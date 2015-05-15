@@ -2,7 +2,7 @@
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/install")
+  SET(CMAKE_INSTALL_PREFIX "/home/pi/BottleBoat/RaspberryPi/ROS/install")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

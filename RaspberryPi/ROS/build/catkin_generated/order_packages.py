@@ -1,5 +1,5 @@
 # generated from catkin/cmake/template/order_packages.context.py.in
-source_root_dir = "/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/src"
+source_root_dir = "/home/pi/BottleBoat/RaspberryPi/ROS/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
 underlay_workspaces = "/opt/ros/indigo".split(';') if "/opt/ros/indigo" != "" else []
