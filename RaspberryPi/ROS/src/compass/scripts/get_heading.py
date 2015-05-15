@@ -9,7 +9,7 @@ def handle_compass():
 
 	pub = rospy.Publisher('heading', Float32, queue_size=10)
 	rospy.init_node('compass', anonymous=True)
-	rate = rospy.Rate(3) # 3hz
+	rate = rospy.Rate(10) # 3hz
 
 	compass = hmc5883l.hmc5883l(gauss = 4.7, declination = (-2,5))
 
