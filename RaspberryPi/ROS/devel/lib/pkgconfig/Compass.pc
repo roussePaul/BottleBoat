@@ -1,0 +1,8 @@
+prefix=/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/devel
+
+Name: Compass
+Description: Description of Compass
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/paul/KTH/OptimalControl/BottleBoat/RaspberryPi/ROS/devel/lib 
+Requires: 

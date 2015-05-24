@@ -4,6 +4,8 @@
 void initRC();
 
 float getChannel(int i);
+boolean isChannelHigh(int i);
+boolean isChannelLow(int i);
 
 
 #endif
